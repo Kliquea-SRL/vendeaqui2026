@@ -1,0 +1,23 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Kliquea-SRL/VendeAqui#readme",
+  "bugs": {
+    "url": "https://github.com/Kliquea-SRL/VendeAqui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kliquea-SRL/VendeAqui.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "dependencies": {
+    "axios": "^1.13.2"
+  }
+}

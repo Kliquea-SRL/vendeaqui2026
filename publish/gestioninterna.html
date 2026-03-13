@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestiona tu negocio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+
+<!-- Navbar -->
+<nav class="bg-white w-full px-6 md:px-16 py-4 shadow-sm fixed top-0 left-0 z-50">
+  <div class="flex items-center justify-between">
+
+    <!-- Logo -->
+  <div class="flex items-center">
+  <a href="/default/vendeaqui" onclick="animateLogo(event)">
+    <img id="logo" src="https://kliqueainternacional.vteximg.com.br/arquivos/logoKliquea-2025 1.svg" alt="Kliquea Logo"
+      class="h-12 w-auto transition-transform duration-150 ease-in-out" />
+  </a>
+</div>
+
+    <!-- Menú escritorio -->
+    <div class="hidden md:flex items-center gap-8 text-[#030389] text-sm font-medium">
+      <!-- Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center hover:font-bold text-[#030389]">
+          Comienza a vender
+          <svg class="ml-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 10.939l3.71-3.71a.75.75 0 011.08 1.04l-4.24 4.24a.75.75 0 01-1.08 0L5.25 8.27a.75.75 0 01-.02-1.06z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+
+        <!-- Dropdown content -->
+        <div class="absolute top-full right-2 mt-2 w-64 bg-white shadow-md border border-gray-200 group-hover:opacity-100 opacity-0 invisible group-hover:visible transition-all duration-200 delay-100 z-50"
+          onmouseover="this.classList.add('opacity-100', 'visible')"
+          onmouseout="this.classList.remove('opacity-100', 'visible')">
+          <a href="/default/integraciones" class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Integraciones</a>
+          <hr class="border-gray-200 mx-6" />
+          <a href="/default/logistica" class="block px-6 py-6 text-sm text-gray-400 ttransition-all duration-200 ease-in-out hover:font-bold hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Logística</a>
+          <hr class="border-gray-200 mx-6" />
+          <a href="/default/servicios" class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold   hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Servicios</a>
+          <hr class="border-gray-200 mx-6" />
+          <a href="/default/facturacion" class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold  hover:text-[#030389] active:translate-x-1 active:scale-95">Facturación</a>
+        </div>
+      </div>
+
+      <!-- Otros enlaces -->
+      <a href="/default/requisitos" 
+        class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
+        Requisitos
+      </a>
+
+      <a href="/default/crecimiento" 
+        class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
+        Crecimiento
+      </a>
+
+      <a href="/default/gestionatunegocio" 
+        class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
+        Gestiona tu negocio
+      </a>
+</div>
+
+    <!-- Botón hamburguesa -->
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-[#030389] focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+<!-- Menú móvil -->
+  <div id="mobile-menu" class="fixed top-16 left-0 w-full h-[calc(100vh-4rem)] z-50 hidden bg-white">
+    <div class="flex h-full">
+      <!-- Lado izquierdo vacío con línea -->
+      <div class="w-[40%] border-r border-gray-200 bg-white"></div>
+
+      <!-- Menú lado derecho -->
+      <div class="w-[60%] bg-white flex flex-col font-montserrat shadow-lg px-6 pt-6 space-y-6">
+        <!-- Botón cerrar -->
+        <div class="flex justify-end">
+          <button id="menu-close" class="text-[#030389] focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Submenú desplegable -->
+        <div>
+          <button onclick="toggleSubmenu()" class="flex justify-between items-center w-full text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pr-2 hover:font-medium">
+            <span>Comienza a vender</span>
+            <svg id="arrow-icon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="#F58220"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+       <div id="submenu" class="hidden mt-2 pl-4 text-sm text-gray-500 space-y-6">
+          <a href="/default/integraciones" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Integraciones</a>
+
+          <a href="/default/logistica" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Logística</a>
+
+          <a href="/default/servicios" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Servicios</a>
+
+          <a href="/default/facturacion" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Facturación</a>
+      </div>
+
+        </div>
+
+        <hr class="border-gray-200" />
+        <a href="/default/requisitos" class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Requisitos</a>
+        <hr class="border-gray-200" />
+        <a href="/default/crecimiento" class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Crecimiento</a>
+        <hr class="border-gray-200" />
+        <a href="/default/gestionatunegocio" class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Gestiona tu negocio</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+  <!--Banner responsive-->
+<section class="relative text-white overflow-hidden h-[500px] md:min-h-[450px]">
+  <div class="absolute inset-0">
+    <div class="hidden md:block w-full h-full bg-cover bg-center"
+         style="background-image:url('https://kliqueainternacional.vteximg.com.br/arquivos/bannerprincipal-gest-interna.jpg')"></div>
+    <div class="block md:hidden w-full h-full bg-cover bg-center"
+         style="background-image:url('https://kliqueainternacional.vteximg.com.br/arquivos/banngestionintermovil.png')"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-[#000066]"></div>
+  </div>
+
+  <div class="relative z-10 h-full flex items-center justify-start
+                px-8 md:px-20 lg:px-32 lg:mt-8 md:mt-8 lg:ml-0 max-w-7xl mx-auto">
+    <div class="w-full flex flex-col justify-center space-y-4
+                    items-start md:items-start
+                    text-left md:text-left
+                    md:max-w-2xl
+                    -mt-12 md:mt-0">
+
+      <h2 class="text-5xl sm:text-5xl md:text-5xl font-extrabold leading-none mb-4">
+        Integra tu mundo.<br class="hidden sm:block">Vende sin fricción.
+      </h2>
+
+      <p class="hidden md:block text-lg md:text-xl leading-relaxed ">
+        Kliquea es más que un marketplace: es el impulso que tu marca necesita para crecer a otro nivel.
+      </p>
+
+     <button
+        class="
+          
+          ml-1           /* margen izquierdo siempre */
+          md:mt-8       /* 2rem (~32px) de margen-top en tablets en adelante */
+          lg:mt-12      /* 3rem (~48px) de margen-top en desktop en adelante */
+          md:ml-0       /* Sin margen izquierdo adicional en md y superior, ya está alineado a la izquierda */
+        "
+      >
+        <a
+          href="#"
+          class=" bg-[#F4771D] 
+          text-white 
+          font-bold 
+          py-2 
+          px-8 
+          rounded-full
+          text-xs 
+          sm:text-xl 
+          md:text-xl 
+          hover:text-[ bg-[#F4771D]] transition"
+        >
+          Regístrate y comienza ya
+        </a>
+      </button>
+    </div>
+  </div>
+</section>
+ 
+
+ <!--Boton de Contacto azul-->
+
+<div class="hidden md:block  fixed bottom-[500px] right-[15px] z-50">
+  <button class="flex items-center transition-transform duration-200 hover:scale-105">
+    <img src="https://kliqueainternacional.vteximg.com.br/arquivos/contacto.png" alt="Chat Icon" class="w-20 h-20 mr-1">
+  </button>
+</div>
+
+ <!--Fin Boton de Contacto azul-->
+  <!-- Tabs de gestión -->
+<!-- Menú inferior responsive con scroll horizontal en móvil -->
+            <div class="md:hidden text-[#585858] text-center mt-12  mb-16 px-10 italic">
+      <p>"Con Kliquea, tu marca cuenta con el soporte necesario para destacarse desde el primer día: desde la integración hasta la presentación visual, te impulsamos para que tu tienda tenga un arranque exitoso."</p>
+      </div>
+    
+
+
+<nav id="submenu-wrapper" class="sticky top-[80px] z-40 bg-white px-2  mt-4">
+  
+  <!-- <div class="hidden sm:block relative bg-white"> -->
+  <div class="hidden sm:block relative w-full flex justify-center bg-white">
+    
+    <ul id="submenu" class="flex place-content-around gap-10 py-5  text-sm font-semibold text-gray-500 relative">
+      
+      <li class="w-auto">
+        <a href="#gestion-productos" class="submenu-item group flex flex-col items-center gap-1 transition-colors duration-300">
+          
+          <div class="relative">
+            <div class="absolute inset-0 bg-orange-400 opacity-0 group-hover:opacity-30 group-[.active]:opacity-30 rounded-full transition-opacity duration-300 z-10"></div>
+           
+            <img src="https://kliqueainternacional.vteximg.com.br/arquivos/submenu.png" class="w-6 h-6 relative z-0" alt="icono1" />
+          </div>
+          
+          <span class="transition-colors duration-300 group-hover:text-gray-500 group-[.active]:text-orange-400 text-center">Gestión de productos y logística</span>
+        </a>
+      </li>
+      
+      <li class="w-auto">
+        
+        <a href="#gestion-precio" class="submenu-item group flex flex-col items-center gap-1 transition-colors duration-300">
+          
+          <div class="relative">
+            <div class="absolute inset-0 bg-orange-400 opacity-0 group-hover:opacity-30 group-[.active]:opacity-30 rounded-full transition-opacity duration-300 z-10"></div>
+
+            <img src="https://kliqueainternacional.vteximg.com.br/arquivos/submenu.png" class="w-6 h-6 relative z-0" alt="icono2" />
+          </div>
+
+          <span class="transition-colors duration-300 group-hover:text-gray-500 group-[.active]:text-orange-400 text-center">Gestión de precio e inventario</span>
+        </a>
+      </li>
+
+      <li class="w-auto">
+        <a href="#gestion-financiera" class="submenu-item group flex flex-col items-center gap-1 transition-colors duration-300">
+          
+          <div class="relative">
+            <div class="absolute inset-0 bg-orange-400 opacity-0 group-hover:opacity-30 group-[.active]:opacity-30 rounded-full transition-opacity duration-300 z-10"></div>
+            
+            <img src="https://kliqueainternacional.vteximg.com.br/arquivos/submenu.png" class="w-6 h-6 relative z-0" alt="icono3" />
+          </div>
+        
+          <span class="transition-colors duration-300 group-hover:text-gray-500 group-[.active]:text-orange-400 text-center">Gestión financiera y documentación</span>
+        </a>
+      </li>
+      
+      <li class="w-auto">
+        <a href="#integracion-cumplimientos" class="submenu-item group flex flex-col items-center gap-1 transition-colors duration-300">
+          
+          <div class="relative">
+            <div class="absolute inset-0 bg-orange-400 opacity-0 group-hover:opacity-30 group-[.active]:opacity-30 rounded-full transition-opacity duration-300 z-10"></div>
+          
+            <img src="https://kliqueainternacional.vteximg.com.br/arquivos/submenu.png" class="w-6 h-6 relative z-0" alt="icono4" />
+          </div>
+          
+          <span class="transition-colors duration-300 group-hover:text-gray-500 group-[.active]:text-orange-400 text-center">Integración de cumplimientos</span>
+        </a>
+      </li>
+      
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-[1px] bg-gray-200"></div>
+      <div id="active-line" class="absolute top-0 h-[2px] bg-blue-900 transition-all duration-300 ease-in-out rounded-full"></div>
+    </ul>
+  
+  </div>
+
+  <div class="sm:hidden relative bg-white">
+    
+    <ul id="mobile-submenu" class="flex w-full gap-4 px-4 py-12 overflow-x-auto whitespace-nowrap text-sm font-semibold text-[#030389] scrollbar-hide scroll-smooth relative">
+      
+      <li class="relative flex-shrink-0">
+        
+        <a href="#gestion-productos" class="submenu-item group flex items-center gap-3 transition-colors duration-300 min-w-max px-2">
+          
+          <div class="relative w-9 h-9 flex items-center justify-center">
+            <div class="absolute inset-0 bg-orange-400 opacity-0 group-hover:opacity-30 group-[.active]:opacity-30 rounded-full transition-opacity duration-300 z-10"></div>
+            
+            <img src="https://kliqueainternacional.vteximg.com.br/arquivos/submenu.png" alt="Productos y logística" class="w-6 h-6 relative z-0" />
+          </div>
+         
+          <span class="text-sm transition-colors duration-300 group-hover:text-[#030389] group-[.active]:text-orange-400">Productos y logística</span>
+        </a>
+      </li>
+      
+      <li class="relative flex-shrink-0">
+        <a href="#gestion-precio" class="submenu-item group flex items-center gap-3 transition-colors duration-300 min-w-max px-2">
+          
+          <div class="relative w-9 h-9 flex items-center justify-center">
+            <div class="absolute inset-0 bg-orange-400 opacity-0 group-hover:opacity-30 group-[.active]:opacity-30 rounded-full transition-opacity duration-300 z-10"></div>
+           
+            <img src="https://kliqueainternacional.vteximg.com.br/arquivos/submenu.png" alt="Precio e inventario" class="w-6 h-6 relative z-0" />
+          </div>
+          
+          <span class="text-sm transition-colors duration-300 group-hover:text-[#030389] group-[.active]:text-orange-400">Precio e inventario</span>
+        </a>
+      </li>
+      
+      <li class="relative flex-shrink-0">
+        <a href="#gestion-financiera" class="submenu-item group flex items-center gap-3 transition-colors duration-300 min-w-max px-2">
+          
+          <div class="relative w-9 h-9 flex items-center justify-center">
+            <div class="absolute inset-0 bg-orange-400 opacity-0 group-hover:opacity-30 group-[.active]:opacity-30 rounded-full transition-opacity duration-300 z-10"></div>
+           
+            <img src="https://kliqueainternacional.vteximg.com.br/arquivos/submenu.png" alt="Finanzas y documentos" class="w-6 h-6 relative z-0" />
+          </div>
+         
+          <span class="text-sm transition-colors duration-300 group-hover:text-[#030389] group-[.active]:text-orange-400">Finanzas y documentos</span>
+        </a>
+      </li>
+      
+      <li class="relative flex-shrink-0">
+        <a href="#integracion-cumplimientos" class="submenu-item group flex items-center gap-3 transition-colors duration-300 min-w-max px-2">
+          
+          <div class="relative w-9 h-9 flex items-center justify-center">
+            <div class="absolute inset-0 bg-orange-400 opacity-0 group-hover:opacity-30 group-[.active]:opacity-30 rounded-full transition-opacity duration-300 z-10"></div>
+            <img src="https://kliqueainternacional.vteximg.com.br/arquivos/submenu.png" alt="Cumplimientos" class="w-6 h-6 relative z-0" />
+          </div>
+         
+          <span class="text-sm transition-colors duration-300 group-hover:text-[#030389] group-[.active]:text-orange-400">Cumplimientos</span>
+        </a>
+      </li>
+     
+      <div class="absolute top-0 left-0 w-full h-[1px] bg-gray-200"></div>
+      <div id="mobile-active-line" class="absolute top-0 h-[2px] bg-blue-900 transition-all duration-300 ease-in-out rounded-full"></div>
+    </ul>
+  </div>
+</nav>
+
+
+    <!-- Acordeon1 -->
+     
+    <div class="w-full max-w-4xl mx-auto scroll-mt-[800px] px-4 sm:px-6 md:px-8 mt-12">
+      <h2  id="gestion-productos" class="text-2xl sm:text-3xl font-bold text-[#030389] mb-4 text-center">Gestión de productos y logística</h2>
+      <p class="mb-6 text-[#585858] text-center sm:text-base text-sm">Lorem ipsum dolor sit amet consectetur adipiscing elit mattis sit phasellus mollis sit aliquam sit nullam.</p>
+
+    
+      
+
+      <div class="space-y-4 my-16">
+        <!-- Tab 1 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(1)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-1" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-1" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-1" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+          </div>
+        </div>
+      
+        <!-- Tab 2 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(2)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-2" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-2" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-2" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+          </div>
+        </div>
+      
+        <!-- Tab 3 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(3)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-3" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-3" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-3" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+          </div>
+        </div>
+      
+        <!-- Tab 4 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(4)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-4" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-4" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-4" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+          </div>
+        </div>
+
+      </div>
+      
+    </div>
+        
+  
+    
+ <!-- Acordeón 2  Gestio-->
+  <section class="bg-[#EEF3FF] text-black py-10">
+      <div class="w-full max-w-4xl mx-auto scroll-mt-[130px] px-4 sm:px-6 md:px-8">
+      <h2 id="gestion-precio" class="text-2xl sm:text-3xl font-bold text-[#030389] mb-4 text-center">Gestión de precio e inventario</h2>
+      <p class="mb-6 text-[#585858] text-center sm:text-base text-sm">Lorem ipsum dolor sit amet consectetur adipiscing elit mattis sit phasellus mollis sit aliquam sit nullam.</p>
+
+      <div class="space-y-4">
+   
+         <!-- Tab 1 -->
+         <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(5)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-5" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-5" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-5" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+          </div>
+        </div>
+      
+        <!-- Tab 2 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(6)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-6" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-6" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-6" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+          </div>
+        </div>
+      
+        <!-- Tab 3 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(7)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-7" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-7" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-7" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+          </div>
+        </div>
+      
+        <!-- Tab 4 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(8)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-8" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-8" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-8" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  
+  </section>
+
+
+ <!--Acordeon 3-->
+  
+ <div class="w-full max-w-4xl mx-auto scroll-mt-[130px] px-4 sm:px-6 md:px-8 mt-10">
+  <h2 id="gestion-financiera" class="text-2xl sm:text-3xl font-bold text-[#030389] mb-4 text-center">Gestión financiera y documentación</h2>
+  <p class="mb-6 text-[#585858] text-center sm:text-base text-sm">Lorem ipsum dolor sit amet consectetur adipiscing elit mattis sit phasellus mollis sit aliquam sit nullam.</p>
+
+
+  
+
+  <div class="space-y-4 my-16">
+    <!-- Tab 1 -->
+    <div class="border-b border-gray-300 py-2">
+      <button onclick="toggleExclusiveAccordion(9)" class="flex justify-between items-center w-full text-left">
+        <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+        <span class="w-6 h-6 shrink-0">
+          <img id="icon-closed-9" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+          <img id="icon-open-9" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+        </span>
+      </button>
+      <div id="content-9" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+      </div>
+    </div>
+  
+    <!-- Tab 2 -->
+    <div class="border-b border-gray-300 py-2">
+      <button onclick="toggleExclusiveAccordion(10)" class="flex justify-between items-center w-full text-left">
+        <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+        <span class="w-6 h-6 shrink-0">
+          <img id="icon-closed-10" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+          <img id="icon-open-10" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+        </span>
+      </button>
+      <div id="content-10" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+      </div>
+    </div>
+  
+    <!-- Tab 3 -->
+    <div class="border-b border-gray-300 py-2 ">
+      <button onclick="toggleExclusiveAccordion(11)" class="flex justify-between items-center w-full text-left">
+        <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+        <span class="w-6 h-6 shrink-0">
+          <img id="icon-closed-11" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+          <img id="icon-open-11" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+        </span>
+      </button>
+      <div id="content-11" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+      </div>
+    </div>
+  
+    <!-- Tab 4 -->
+    <div class="border-b border-gray-300 py-2">
+      <button onclick="toggleExclusiveAccordion(12)" class="flex justify-between items-center w-full text-left">
+        <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+        <span class="w-6 h-6 shrink-0">
+          <img id="icon-closed-12" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+          <img id="icon-open-1" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+        </span>
+      </button>
+      <div id="content-12" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+      </div>
+    </div>
+
+  </div>
+  
+</div>
+    
+
+
+  <!-- Acordeon 4 -->
+    
+  <section class="bg-[#EEF3FF] text-black py-10">
+    <div class="w-full max-w-4xl mx-auto scroll-mt-[130px] px-4 sm:px-6 md:px-8">
+      <h2 id="integracion-cumplimientos" class="text-2xl sm:text-3xl font-bold text-[#030389] mb-4 text-center">Integración de cumplimientos</h2>
+      <p class="mb-6 text-[#585858] text-center sm:text-base text-sm">Lorem ipsum dolor sit amet consectetur adipiscing elit mattis sit phasellus mollis sit aliquam sit nullam.</p>
+
+      <div class="space-y-4">
+   
+         <!-- Tab 1 -->
+         <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(13)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-13" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-13" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-13" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+          </div>
+        </div>
+      
+        <!-- Tab 2 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(14)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-14" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-1" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-14" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+          </div>
+        </div>
+      
+        <!-- Tab 3 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(15)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-15" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-15" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-15" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+          </div>
+        </div>
+      
+        <!-- Tab 4 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(16)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base sm:text-lg font-bold text-[#030389] cursor-pointer">Titulo Tab</h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-16" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-16" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-16" class="hidden mt-2 text-[#585858] text-sm sm:text-base">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit id venenatis pretium risus euismod dictum.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  
+  </section>
+
+
+  
+<script>
+  function animateLogo(event) {
+    event.preventDefault(); // Evita la navegación inmediata
+
+    const logo = document.getElementById('logo');
+    const link = event.currentTarget.getAttribute('href');
+
+    logo.classList.add('rotate-12', 'scale-105');
+
+    // Esperar que termine la animación antes de redirigir
+    setTimeout(() => {
+      logo.classList.remove('rotate-12', 'scale-105');
+      window.location.href = link;
+    }, 300); // Mismo tiempo que tu animación
+  }
+</script>
+
+
+
+    <!--animaciones del menu-->
+
+<span class="hidden translate-x-1.5 pl-3"></span>
+
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('menu-close');
+
+    // Cierre del menú al hacer clic en el botón cerrar
+    closeBtn?.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+
+    // Seleccionar todos los <a> dentro del menú móvil (incluye submenu)
+    const menuLinks = mobileMenu.querySelectorAll('a');
+
+    menuLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevenir navegación inmediata
+
+        // Agrega animación de rebote (solo si no está ya en animación)
+        link.classList.add('pl-3', 'font-medium'); // Cambio visual
+        link.classList.add('duration-200', 'transition-all'); // Asegura transición
+
+        // Rebote con clase temporal
+        link.classList.add('translate-x-1.5');
+        setTimeout(() => {
+          link.classList.remove('translate-x-1.5');
+        }, 200);
+
+        // Cierra el menú tras un pequeño delay y redirecciona
+        const href = link.getAttribute('href');
+        setTimeout(() => {
+          mobileMenu.classList.add('hidden');
+          window.location.href = href;
+        }, 250); // Da tiempo al efecto visual
+      });
+    });
+  });
+</script>
+
+
+
+
+
+ <!--menuresponsivehome   -->
+ <script >
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    document.getElementById('mobile-menu').classList.remove('hidden');
+  });
+
+  document.getElementById('menu-close').addEventListener('click', function () {
+    document.getElementById('mobile-menu').classList.add('hidden');
+  });
+
+  function toggleSubmenu() {
+    const submenu = document.getElementById('submenu');
+    const arrowIcon = document.getElementById('arrow-icon');
+    submenu.classList.toggle('hidden');
+    arrowIcon.classList.toggle('rotate-180');
+  }
+
+</script>
+
+
+<!-----------------------------------------------Submenugestioninterna-------------------------------------------------->
+-
+<script >
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Función para mover la línea azul
+    function setActiveLine(el, line, containerSelector) {
+        const container = el.closest(containerSelector);
+        if (!container) return;
+        const rect = el.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        const scrollLeft = container.scrollLeft || 0;
+        line.style.width = `${rect.width}px`;
+        line.style.left = `${rect.left - containerRect.left + scrollLeft}px`;
+    }
+
+    // ===== ELEMENTOS GLOBALES Y CONSTANTES =====
+    const desktopItems = document.querySelectorAll('#submenu .submenu-item');
+    const desktopLine = document.getElementById('active-line');
+    const mobileItems = document.querySelectorAll('#mobile-submenu .submenu-item');
+    const mobileLine = document.getElementById('mobile-active-line');
+    const mobileSubmenu = document.getElementById('mobile-submenu');
+    const submenuWrapper = document.getElementById('submenu-wrapper');
+
+    // Guardar las secciones para no tener que consultarlas repetidamente
+    const sections = [];
+    document.querySelectorAll('a.submenu-item[href^="#"]').forEach(item => {
+        try {
+            const sectionId = item.getAttribute('href');
+            const section = document.querySelector(sectionId);
+            if (section) {
+                sections.push(section);
+            } else {
+                console.warn(`Sección no encontrada para el href: ${sectionId}`);
+            }
+        } catch (e) {
+            console.warn(`Error al buscar sección para href: ${item.getAttribute('href')}`, e);
+        }
+    });
+
+    // ===== LÓGICA DE ACTUALIZACIÓN DE ÍTEM ACTIVO EN SCROLL DE PÁGINA =====
+    function updateActiveStateOnPageScroll() {
+        if (!sections.length || !submenuWrapper) return;
+
+        const menuHeight = submenuWrapper.offsetHeight;
+        let bestMatchId = null;
+        let minOffset = Infinity;
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            // Considera la distancia del top de la sección al top de la ventana (ajustado por la altura del menú)
+            const offsetTop = Math.abs(rect.top - menuHeight);
+
+            if (rect.top <= window.innerHeight && rect.bottom >= menuHeight) {
+                if (offsetTop < minOffset) {
+                    minOffset = offsetTop;
+                    bestMatchId = section.id;
+                }
+            } else if (rect.top > window.innerHeight && bestMatchId === null && sections.indexOf(section) === 0) {
+                bestMatchId = sections[0].id; // Si estamos muy arriba, la primera podría ser la "activa"
+            }
+        });
+
+        // Actualizar ítems de escritorio
+        desktopItems.forEach(item => {
+            const isActive = item.getAttribute('href') === `#${bestMatchId}`;
+            item.classList.toggle('active', isActive);
+            if (isActive && desktopLine) {
+                setActiveLine(item, desktopLine, '#submenu');
+            } else if (!document.querySelector('#submenu .submenu-item.active') && desktopLine) {
+                desktopLine.style.width = '0px';
+            }
+        });
+
+        // Actualizar ítems móviles (similar a escritorio)
+        mobileItems.forEach(item => {
+            const isActive = item.getAttribute('href') === `#${bestMatchId}`;
+            item.classList.toggle('active', isActive);
+            if (isActive && mobileLine) {
+                setActiveLine(item, mobileLine, '#mobile-submenu');
+                const listItem = item.closest('li');
+                if (listItem && mobileSubmenu && mobileSubmenu.scrollWidth > mobileSubmenu.clientWidth) {
+                    listItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            } else if (!document.querySelector('#mobile-submenu .submenu-item.active') && mobileLine) {
+                mobileLine.style.width = '0px';
+            }
+        });
+    }
+
+    // ===== EVENT LISTENERS =====
+
+    // --- Scroll de la página ---
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateActiveStateOnPageScroll, 60); // Throttle
+    });
+
+    // --- Clics en ítems de menú (común para Desktop y Mobile) ---
+    function handleMenuItemClick(e, items, line, menuSelector, isMobile = false) {
+        e.preventDefault();
+        const clickedItem = e.currentTarget;
+        const targetId = clickedItem.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement && submenuWrapper) {
+            items.forEach(i => i.classList.remove('active'));
+            clickedItem.classList.add('active');
+            setActiveLine(clickedItem, line, menuSelector);
+
+            if (isMobile) {
+                const listItem = clickedItem.closest('li');
+                if (listItem && mobileSubmenu && mobileSubmenu.scrollWidth > mobileSubmenu.clientWidth) {
+                    listItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            }
+
+            const menuHeight = submenuWrapper.offsetHeight;
+            const submenuCssTopOffset = 80; // El valor de 'top' de tu submenú sticky
+            const desiredGapBelowSubmenu = 20; // Ajusta este valor según el espacio que quieras debajo del submenú
+
+            const desiredViewportTopForTarget = submenuCssTopOffset + menuHeight + desiredGapBelowSubmenu;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - desiredViewportTopForTarget;
+
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+            // Se espera que el listener de scroll de la ventana actualice el estado después del scroll,
+            // pero podemos forzar una actualización de la línea inmediatamente.
+            // La clase 'active' ya está puesta.
+        }
+    }
+
+    desktopItems.forEach(item => {
+        item.addEventListener('click', (e) => handleMenuItemClick(e, desktopItems, desktopLine, '#submenu'));
+        item.addEventListener('mouseenter', () => {
+            if (desktopLine) setActiveLine(item, desktopLine, '#submenu');
+        });
+        item.addEventListener('mouseleave', () => {
+            const active = document.querySelector('#submenu .submenu-item.active');
+            if (active && desktopLine) {
+                setActiveLine(active, desktopLine, '#submenu');
+            } else if (desktopLine) {
+                desktopLine.style.width = '0px';
+            }
+        });
+    });
+
+    mobileItems.forEach(item => {
+        item.addEventListener('click', (e) => handleMenuItemClick(e, mobileItems, mobileLine, '#mobile-submenu', true));
+        // El touchstart original para mover la línea podría ser útil para feedback inmediato.
+        // Lo dejamos fuera por ahora para simplificar, ya que el click y scroll de página se encargan.
+        // item.addEventListener('touchstart', () => setActiveLine(item, mobileLine, '#mobile-submenu'));
+    });
+
+
+    // --- DOMContentLoaded ---
+    function initializeMenuState() {
+        const hash = window.location.hash;
+       if (hash && sections.find(s => `#${s.id}` === hash)) {
+            const targetElement = document.querySelector(hash);
+             if (targetElement && submenuWrapper) {
+            const menuHeight = submenuWrapper.offsetHeight;
+            const submenuCssTopOffset = 80; // El valor de 'top' de tu submenú sticky
+            const desiredGapBelowSubmenuOnInit = 20; // Puedes tener un gap diferente para el inicio si quieres
+
+             const desiredViewportTopForTargetOnInit = submenuCssTopOffset + menuHeight + desiredGapBelowSubmenuOnInit;
+             const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - desiredViewportTopForTargetOnInit;
+
+                
+                 // Hacemos scroll sin 'smooth' para que sea instantáneo al cargar
+                 window.scrollTo({ top: targetPosition, behavior: 'auto' });
+
+                 // Activar el ítem correspondiente
+                 desktopItems.forEach(i => i.classList.remove('active'));
+                 mobileItems.forEach(i => i.classList.remove('active'));
+
+                 const activeDesktopItem = document.querySelector(`#submenu .submenu-item[href="${hash}"]`);
+                 if (activeDesktopItem && desktopLine) {
+                     activeDesktopItem.classList.add('active');
+                     setActiveLine(activeDesktopItem, desktopLine, '#submenu');
+                 }
+                 const activeMobileItem = document.querySelector(`#mobile-submenu .submenu-item[href="${hash}"]`);
+                 if (activeMobileItem && mobileLine) {
+                     activeMobileItem.classList.add('active');
+                     setActiveLine(activeMobileItem, mobileLine, '#mobile-submenu');
+                     const listItem = activeMobileItem.closest('li');
+                     if (listItem && mobileSubmenu && mobileSubmenu.scrollWidth > mobileSubmenu.clientWidth) {
+                         // Usar 'auto' también para el scroll del menú al cargar
+                         listItem.scrollIntoView({ behavior: 'auto', block: 'nearest', inline: 'center' });
+                     }
+                 }
+                 // Forzar actualización después de scroll por hash
+                 setTimeout(updateActiveStateOnPageScroll, 150); // Dar tiempo al scroll por hash y luego reevaluar
+                 return; // Salir si se procesó un hash
+             }
+         }
+         // Si no hay hash válido, o después de procesarlo, actualizar basado en el scroll actual.
+         // Una pequeña demora para asegurar que el layout esté completo.
+         setTimeout(updateActiveStateOnPageScroll, 100);
+    }
+    
+    initializeMenuState();
+
+
+    // --- Resize ---
+    window.addEventListener('resize', () => {
+        updateActiveStateOnPageScroll(); // Re-evaluar qué sección es visible
+        // Y luego re-dibujar la línea para el que quede activo
+        const activeDesktop = document.querySelector('#submenu .submenu-item.active');
+        if (activeDesktop && desktopLine) setActiveLine(activeDesktop, desktopLine, '#submenu');
+        
+        const activeMobile = document.querySelector('#mobile-submenu .submenu-item.active');
+        if (activeMobile && mobileLine) setActiveLine(activeMobile, mobileLine, '#mobile-submenu');
+    });
+
+    // Eliminar la función `updateActiveOnScroll` original si ya no es necesaria,
+    // ya que `updateActiveStateOnPageScroll` ahora se encarga de la clase `active`
+    // y el `scrollIntoView` del ítem activo en el menú móvil.
+    // const mobileContainer = document.getElementById('mobile-submenu');
+    // mobileContainer.addEventListener('scroll', () => {
+    //  requestAnimationFrame(updateActiveOnScroll); // updateActiveOnScroll era tu función original
+    // });
+});
+
+
+
+</script>
+
+
+
+  <!----------------------------------  fin submenu gestion interna ---------------------------------------------------------->
+
+  <!--gestioninterna-->
+<script >
+function toggleExclusiveAccordion(id) {
+    const totalTabs = 16; // Ajusta si agregas más tabs
+  
+    for (let i = 1; i <= totalTabs; i++) {
+      const content = document.getElementById('content-' + i);
+      const icon = document.getElementById('icon-' + i);
+  
+      if (i === id) {
+        const isHidden = content.classList.contains('hidden');
+        // Primero cerrar todo
+        document.querySelectorAll('[id^="content-"]').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('[id^="icon-"]').forEach(ic => ic.textContent = '+');
+  
+        if (isHidden) {
+          content.classList.remove('hidden');
+          icon.textContent = '−'; // Cambia el ícono al abierto
+        }
+      }
+    }
+  }
+
+</script>
+
+
+
+
+</body>
+
+
+  <!-- Call to action -->
+  <section class="hidden md:block w-full">
+  <div class="relative h-[300px] bg-cover bg-no-repeat bg-left" style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/baner.jpg');">
+
+    <!-- Gradiente solo visible en md y adelante -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/5 via-[#000030]/60 to-[#000066]/90 z-0"></div>
+
+    <!-- Contenido -->
+    <div class="absolute inset-0 flex items-center justify-center md:justify-end px-6 md:px-16 z-10">
+      <div class="text-left md:text-right text-white max-w-xl md:mr-[10%] ">
+        <h2 class="text-3xl font-extrabold mb-4 leading-tight">
+          Haz historia en el eCommerce...
+        </h2>
+        <p class="text-base font-medium lg:text-lg mb-6 leading-relaxed">
+          Kliquea es más que un marketplace:<br class="hidden lg:block" />
+          es el impulso que tu marca necesita para crecer a otro nivel.
+        </p>
+        <a
+          href="#"
+          class="bg-[#ff7a00] hover:bg-[#e36900] transition text-white font-bold py-3 px-10 rounded-full text-base lg:text-lg inline-block"
+        >
+          Regístrate y comienza ya
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- Imagen de fondo para móvil -->
+<section
+  class="flex md:hidden bg-cover bg-center h-[700px] items-center text-white px-6 pb-10"
+  style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivosbannerfootermovil.png');"
+>
+  <div class="w-full text-center mt-[250px]">
+    <div class="max-w-md mx-auto ">
+      <h2 class="text-4xl font-extrabold mb-4 leading-tight">
+        Haz historia en el eCommerce...
+      </h2>
+      <p class="text-base mb-6 leading-relaxed">
+        Kliquea es más que un marketplace: es el impulso que tu marca necesita para crecer a otro nivel.
+      </p>
+      <a
+        href="#"
+        class="bg-[#ff7a00] hover:bg-[#e36900] transition text-white font-bold py-5 px-9 rounded-full text-base inline-block"
+      >
+        Regístrate y comienza ya
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="bg-blue-50 px-6 md:px-16 py-8">
+  <!-- Navegación y redes -->
+  <div class="flex flex-col md:flex-row md:justify-between items-center gap-4 md:gap-0 mb-4">
+    <!-- Links de navegación -->
+    <div class="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-[#141B5B] font-medium">
+      <a href="#quienes-somos" class="hover:underline">Quiénes somos</a>
+      <a href="#innovadores" class="hover:underline">Únete a nuestra tribu de innovadores</a>
+      <a href="#ayuda" class="hover:underline">¿Necesitas ayuda?</a>
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="flex items-center gap-4">
+      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/Twitter2.png" alt="X" class="h-4 w-4"></a>
+      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/Facebook.png" alt="Facebook" class="h-7 w-7"></a>
+      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/Instagram.png" alt="Instagram" class="h-7 w-7"></a>
+      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/TikTok.png" alt="TikTok" class="h-5 w-5"></a>
+      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/LinkedIn.png" alt="LinkedIn" class="h-4 w-4"></a>
+    </div>
+
+       <!-- Sello de confianza 
+    <div class="ml-4">
+      <img src="https://kliqueainternacional.vteximg.com.br/arquivos/sellodeconfianza.png" alt="Sello de confianza" class="h-14 w-14">
+    </div>
+  </div>
+  -->
+
+  <!-- Línea y derechos -->
+  <hr class="border-t border-blue-100 my-4">
+  <p class="text-xs text-center text-gray-500">
+    Copyright © 2026 Kliquea |
+    <a href="#terminos" class="hover:underline">Términos y condiciones</a> •
+    <a href="#privacidad" class="hover:underline">Política de privacidad</a>
+  </p>
+</footer>
+
+</html>
+
+

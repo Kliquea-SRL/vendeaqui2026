@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestiona tu negocio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-white text-white font-[Montserrat]">
+ 
+<!-- Navbar -->
+<nav class="bg-white w-full px-6 md:px-16 py-4 shadow-sm fixed top-0 left-0 z-50">
+  <div class="flex items-center justify-between">
+
+    <!-- Logo -->
+  <div class="flex items-center">
+  <a href="/default/vendeaqui" onclick="animateLogo(event)">
+    <img id="logo" src="https://kliqueainternacional.vteximg.com.br/arquivos/logoKliquea-2025 1.svg" alt="Kliquea Logo"
+      class="h-12 w-auto transition-transform duration-150 ease-in-out" />
+  </a>
+</div>
+
+    <!-- Menú escritorio -->
+    <div class="hidden md:flex items-center gap-8 text-[#030389] text-sm font-medium">
+      <!-- Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center hover:font-bold text-[#030389]">
+          Comienza a vender
+          <svg class="ml-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 10.939l3.71-3.71a.75.75 0 011.08 1.04l-4.24 4.24a.75.75 0 01-1.08 0L5.25 8.27a.75.75 0 01-.02-1.06z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+
+        <!-- Dropdown content -->
+        <div class="absolute top-full right-2 mt-2 w-64 bg-white shadow-md border border-gray-200 group-hover:opacity-100 opacity-0 invisible group-hover:visible transition-all duration-200 delay-100 z-50"
+          onmouseover="this.classList.add('opacity-100', 'visible')"
+          onmouseout="this.classList.remove('opacity-100', 'visible')">
+          <a href="/default/integraciones" class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Integraciones</a>
+          <hr class="border-gray-200 mx-6" />
+          <a href="/default/logistica" class="block px-6 py-6 text-sm text-gray-400 ttransition-all duration-200 ease-in-out hover:font-bold hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Logística</a>
+          <hr class="border-gray-200 mx-6" />
+          <a href="/default/servicios" class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold   hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Servicios</a>
+          <hr class="border-gray-200 mx-6" />
+          <a href="/default/facturacion" class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold  hover:text-[#030389] active:translate-x-1 active:scale-95">Facturación</a>
+        </div>
+      </div>
+
+      <!-- Otros enlaces -->
+      <a href="/default/requisitos" 
+        class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
+        Requisitos
+      </a>
+
+      <a href="/default/crecimiento" 
+        class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
+        Crecimiento
+      </a>
+
+      <a href="/default/gestionatunegocio" 
+        class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
+        Gestiona tu negocio
+      </a>
+</div>
+
+    <!-- Botón hamburguesa -->
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-[#030389] focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+<!-- Menú móvil -->
+  <div id="mobile-menu" class="fixed top-16 left-0 w-full h-[calc(100vh-4rem)] z-50 hidden bg-white">
+    <div class="flex h-full">
+      <!-- Lado izquierdo vacío con línea -->
+      <div class="w-[40%] border-r border-gray-200 bg-white"></div>
+
+      <!-- Menú lado derecho -->
+      <div class="w-[60%] bg-white flex flex-col font-montserrat shadow-lg px-6 pt-6 space-y-6">
+        <!-- Botón cerrar -->
+        <div class="flex justify-end">
+          <button id="menu-close" class="text-[#030389] focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Submenú desplegable -->
+        <div>
+          <button onclick="toggleSubmenu()" class="flex justify-between items-center w-full text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pr-2 hover:font-medium">
+            <span>Comienza a vender</span>
+            <svg id="arrow-icon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="#F58220"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+       <div id="submenu" class="hidden mt-2 pl-4 text-sm text-gray-500 space-y-6">
+          <a href="/default/integraciones" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Integraciones</a>
+
+          <a href="/default/logistica" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Logística</a>
+
+          <a href="/default/servicios" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Servicios</a>
+
+          <a href="/default/facturacion" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Facturación</a>
+      </div>
+
+        </div>
+
+        <hr class="border-gray-200" />
+        <a href="/default/requisitos" class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Requisitos</a>
+        <hr class="border-gray-200" />
+        <a href="/default/crecimiento" class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Crecimiento</a>
+        <hr class="border-gray-200" />
+        <a href="/default/gestionatunegocio" class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Gestiona tu negocio</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+    <body class="font-sans text-[#1b1b1b]">
+
+    <section class="relative text-white overflow-hidden h-[500px] md:min-h-[450px]">
+  <div class="absolute inset-0">
+    <div class="hidden md:block w-full h-full bg-cover bg-center"
+         style="background-image:url('https://kliqueainternacional.vteximg.com.br/arquivos/imgNecesitasayuda/bannerprincipal.png')"></div>
+    <div class="block md:hidden w-full h-full bg-cover bg-center"
+         style="background-image:url('https://kliqueainternacional.vteximg.com.br/arquivos/imgNecesitasayuda/bannermovilnecesitasayu.png')"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-[#000066]"></div>
+  </div>
+
+  <div class="relative z-10 h-full flex items-center justify-end
+                px-8 md:px-20 lg:px-32 lg:mt-8 md:mt-8 lg:mr-0 max-w-7xl mx-auto">
+    <div class="w-full flex flex-col justify-center space-y-4
+                    items-start md:items-end
+                    text-left md:text-right
+                    md:max-w-2xl
+                    -mt-12 md:mt-0">
+
+      <h2 class="text-5xl sm:text-5xl md:text-5xl font-extrabold leading-none mb-4">
+        Logística que mueve<br class="hidden sm:block"> tu marca
+      </h2>
+
+      <p class="hidden md:block text-lg md:text-xl leading-relaxed ">
+        Desde el inventario hasta la entrega, Kliquea te conecta con una red logística inteligente, rápida y sin fronteras.<br>
+        Nosotros nos encargamos del envío, tú enfócate en vender.
+      </p>
+
+      <button
+        class="
+          
+          ml-1           /* margen izquierdo siempre */
+          md:mt-8       /* 2rem (~32px) de margen-top en tablets en adelante */
+          lg:mt-12      /* 3rem (~48px) de margen-top en desktop en adelante */
+          md:ml-0       /* Sin margen izquierdo adicional en md y superior, ya está alineado a la izquierda */
+        "
+      >
+        <a
+          href="#"
+          class=" bg-[#F4771D] 
+          text-white 
+          font-bold 
+          py-2 
+          px-8 
+          rounded-full
+          text-xs 
+          sm:text-xl 
+          md:text-xl 
+          hover:text-[ bg-[#F4771D]] transition"
+        > 
+          Regístrate y comienza ya
+        </a>
+      </button>
+    </div>
+  </div>
+</section>
+    
+      <!-- Preguntas frecuentes -->
+      <section class="bg-white py-6 sm:py-16 px-4 sm:px-6">
+        
+
+                  <div class="md:hidden text-gray-600 text-center mt-12  mb-16 px-10 italic">
+      <p>"Logística inteligente y sin fronteras. Del inventario a la entrega, rápido y conectado. Tú vendes, nosotros nos encargamos del resto."</p>
+      </div>
+
+
+        <div class="max-w-4xl mx-auto">
+          <h3 class="text-xl font-bold text-center text-[#030389] mb-10">Preguntas frecuentes</h3>
+          
+            <!-- Acordeon1 -->
+          <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
+      
+
+        <div class="space-y-4 ">
+        <!-- Tab 1 -->
+          <div class="border-b border-gray-300 py-2">
+            <button onclick="toggleExclusiveAccordion(1)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base mb-4 sm:text-lg font-bold text-[#030389] cursor-pointer">1. ¿Cómo me registro para vender en Kliquea? </h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-1" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-1" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-1" class="hidden mt-2 mb-2 text-[#585858] text-sm sm:text-base">
+          Completa el formulario de registro y adjunta la documentación requerida. 
+Uno de nuestros asesores comerciales se pondrá en contacto contigo para iniciar el proceso de afiliación. 
+Puedes conocer los pasos detallados en el apartado “Requisitos” de esta misma sección. 
+          </div>
+        </div>
+      
+        <!-- Tab 2 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(2)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base mb-4 sm:text-lg font-bold text-[#030389] cursor-pointer">2. ¿Cuánto cuesta vender en Kliquea? </h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-2" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-2" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-2" class="hidden mt-2 mb-2 text-[#585858] text-sm sm:text-base">
+Kliquea aplica una comisión sobre cada venta, la cual varía según la categoría del producto. 
+Puedes calcular tu comisión en nuestra calculadora de tarifas disponible en el apartado de “Requisitos”. 
+          </div>
+        </div>
+      
+        <!-- Tab 3 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(3)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base mb-4 sm:text-lg font-bold text-[#030389] cursor-pointer">3. ¿Qué productos no puedo vender en Kliquea? </h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-3" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-3" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-3" class="hidden mt-2 mb-2 text-[#585858] text-sm sm:text-base">
+           Los productos deben cumplir con las leyes, regulaciones locales e internacionales, y las políticas del Marketplace. 
+Está prohibida la venta de productos falsificados, usados, con contenido ofensivo o que infrinjan derechos de autor o de marca
+          </div>
+        </div>
+      
+        <!-- Tab 4 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(4)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base mb-4 sm:text-lg font-bold text-[#030389] cursor-pointer">4. ¿Cómo puedo comunicarme con el equipo de Kliquea? </h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-4" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-4" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-4" class="hidden mt-2 mb-2 text-[#585858] text-sm sm:text-base">
+     Puedes escribirnos al correo soporteseller@kliquea.com o desde la sección “Contacto”dentro de tu panel de vendedor. 
+Nuestro equipo comercial estará encantado de ayudarte. 
+          </div>
+        </div>
+        <!--fin tab-->
+        
+        <!-- Tab 5 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(5)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base mb-4 sm:text-lg font-bold text-[#030389] cursor-pointer">5. ¿Qué requisitos necesito para vender en Kliquea?  </h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-5" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-5" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-5" class="hidden mt-2  mb-2 text-[#585858] text-sm sm:text-base">
+ Debes contar con un RNC o documento fiscal válido, catálogo de productos, información bancaria y políticas de envío y devolución claras. Todos los detalles se encuentran en el apartado “Requisitos”. 
+          </div>
+        </div>
+        <!--fin tab-->
+
+        <!-- Tab 6 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(6)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base mb-4 sm:text-lg font-bold text-[#030389] cursor-pointer">6. ¿Puedo vender si estoy fuera de República Dominicana? </h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-6" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-6" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-6" class="hidden mt-2  mb-2 text-[#585858] text-sm sm:text-base">
+  Sí. Kliquea es un marketplace transfronterizo (cross-border) que conecta vendedores de toda Latinoamérica y el Caribe. 
+Solo asegúrate de cumplir con las regulaciones de exportación y envío internacional. 
+
+ 
+          </div>
+        </div>
+        <!--fin tab-->
+        
+        
+        <!-- Tab 7 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(7)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base mb-4  sm:text-lg font-bold text-[#030389] cursor-pointer">7. ¿Cómo se gestionan los envíos de mis productos? </h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-7" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-7" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-7" class="hidden mt-2  mb-2 text-[#585858] text-sm sm:text-base">
+Kliquea cuenta con la red logística de BM Cargo, lo que garantiza una entrega rápida y segura. 
+Puedes optar por envío local o internacional, según tu tipo de tienda y destino.  
+          </div>
+        </div>
+        <!--fin tab-->
+        
+        <!-- Tab 8 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(8)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base mb-4 sm:text-lg font-bold text-[#030389] cursor-pointer">8. ¿Kliquea me ayuda con la gestión del inventario? </h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-8" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-8" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-8" class="hidden mt-2 mb-2 text-[#585858] text-sm sm:text-base">
+Sí. Si lo deseas, puedes optar por nuestros servicios de almacenaje y fulfillment, disponibles en los centros logísticos de BM Cargo.
+          </div>
+        </div>
+        <!--fin tab-->
+        
+        <!-- Tab 9 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(9)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base mb-4 sm:text-lg font-bold text-[#030389] cursor-pointer">9. ¿Cómo puedo aumentar mis ventas dentro de Kliquea? </h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-9" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-9" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-9" class="hidden mt-2 mb-2 text-[#585858] text-sm sm:text-base">
+    Participa en nuestras campañas promocionales, optimiza tus fichas de producto y solicita asesoría comercial personalizada para mejorar tu posicionamiento.  
+          </div>
+        </div>
+        <!--fin tab-->
+        
+        <!-- Tab 10 -->
+        <div class="border-b border-gray-300 py-2">
+          <button onclick="toggleExclusiveAccordion(10)" class="flex justify-between items-center w-full text-left">
+            <h3 class="text-base mb-4 sm:text-lg font-bold text-[#030389] cursor-pointer">10. ¿Qué métodos de pago recibiré por mis ventas?  </h3>
+            <span class="w-6 h-6 shrink-0">
+              <img id="icon-closed-10" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" />
+              <img id="icon-open-10" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" />
+            </span>
+          </button>
+          <div id="content-10" class="hidden mt-2 mb-2 text-[#585858] text-sm sm:text-base">
+  Los pagos se realizan de forma quincenal, según el calendario de cortes establecido por Kliquea. 
+Las transferencias se efectúan directamente a la cuenta bancaria que registraste 
+
+
+          </div>
+        </div>
+        <!--fin tab-->        
+
+
+        </div>
+      </section>
+      
+    </div>  
+ <!--Boton de Contacto azul-->
+
+<div class="hidden md:block  fixed bottom-[500px] right-[15px] z-50">
+  <button class="flex items-center transition-transform duration-200 hover:scale-105">
+    <img src="https://kliqueainternacional.vteximg.com.br/arquivos/contacto.png" alt="Chat Icon" class="w-20 h-20 mr-1">
+  </button>
+</div>
+
+ <!--Fin Boton de Contacto azul-->
+
+      <!-- Otras preguntas y formulario -->
+      <section class="bg-white py-12 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+          <!-- Texto -->
+          <div>
+            <h4 class="text-sm font-semibold text-[#15BEF0] mb-2">CONTÁCTANOS</h4>
+            <h3 class="  text-[#030389] text-xl font-bold mb-3">Otras preguntas</h3>
+            <p class="text-sm text-gray-600">¿Aún tienes dudas? Déjanos tu pregunta en el formulario y te contactaremos.</p>
+          </div>
+          
+          <!-- Formulario -->
+          <div class="bg-[#f4f7fe] p-6 rounded-xl shadow-md w-full">
+            <form class="space-y-4">
+              <input type="text" placeholder="Nombre completo" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500">
+              <input type="email" placeholder="Correo electrónico" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500">
+              <textarea placeholder="Por favor deja aquí tu pregunta..." rows="3" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500"></textarea>
+              <button type="submit" class="w-full bg-[#ff7900] text-white py-2 rounded-md font-semibold hover:bg-[#e56e00] transition">ENVIAR</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+
+      <!--gestionatiunegocio-->
+    <script>
+      
+
+  
+  function toggleExclusiveAccordion(id) {
+    for (let i = 1; i <= 16; i++) {
+      const content = document.getElementById(`content-${i}`);
+      const iconOpen = document.getElementById(`icon-open-${i}`);
+      const iconClosed = document.getElementById(`icon-closed-${i}`);
+
+      if (i === id) {
+        const isOpen = !content.classList.contains('hidden');
+        content.classList.toggle('hidden');
+        iconOpen.classList.toggle('hidden', isOpen);
+        iconClosed.classList.toggle('hidden', !isOpen);
+      } else {
+        if (content && iconOpen && iconClosed) {
+          content.classList.add('hidden');
+          iconOpen.classList.add('hidden');
+          iconClosed.classList.remove('hidden');
+        }
+      }
+    }
+  }
+
+  // Toggle menú móvil
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.remove('hidden');
+  });
+
+  document.getElementById('menu-close').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.add('hidden');
+  });
+
+  function toggleSubmenu() {
+    const submenu = document.getElementById("submenu");
+    const arrow = document.getElementById("arrow-icon");
+    submenu.classList.toggle("hidden");
+    arrow.classList.toggle("rotate-180");
+  }
+
+    </script>
+    
+
+<script>
+  function animateLogo(event) {
+    event.preventDefault(); // Evita la navegación inmediata
+
+    const logo = document.getElementById('logo');
+    const link = event.currentTarget.getAttribute('href');
+
+    logo.classList.add('rotate-12', 'scale-105');
+
+    // Esperar que termine la animación antes de redirigir
+    setTimeout(() => {
+      logo.classList.remove('rotate-12', 'scale-105');
+      window.location.href = link;
+    }, 300); // Mismo tiempo que tu animación
+  }
+</script>
+
+
+    <!--animaciones del menu-->
+
+<span class="hidden translate-x-1.5 pl-3"></span>
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('menu-close');
+
+    // Cierre del menú al hacer clic en el botón cerrar
+    closeBtn?.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+
+    // Seleccionar todos los <a> dentro del menú móvil (incluye submenu)
+    const menuLinks = mobileMenu.querySelectorAll('a');
+
+    menuLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevenir navegación inmediata
+
+        // Agrega animación de rebote (solo si no está ya en animación)
+        link.classList.add('pl-3', 'font-medium'); // Cambio visual
+        link.classList.add('duration-200', 'transition-all'); // Asegura transición
+
+        // Rebote con clase temporal
+        link.classList.add('translate-x-1.5');
+        setTimeout(() => {
+          link.classList.remove('translate-x-1.5');
+        }, 200);
+
+        // Cierra el menú tras un pequeño delay y redirecciona
+        const href = link.getAttribute('href');
+        setTimeout(() => {
+          mobileMenu.classList.add('hidden');
+          window.location.href = href;
+        }, 250); // Da tiempo al efecto visual
+      });
+    });
+  });
+</script>
+
+
+
+
+<!-- menu responsivohome-->
+<script >
+
+
+
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+    document.getElementById('mobile-menu').classList.remove('hidden');
+  });
+
+  document.getElementById('menu-close').addEventListener('click', function () {
+    document.getElementById('mobile-menu').classList.add('hidden');
+  });
+
+  function toggleSubmenu() {
+    const submenu = document.getElementById('submenu');
+    const arrowIcon = document.getElementById('arrow-icon');
+    submenu.classList.toggle('hidden');
+    arrowIcon.classList.toggle('rotate-180');
+  }
+</script>
+
+  </body>
+
+<!-- Call to action -->
+  <section class="hidden md:block w-full">
+  <div class="relative h-[300px] bg-cover bg-no-repeat bg-left" style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/baner.jpg');">
+
+    <!-- Gradiente solo visible en md y adelante -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/5 via-[#000030]/60 to-[#000066]/90 z-0"></div>
+
+    <!-- Contenido -->
+    <div class="absolute inset-0 flex items-center justify-center md:justify-end px-6 md:px-16 z-10">
+      <div class="text-left md:text-right text-white max-w-xl md:mr-[10%] ">
+        <h2 class="text-3xl font-extrabold mb-4 leading-tight">
+          Haz historia en el eCommerce...
+        </h2>
+        <p class="text-base font-medium lg:text-lg mb-6 leading-relaxed">
+          Kliquea es más que un marketplace:<br class="hidden lg:block" />
+          es el impulso que tu marca necesita para crecer a otro nivel.
+        </p>
+        <a
+          href="#"
+          class="bg-[#ff7a00] hover:bg-[#e36900] transition text-white font-bold py-3 px-10 rounded-full text-base lg:text-lg inline-block"
+        >
+          Regístrate y comienza ya
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- Imagen de fondo para móvil -->
+<section
+  class="flex md:hidden bg-cover bg-center h-[700px] items-center text-white px-6 pb-10"
+  style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivosbannerfootermovil.png');"
+>
+  <div class="w-full text-center mt-[250px]">
+    <div class="max-w-md mx-auto ">
+      <h2 class="text-4xl font-extrabold mb-4 leading-tight">
+        Haz historia en el eCommerce...
+      </h2>
+      <p class="text-base mb-6 leading-relaxed">
+        Kliquea es más que un marketplace: es el impulso que tu marca necesita para crecer a otro nivel.
+      </p>
+      <a
+        href="#"
+        class="bg-[#ff7a00] hover:bg-[#e36900] transition text-white font-bold py-5 px-9 rounded-full text-base inline-block"
+      >
+        Regístrate y comienza ya
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="bg-blue-50 px-6 md:px-16 py-8">
+  <!-- Navegación y redes -->
+  <div class="flex flex-col md:flex-row md:justify-between items-center gap-4 md:gap-0 mb-4">
+    <!-- Links de navegación -->
+    <div class="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-[#141B5B] font-medium">
+      <a href="#quienes-somos" class="hover:underline">Quiénes somos</a>
+      <a href="#innovadores" class="hover:underline">Únete a nuestra tribu de innovadores</a>
+      <a href="#ayuda" class="hover:underline">¿Necesitas ayuda?</a>
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="flex items-center gap-4">
+      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/Twitter2.png" alt="X" class="h-4 w-4"></a>
+      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/Facebook.png" alt="Facebook" class="h-7 w-7"></a>
+      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/Instagram.png" alt="Instagram" class="h-7 w-7"></a>
+      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/TikTok.png" alt="TikTok" class="h-5 w-5"></a>
+      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/LinkedIn.png" alt="LinkedIn" class="h-4 w-4"></a>
+    </div>
+
+     <!-- Sello de confianza 
+    <div class="ml-4">
+      <img src="https://kliqueainternacional.vteximg.com.br/arquivos/sellodeconfianza.png" alt="Sello de confianza" class="h-14 w-14">
+    </div>
+  </div>
+  -->
+  <!-- Línea y derechos -->
+  <hr class="border-t border-blue-100 my-4">
+  <p class="text-xs text-center text-gray-500">
+    Copyright © 2026 Kliquea |
+    <a href="#terminos" class="hover:underline">Términos y condiciones</a> •
+    <a href="#privacidad" class="hover:underline">Política de privacidad</a>
+  </p>
+</footer>
+
+</html>

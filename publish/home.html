@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendeaqui</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    .beneficios-swiper {
+      --swiper-pagination-color: #141B5B;
+      --swiper-pagination-bullet-inactive-color: #0082CD;
+      --swiper-pagination-bullet-inactive-opacity: 1;
+    }
+  </style>
+
+</head>
+
+<body class="bg-white text-white font-[Montserrat] pt-20">
+  
+<!-- Navbar -->
+<nav class="bg-white w-full px-6 md:px-16 py-4 shadow-sm fixed top-0 left-0 z-50">
+  <div class="flex items-center justify-between">
+
+    <!-- Logo -->
+  <div class="flex items-center">
+  <a href="/default/vendeaqui" onclick="animateLogo(event)">
+    <img id="logo" src="https://kliqueainternacional.vteximg.com.br/arquivos/logoKliquea-2025 1.svg" alt="Kliquea Logo"
+      class="h-12 w-auto transition-transform duration-150 ease-in-out" />
+  </a>
+</div>
+
+    <!-- Menú escritorio -->
+    <div class="hidden md:flex items-center gap-8 text-[#030389] text-sm font-medium">
+      <!-- Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center hover:font-bold text-[#030389]">
+          Comienza a vender
+          <svg class="ml-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 10.939l3.71-3.71a.75.75 0 011.08 1.04l-4.24 4.24a.75.75 0 01-1.08 0L5.25 8.27a.75.75 0 01-.02-1.06z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+
+        <!-- Dropdown content -->
+        <div class="absolute top-full right-2 mt-2 w-64 bg-white shadow-md border border-gray-200 group-hover:opacity-100 opacity-0 invisible group-hover:visible transition-all duration-200 delay-100 z-50"
+          onmouseover="this.classList.add('opacity-100', 'visible')"
+          onmouseout="this.classList.remove('opacity-100', 'visible')">
+          <a href="/default/integraciones" class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Integraciones</a>
+          <hr class="border-gray-200 mx-6" />
+          <a href="/default/logistica" class="block px-6 py-6 text-sm text-gray-400 ttransition-all duration-200 ease-in-out hover:font-bold hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Logística</a>
+          <hr class="border-gray-200 mx-6" />
+          <a href="/default/servicios" class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold   hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Servicios</a>
+          <hr class="border-gray-200 mx-6" />
+          <a href="/default/facturacion" class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold  hover:text-[#030389] active:translate-x-1 active:scale-95">Facturación</a>
+        </div>
+      </div>
+
+      <!-- Otros enlaces -->
+      <a href="/default/requisitos" 
+        class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
+        Requisitos
+      </a>
+
+      <a href="/default/crecimiento" 
+        class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
+        Crecimiento
+      </a>
+
+      <a href="/default/alianzas" 
+        class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
+        Alianzas y servicios
+      </a>
+</div>
+
+    <!-- Botón hamburguesa -->
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-[#030389] focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+<!-- Menú móvil -->
+  <div id="mobile-menu" class="fixed top-16 left-0 w-full h-[calc(100vh-4rem)] z-50 hidden bg-white">
+    <div class="flex h-full">
+      <!-- Lado izquierdo vacío con línea -->
+      <div class="w-[40%] border-r border-gray-200 bg-white"></div>
+
+      <!-- Menú lado derecho -->
+      <div class="w-[60%] bg-white flex flex-col font-montserrat shadow-lg px-6 pt-6 space-y-6">
+        <!-- Botón cerrar -->
+        <div class="flex justify-end">
+          <button id="menu-close" class="text-[#030389] focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Submenú desplegable -->
+        <div>
+          <button onclick="toggleSubmenu()" class="flex justify-between items-center w-full text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pr-2 hover:font-medium">
+            <span>Comienza a vender</span>
+            <svg id="arrow-icon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="#F58220"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+       <div id="submenu" class="hidden mt-2 pl-4 text-sm text-gray-500 space-y-6">
+          <a href="/default/integraciones" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Integraciones</a>
+
+          <a href="/default/logistica" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Logística</a>
+
+          <a href="/default/servicios" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Servicios</a>
+
+          <a href="/default/facturacion" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Facturación</a>
+      </div>
+
+        </div>
+
+        <hr class="border-gray-200" />
+        <a href="/default/requisitos" class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Requisitos</a>
+        <hr class="border-gray-200" />
+        <a href="/default/crecimiento" class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Crecimiento</a>
+        <hr class="border-gray-200" />
+        <a href="/default/alianzas" class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Alianzas y servicios </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+  <!-- Hero -->
+  <section class="bg-white py-12 px-14">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <div class="flex-1 order-2 md:order-1">
+        <h1 class="text-3xl md:text-5xl font-bold text-[#141B5B] mb-4">¿Qué es Kliquea?</h1>
+        <p class="mb-6 text-gray-700 leading-relaxed">
+        <span class="font-bold">  La revolución del eCommerce nace en Kliquea.</span> <br>
+           Somos el puente entre marcas con visión de grandeza y millones de clientes por descubrir, con la calidez del Caribe y la fuerza de Centroamérica, encendemos un movimiento regional.<br>
+         <span class="font-bold "> Aquí conectamos culturas, cruzamos fronteras y construimos a los próximos best sellers. Estamos construyendo historia.</span>
+        </p>
+        <button
+          class=" bg-[#F4771D] text-white px-6 py-3 rounded-full transition-transform transform hover:scale-105">
+          Regístrate y comienza ya
+        </button>
+      </div>
+      <div class="flex-1 order-1 md:order-2">
+        <img src="https://kliqueainternacional.vteximg.com.br/arquivos/imagen-bannerhero-vendeaqui.jpg" alt="Hero Kliquea"
+          class="rounded-lg shadow-lg">
+      </div>
+    </div>
+  </section>
+
+
+  <!--Boton de Contacto azul-->
+
+<div class="hidden md:block  fixed bottom-[500px] right-[15px] z-50">
+  <button class="flex items-center transition-transform duration-200 hover:scale-105">
+    <img src="https://kliqueainternacional.vteximg.com.br/arquivos/contacto.png" alt="Chat Icon" class="w-20 h-20 mr-1">
+  </button>
+</div>
+
+ <!--Fin Boton de Contacto azul-->
+
+  <!-- Cards de inicio -->
+  <section class="bg-gray-100 md:py-12 py-6 px-6">
+    <div class="max-w-6xl mx-auto px-4">
+      <!-- Mobile -->
+      <div class="md:hidden w-full py-5 inline-flex flex-col justify-start items-center gap-5">
+        <!-- Tarjeta 1 -->
+        <div
+          class="bg-white rounded-2xl p-6 text-center shadow hover:scale-105 transform transition duration-300 w-full mx-auto flex flex-col items-start gap-2.5">
+          <div class="flex items-center gap-3 ">
+            <div class="bg-gray-100 flex w-20 h-20 rounded-full items-center justify-center">
+              <img src="https://kliqueainternacional.vteximg.com.br/arquivos/icon-comienza.png" alt="Icono carrito"
+                class="md:w-20 md:h-20 w-10 h-10" />
+            </div>
+            <h3 class="text-sm font-bold text-[#141B5B] uppercase text-left">Comienza a vender</h3>
+          </div>
+          <p class="text-sm text-[#585858]  text-left">Da el primer paso hacia tu éxito digital</p>
+          <button
+            class="text-sm text-[#141B5B] border border-[#1a1a64] px-4 py-2 rounded-full hover:bg-[#1a1a64] hover:text-white transition duration-300">
+            <a href="/default/integraciones"> Saber más</a>
+          </button>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div
+          class="bg-[#141B5B] rounded-2xl p-6 text-center shadow hover:scale-105 transform transition duration-300 w-full mx-auto flex flex-col items-start gap-2.5">
+          <div class="flex items-center gap-3 ">
+            <div class="bg-gray-100 flex w-20 h-20 rounded-full items-center justify-center">
+              <img src="https://kliqueainternacional.vteximg.com.br/arquivos/icon-requisitos.png" alt="Icono requisitos"
+                class="md:w-20 md:h-20 w-10 h-10" />
+            </div>
+            <h3 class="text-sm font-bold text-white uppercase text-left">Requisitos</h3>
+          </div>
+          <p class="text-sm text-gray-300 text-left">Todo lo que necesitas para empezar, en un solo lugar</p>
+          <button
+            class="text-sm text-white border border-white px-4 py-2 rounded-full hover:bg-white hover:text-[#141B5B] transition duration-300">
+            <a href="/default/requisitos"> Saber más</a>
+          </button>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div
+          class="bg-white rounded-2xl p-6 text-center shadow hover:scale-105 transform transition duration-300 w-full mx-auto flex flex-col items-start gap-2.5">
+          <div class="flex items-center gap-3 ">
+            <div class="bg-gray-100 w-20 h-20 rounded-full flex items-center justify-center">
+              <img src="https://kliqueainternacional.vteximg.com.br/arquivos/icon-crecimiento.png" alt="Icono crecimiento"
+                class="md:w-20 md:h-20 w-10 h-10" />
+            </div>
+            <h3 class="text-sm font-bold text-[#141B5B] uppercase text-left">Crecimiento</h3>
+          </div>
+          <p class="text-sm text-[#585858]  text-left">Haz que tu marca cruce fronteras y escale sin límites</p>
+          <button
+            class="text-sm text-[#141B5B] border border-[#1a1a64] px-4 py-2 rounded-full hover:bg-[#1a1a64] hover:text-white transition duration-300">
+            <a href="/default/crecimiento"> Saber más</a>
+          </button>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div
+          class="bg-[#141B5B] rounded-2xl p-6 text-center shadow hover:scale-105 transform transition duration-300 w-full mx-auto flex flex-col items-start gap-2.5">
+          <div class="flex items-center gap-3 ">
+            <div class="bg-gray-100 w-20 h-20 rounded-full flex items-center justify-center">
+              <img src="https://kliqueainternacional.vteximg.com.br/arquivos/icon-gestiona.png" alt="Icono gestion"
+                class="md:w-20 md:h-20 w-10 h-10" />
+            </div>
+            <h3 class="text-sm font-bold text-white uppercase text-left">Alianzas</h3>
+          </div>
+          <p class="text-sm text-gray-300  text-left">Expande tu negocio con nuevas alianzas</p>
+          <button
+            class="text-sm text-white border border-white px-4 py-2 rounded-full hover:bg-white hover:text-[#141B5B] transition duration-300">
+            <a href="/default/alianzas"> Saber más</a>
+          </button>
+        </div>
+      </div>
+
+      <!-- Desktop (sin cambios) -->
+      <div class="hidden md:grid md:grid-cols-4 gap-6">
+        <!-- Tarjeta 1 -->
+        <div class="bg-white w-64 h-96 rounded-2xl p-6 text-center shadow hover:scale-105 transform transition duration-300">
+          <div class=" w-44 h-44 bg-gray-200 rounded-full mx-auto  flex items-center justify-center mb-4">
+            <!-- Ícono carrito -->
+            <img src="https://kliqueainternacional.vteximg.com.br/arquivos/icon-comienza.png" alt="Icono carrito" class="w-22 h-22 " />
+          </div>
+          <h3 class="text-sm font-bold text-[#141B5B] mb-2 uppercase">Comienza a vender</h3>
+          <p class="text-sm text-[#585858] mb-4">Da el primer paso hacia tu éxito digital</p>
+          <button
+            class="text-sm text-[#141B5B] border border-[#1a1a64] px-4 py-2 rounded-full hover:bg-[#1a1a64] hover:text-white transition duration-300">
+             <a href="/default/integraciones"> Saber más</a>
+          </button>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="bg-white rounded-2xl p-6 text-center shadow hover:scale-105 transform transition duration-300">
+          <div class="bg-gray-200 w-44 h-44 mx-auto rounded-full flex items-center justify-center mb-4">
+            <img src="https://kliqueainternacional.vteximg.com.br/arquivos/icon-requisitos.png" alt="Icono requisitos" class="w-22 h-22" />
+          </div>
+          <h3 class="text-sm font-bold text-[#141B5B] mb-2 uppercase">Requisitos</h3>
+          <p class="text-sm text-[#585858] mb-4">Todo lo que necesitas para empezar, en un solo lugar</p>
+          <button
+            class="text-sm text-[#141B5B] border border-[#1a1a64] px-4 py-2 rounded-full hover:bg-[#1a1a64] hover:text-white transition duration-300">
+             <a href="/default/requisitos"> Saber más</a>
+          </button>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="bg-white rounded-2xl p-6 text-center shadow hover:scale-105 transform transition duration-300">
+          <div class="bg-gray-200 w-44 h-44 mx-auto rounded-full flex items-center justify-center mb-4">
+            <img src="https://kliqueainternacional.vteximg.com.br/arquivos/icon-crecimiento.png" alt="Icono crecimiento" class="w-22 h-22" />
+          </div>
+          <h3 class="text-sm font-bold text-[#141B5B] mb-2 uppercase">Crecimiento</h3>
+          <p class="text-sm text-[#585858] mb-4">Haz que tu marca cruce fronteras y escale sin límites</p>
+          <button
+            class="text-sm text-[#141B5B] border border-[#1a1a64] px-4 py-2 rounded-full hover:bg-[#1a1a64] hover:text-white transition duration-300">
+              <a href="/default/crecimiento"> Saber más</a>
+          </button>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="bg-white rounded-2xl p-6 text-center shadow hover:scale-105 transform transition duration-300">
+          <div class="bg-gray-200 w-44 h-44 mx-auto rounded-full flex items-center justify-center mb-4">
+            <img src="https://kliqueainternacional.vteximg.com.br/arquivos/icon-gestiona.png" alt="Icono gestión" class="w-22 h-22" />
+          </div>
+          <h3 class="text-sm font-bold text-[#141B5B] mb-2 uppercase">Gestiona tu negocio</h3>
+          <p class="text-sm text-[#585858] mb-4">Toma el control, optimiza y hazlo crecer</p>
+          <button
+            class="text-sm text-[#141B5B] border border-[#1a1a64] px-4 py-2 rounded-full hover:bg-[#1a1a64] hover:text-white transition duration-300">
+              <a href="/default/gestionatunegocio"> Saber más</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <!-- Swiper.js CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <section class="max-w-6xl mx-auto  py-12">
+    <h2 class="text-2xl font-bold text-center text-[#141B5B] mb-6">Beneficios</h2>
+
+    <!-- Carrusel en móviles -->
+    <div class="block md:hidden">
+
+      <div class="swiper beneficios-swiper w-full">
+
+        <div class="swiper-wrapper ">
+          <!-- Tarjetas como slides -->
+          <!-- Swiper Slide 1 -->
+          <div class="swiper-slide !flex !justify-center !items-center">
+            <div
+              class="relative bg-white rounded-2xl overflow-hidden border border-blue-200 shadow-md w-full h-[325px] flex items-start justify-center text-center p-6">
+
+              <!-- Imagen como fondo -->
+              <div class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/conquistalatinoamerica.png');"></div>
+
+              <!-- Capa semitransparente para legibilidad (opcional) -->
+              <div class="absolute inset-0 bg-white bg-opacity-20"></div>
+
+              <!-- Contenido encima -->
+              <div class="relative z-10 space-y-1">
+                <h3 class="text-orange-500 font-extrabold text-base leading-snug">Conquista Latinoamérica</h3>
+                <p class="text-[#141B5B] text-sm leading-relaxed max-w-xs mx-auto leading-4">
+                  Vende en República Dominicana, México,
+                  Costa Rica, Panamá y más…
+                  haz que tu marca cruce fronteras
+                  donde más la adoran.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swiper Slide 2 -->
+          <div class="swiper-slide !flex !justify-center !items-center">
+            <div
+              class="relative bg-white rounded-2xl overflow-hidden border border-blue-200 shadow-md w-full h-[325px] flex items-start justify-center text-center p-6">
+              <div class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/elpoderdelcrossborder.png');"></div>
+              <div class="absolute inset-0 bg-white bg-opacity-20"></div>
+              <div class="relative z-10 space-y-1">
+                <h3 class="text-orange-500 font-extrabold text-base leading-snug">El poder del cross-border</h3>
+                <p class="text-[#141B5B] text-sm leading-relaxed max-w-xs mx-auto leading-4">
+                  Con Kliquea, el cross-border es simple,
+                  rápido y emocionante. Tu producto, tu
+                  estilo, tus reglas. Sin fronteras.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swiper Slide 3 -->
+          <div class="swiper-slide !flex !justify-center !items-center">
+            <div
+              class="relative bg-white rounded-2xl overflow-hidden border border-blue-200 shadow-md w-full h-[325px] flex items-start justify-center text-center p-6">
+              <div class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/aliadosquehacenmagia.png');"></div>
+              <div class="absolute inset-0 bg-white bg-opacity-20"></div>
+              <div class="relative z-10 space-y-1 leading-4">
+                <h3 class="text-orange-500 font-extrabold text-base leading-snug">Aliados que hacen magia</h3>
+                <p class="text-[#141B5B] text-sm leading-relaxed max-w-xs mx-auto leading-4">
+                  Con BM Cargo, tus envíos llegan rápido,
+                  con menos costos y la seguridad de
+                  estar en buenas manos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swiper Slide 4 -->
+          <div class="swiper-slide !flex !justify-center !items-center">
+            <div
+              class="relative bg-white rounded-2xl overflow-hidden border border-blue-200 shadow-md w-full h-[325px] flex items-start justify-center text-center p-6">
+              <div class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/tecnologiaparaescalar.png');"></div>
+              <div class="absolute inset-0 bg-white bg-opacity-20"></div>
+              <div class="relative z-10 space-y-1">
+                <h3 class="text-orange-500 font-extrabold text-base leading-snug">Tecnología para escalar</h3>
+                <p class="text-[#141B5B] text-sm leading-relaxed max-w-xs mx-auto leading-4">
+                  Integra tu tienda con Shopify, VTEX,
+                  Magento, WooCommerce y más.
+                  Analiza, optimiza y toma decisiones
+                  que disparen tu crecimiento.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swiper Slide 5 -->
+          <div class="swiper-slide !flex !justify-center !items-center">
+            <div
+              class="relative bg-white rounded-2xl overflow-hidden border border-blue-200 shadow-md w-full h-[325px] flex items-start justify-center text-center p-6">
+              <div class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/todaunaredparatutienda.jpg');"></div>
+               <div class="absolute inset-0 bg-gradient-to-b from-white/100 via-white/80 to-transparent z-10"></div>
+              <div class="relative z-10 space-y-1">
+                <h3 class="text-orange-500 font-extrabold text-base leading-snug">Toda una red para tu tienda</h3>
+                <p class="text-[#141B5B] text-sm leading-relaxed max-w-xs mx-auto leading-4">
+                  +6 HUBs listos para expandir tu marca.
+                  Despacha como un experto desde el día uno.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swiper Slide 6 -->
+          <div class="swiper-slide !flex !justify-center !items-center mb-12">
+            <div
+              class="relative bg-white rounded-2xl overflow-hidden border border-blue-200 shadow-md w-full h-[325px] flex items-start justify-center text-center p-6">
+              <div class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/despachossincomplicaciones.png');"></div>
+              <div class="absolute inset-0 bg-white bg-opacity-20"></div>
+              <div class="relative z-10 space-y-1">
+                <h3 class="text-orange-500 font-extrabold text-base leading-snug">Despachos sin complicaciones</h3>
+                <p class="text-[#141B5B] text-sm leading-relaxed max-w-xs mx-auto leading-4">
+                  Zona franca y aduanas
+                  simplificadas y seguras.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Controles -->
+        <div class="swiper-pagination mt-4 "></div>
+      </div>
+    </div>
+
+    <!-- Grid Desktop -->
+    <div class="hidden md:grid grid-cols-1 sm:grid-cols-2 gap-[30px]">
+
+      <!-- Tarjeta 1 -->
+      <div class="flex justify-end items-end -mb-[45px]">
+        <div
+          class="relative bg-white rounded-2xl overflow-hidden border-[1px] border-[#15BEF0] shadow-md w-[75%] h-[500px] flex items-start justify-center text-center p-6">
+          <div class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/conquistalatinoamerica.png');"></div>
+          <div class="absolute inset-0 bg-white bg-opacity-20"></div>
+          <div class="relative z-10 space-y-1">
+            <h3 class="text-orange-500 font-extrabold text-xl leading-snug">Conquista<br>Latinoamérica</h3>
+            <p class="text-[#141B5B] text-sm leading-relaxed max-w-xs mx-auto">
+              Vende en República Dominicana, México,<br>
+              Costa Rica, Panamá y más…<br>
+              haz que tu marca cruce fronteras<br>
+              donde más la adoran.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="flex justify-start content-end items-end">
+        <div
+          class="relative bg-white rounded-2xl overflow-hidden border-[1px] border-[#15BEF0] shadow-md w-[75%] h-[400px] flex items-start justify-center text-center p-6">
+          <div class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/elpoderdelcrossborder.png');"></div>
+          <div class="absolute inset-0 bg-white bg-opacity-20"></div>
+          <div class="relative z-10 space-y-1">
+            <h3 class="text-orange-500 font-extrabold text-xl leading-snug">El poder<br>del cross-border</h3>
+            <p class="text-[#141B5B] text-sm leading-relaxed max-w-xs mx-auto">
+              Con Kliquea, el cross-border es simple,<br>
+              rápido y emocionante. Tu producto, tu<br>
+              estilo, tus reglas. Sin fronteras.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="flex justify-end items-center">
+        <div
+          class="relative bg-white rounded-2xl overflow-hidden border-[1px] border-[#15BEF0] shadow-md w-[75%] h-[400px] flex items-start justify-center text-center p-6">
+          <div class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/aliadosquehacenmagia.png');"></div>
+          <div class="absolute inset-0 bg-white bg-opacity-20"></div>
+          <div class="relative z-10 space-y-1">
+            <h3 class="text-orange-500 font-extrabold text-xl leading-snug">Aliados que<br>hacen magia</h3>
+            <p class="text-[#141B5B] text-sm leading-relaxed max-w-xs mx-auto">
+              Con BM Cargo, tus envíos llegan rápido,<br>
+              con menos costos y la seguridad de<br>
+              estar en buenas manos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 4 -->
+      <div class="flex justify-start ">
+        <div
+          class="relative bg-white rounded-2xl overflow-hidden border-[1px] border-[#15BEF0] w-[75%] h-[500px] flex items-start justify-center text-center p-6">
+
+          <div class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/tecnologiaparaescalar.png');"></div>
+          <div class="absolute inset-0 bg-gradient-to-b from-white/100 via-white/80 to-transparent z-10"></div>
+          <div class="relative z-10 space-y-1">
+            <h3 class="text-orange-500 font-extrabold text-xl leading-snug">Tecnología<br>para escalar</h3>
+            <p class="text-[#141B5B] text-sm leading-relaxed max-w-xs mx-auto">
+              Integra tu tienda con Shopify, VTEX,<br>
+              Magento, WooCommerce y más.<br>
+              Analiza, optimiza y toma decisiones<br>
+              que disparen tu crecimiento.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 5 -->
+      <div class="flex justify-end -mt-[45px]">
+        <div
+          class="relative bg-white rounded-2xl overflow-hidden border-[1px] border-[#15BEF0] shadow-md w-[75%] h-[500px] flex items-start justify-center text-center p-6">
+
+          <!-- Imagen de fondo -->
+          <div class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/todaunaredparatutienda.jpg');"></div>
+
+          <!-- Degradado blanco arriba -->
+          <div class="absolute inset-0 bg-gradient-to-b from-white/100 via-white/80 to-transparent z-10"></div>
+
+          <!-- Contenido -->
+          <div class="relative z-20 space-y-1">
+            <h3 class="text-orange-500 font-extrabold text-xl leading-snug">Toda una red<br>para tu tienda</h3>
+            <p class="text-[#141B5B] text-sm leading-relaxed max-w-xs mx-auto">
+              +6 HUBs listos para expandir tu marca.<br>
+              Despacha como un experto desde el día uno.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Tarjeta 6 -->
+      <div class="flex justify-start">
+        <div
+          class="relative bg-white rounded-2xl overflow-hidden border-[1px] border-[#15BEF0] shadow-md w-[75%] h-[400px] flex items-start justify-center text-center p-6">
+          <div class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/despachossincomplicaciones.png');"></div>
+          <div class="absolute inset-0 bg-white bg-opacity-20"></div>
+          <div class="relative z-10 space-y-1">
+            <h3 class="text-orange-500 font-extrabold text-xl leading-snug">Despachos<br>sin complicaciones</h3>
+            <p class="text-[#141B5B] text-sm leading-relaxed max-w-xs mx-auto">
+              Zona franca y aduanas<br>
+              simplificadas y seguras.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Sección de revolución -->
+  <section class="bg-white md:py-8 px-4">
+    <div class="max-w-6xl mx-auto text-center  mb-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#141B5B] leading-6">El comercio electrónico necesitaba una revolución.
+      </h2>
+      <h3 class="text-xl text-orange-500 font-bold mt-1 leading-6">La creamos</h3>
+      <p class="mt-4 text-gray-700 max-w-3xl mx-auto text-sm leading-4 px-2">
+        Kliquea rompe el molde: vendes sin fronteras, con tecnología, visibilidad y comunidad.
+        Conecta con miles de compradores en Latinoamérica y el Caribe.
+        Haz que tu producto cruce fronteras y llegue directo a donde lo necesitan, lo desean, lo adoran.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:gap-7 md:grid-cols-[478px_572px] md:justify-center md:items-stretch max-w-6xl md:max-w-[1088px] mx-auto mb-12">
+
+      <!-- Tarjeta 1 -->
+      <div class="flex flex-col md:flex-row bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden md:col-span-2 md:w-full md:p-7 md:rounded-[10px] md:justify-between md:items-center md:outline md:outline-1 md:outline-offset-[-1px] md:outline-stone-300">
+        <img src="https://kliqueainternacional.vteximg.com.br/arquivos/sabescuanto.jpg" class="w-[90%] h-20 max-w-full object-cover rounded-[5px] mx-auto mt-4 md:mt-0 md:mx-0 md:w-[494px] md:h-52 md:rounded-[10px]" alt="">
+        <div class="p-5 text-left md:p-0 md:w-[485px] md:inline-flex md:flex-col md:justify-center md:items-start md:gap-3.5">
+          <h4 class="text-[#1a1a64] font-bold text-md md:text-xl md:leading-8">¿Sabes cuánto podrías estar<br class="hidden md:block">ganando hoy?</h4>
+          <p class="text-sm text-gray-700 mt-2 md:mt-0 md:leading-6">Con un crecimiento proyectado del 75% en las ventas de comercio electrónico en la región para 2025, es el momento perfecto para que tu marca se expanda. Kliquea te conecta con mercados en crecimiento y te ayuda a maximizar tu alcance.</p>
+          <a href="/default/requisitos#calculadora" class="mt-3 md:mt-0 inline-flex items-center gap-1.5 text-sky-600 text-base md:text-lg font-bold leading-4 font-['DM_Sans']">
+            <span>Saber más</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 -->
+
+      <div class="flex flex-col bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden md:row-span-2 md:w-[478px] md:h-full md:self-stretch md:p-7 md:rounded-[10px] md:outline md:outline-1 md:outline-offset-[-1px] md:outline-stone-300 md:border-0 md:shadow-none md:overflow-visible md:inline-flex md:justify-between md:items-center">
+        <img src="https://kliqueainternacional.vteximg.com.br/arquivos/marcapoderosa.jpg" class="w-[90%] h-20 max-w-full object-cover rounded-[5px] mx-auto mt-4 md:mt-0 md:mx-0 md:w-96 md:h-72 md:rounded-[10px]" alt="">
+        <div class="p-5 text-left md:p-0 md:self-stretch md:flex-1 md:flex md:flex-col md:justify-end md:items-center md:gap-3.5 md:text-center">
+          <h4 class="text-[#1a1a64] font-bold text-md md:self-stretch md:text-xl md:leading-8">
+            ¿Tienes una marca poderosa?<br class="hidden md:block">
+            Te damos las herramientas<br class="hidden md:block">
+            para hacerla imparable
+          </h4>
+          <p class="text-sm text-gray-700 mt-4 md:mt-0 md:self-stretch md:leading-6">
+            Posicionamiento, campañas, diseño, asesoría, tecnología, IA<br class="hidden md:block">
+            y visibilidad premium. Todo lo que necesitas para transformar tu tienda en una marca best seller.<br class="hidden md:block">
+            En Kliquea no impulsamos productos,<br class="hidden md:block">
+            impulsamos imperios.
+          </p>
+          <a href="/default/gestionatunegocio" class="mt-3 md:mt-0 inline-flex items-center gap-1.5 text-sky-600 text-base md:text-lg font-bold leading-4 font-['DM_Sans']">
+            <span>Saber más</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="flex flex-col md:flex-row bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden md:w-[572px] md:p-7 md:rounded-[10px] md:outline md:outline-1 md:outline-offset-[-1px] md:outline-stone-300 md:border-0 md:shadow-none md:overflow-visible md:justify-start md:items-center md:gap-5">
+        <img src="https://kliqueainternacional.vteximg.com.br/arquivos/tutiendaconectada.jpg" class="w-[90%] h-20 max-w-full object-cover rounded-[5px] mx-auto mt-4 md:mt-0 md:mx-0 md:order-2 md:w-44 md:h-32 md:rounded-[10px]" alt="">
+        <div class="p-5 text-left md:p-0 md:order-1 md:flex-1 md:inline-flex md:flex-col md:justify-center md:items-start md:gap-3.5">
+          <h4 class="text-[#1a1a64] font-bold text-md md:text-xl md:leading-8">Tu tienda conectada. Tus ventas desatadas.</h4>
+          <p class="text-sm text-gray-700 mt-2 md:mt-0 md:leading-6">Desde Shopify o VTEX hasta nuestro panel: conecta, gestiona y vende sin complicaciones. La venta online no tiene que ser difícil. Con Kliquea, es directa, bella y poderosa… como tu marca.</p>
+          <a href="/default/integraciones#integracionesacord" class="mt-3 md:mt-0 inline-flex items-center gap-1.5 text-sky-600 text-base md:text-lg font-bold leading-4 font-['DM_Sans']">
+            <span>Saber más</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+
+      <!-- Tarjeta 4 -->
+      <div class="flex flex-col md:flex-row bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden md:w-[572px] md:p-7 md:rounded-[10px] md:outline md:outline-1 md:outline-offset-[-1px] md:outline-stone-300 md:border-0 md:shadow-none md:overflow-visible md:justify-start md:items-center md:gap-5">
+        <img src="https://kliqueainternacional.vteximg.com.br/arquivos/FuturoBESTSELLE.jpg" class="w-[90%] h-20 max-w-full object-cover rounded-[5px] mx-auto mt-4 md:mt-0 md:mx-0 md:order-2 md:w-44 md:h-32 md:rounded-[10px]" alt="">
+        <div class="p-5 text-left md:p-0 md:order-1 md:flex-1 md:inline-flex md:flex-col md:justify-center md:items-start md:gap-3.5">
+          <h4 class="text-[#1a1a64] font-bold text-md md:text-xl md:leading-8">Aquí no entras como principiante.<br>Entras como futuro best seller.</h4>
+          <p class="text-sm text-gray-700 mt-2 md:mt-0 md:leading-6">Desde el primer día, te damos guía, soporte y una comunidad que sí empuja. Porque sabemos que lo que haces tiene potencial de sobra. Solo necesitabas el lugar correcto para crecerlo.</p>
+          <a href="/default/requisitos" class="mt-3 md:mt-0 inline-flex items-center gap-1.5 text-sky-600 text-base md:text-lg font-bold leading-4 font-['DM_Sans']">
+            <span>Saber más</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 5 -->
+      <div class="flex flex-col md:flex-row bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden md:col-span-2 md:w-full md:p-7 md:rounded-[10px] md:justify-between md:items-center md:outline md:outline-1 md:outline-offset-[-1px] md:outline-stone-300">
+        <img src="https://kliqueainternacional.vteximg.com.br/arquivos/gestionacomoungrande.jpg" class="w-[90%] h-20 max-w-full object-cover rounded-[5px] mx-auto mt-4 md:mt-0 md:mx-0 md:w-[494px] md:h-52 md:rounded-[10px]" alt="">
+        <div class="p-5 text-left md:p-0 md:w-[485px] md:inline-flex md:flex-col md:justify-center md:items-start md:gap-3.5">
+          <h4 class="text-[#1a1a64] font-bold text-md md:text-xl md:leading-8">Gestiona como un grande.<br>Crece como un gigante</h4>
+          <p class="text-sm text-gray-700 mt-2 md:mt-0 md:leading-6">Controla cada parte de tu tienda con herramientas diseñadas para escalar. Tu marca merece esta versión pro. Y ya está lista para activarla.</p>
+          <a href="#" class="mt-3 md:mt-0 inline-flex items-center gap-1.5 text-sky-600 text-base md:text-lg font-bold leading-4 font-['DM_Sans']">
+            <span>Saber más</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+
+ <!--menuresponsivehome   -->
+ <script >
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    document.getElementById('mobile-menu').classList.remove('hidden');
+  });
+
+  document.getElementById('menu-close').addEventListener('click', function () {
+    document.getElementById('mobile-menu').classList.add('hidden');
+  });
+
+  function toggleSubmenu() {
+    const submenu = document.getElementById('submenu');
+    const arrowIcon = document.getElementById('arrow-icon');
+    submenu.classList.toggle('hidden');
+    arrowIcon.classList.toggle('rotate-180');
+  }
+
+</script>
+  
+
+<!--Swiper  -->
+  <script >
+    
+new Swiper('.beneficios-swiper', {
+  slidesPerView: 1.3,
+  spaceBetween: 20,
+  slidesOffsetBefore: 20,
+  slidesOffsetAfter: 20,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+  <script>
+    
+    function animateLogo(event) {
+      const logo = document.getElementById('logo');
+      logo.classList.add('rotate-12', 'scale-105');
+      
+      // Quitar la clase después de la animación para que pueda repetirse
+      setTimeout(() => {
+        logo.classList.remove('rotate-12', 'scale-105');
+      }, 300);
+    }
+    </script>
+
+
+
+    <!--animaciones del menu-->
+
+<span class="hidden translate-x-1.5 pl-3"></span>
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('menu-close');
+
+    // Cierre del menú al hacer clic en el botón cerrar
+    closeBtn?.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+
+    // Seleccionar todos los <a> dentro del menú móvil (incluye submenu)
+    const menuLinks = mobileMenu.querySelectorAll('a');
+
+    menuLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevenir navegación inmediata
+
+        // Agrega animación de rebote (solo si no está ya en animación)
+        link.classList.add('pl-3', 'font-medium'); // Cambio visual
+        link.classList.add('duration-200', 'transition-all'); // Asegura transición
+
+        // Rebote con clase temporal
+        link.classList.add('translate-x-1.5');
+        setTimeout(() => {
+          link.classList.remove('translate-x-1.5');
+        }, 200);
+
+        // Cierra el menú tras un pequeño delay y redirecciona
+        const href = link.getAttribute('href');
+        setTimeout(() => {
+          mobileMenu.classList.add('hidden');
+          window.location.href = href;
+        }, 250); // Da tiempo al efecto visual
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+</body>
+
+<!-- Call to action -->
+        <!-- Call to action -->
+  <section class="hidden md:block w-full">
+  <div class="relative h-[300px] bg-cover bg-no-repeat bg-left" style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/baner.jpg');">
+
+    <!-- Gradiente solo visible en md y adelante -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/5 via-[#000030]/60 to-[#000066]/90 z-0"></div>
+
+    <!-- Contenido -->
+    <div class="absolute inset-0 flex items-center justify-center md:justify-end px-6 md:px-16 z-10">
+      <div class="text-left md:text-right text-white max-w-xl md:mr-[10%] ">
+        <h2 class="text-3xl font-extrabold mb-4 leading-tight">
+          Haz historia en el eCommerce...
+        </h2>
+        <p class="text-base font-medium lg:text-lg mb-6 leading-relaxed">
+          Kliquea es más que un marketplace:<br class="hidden lg:block" />
+          es el impulso que tu marca necesita para crecer a otro nivel.
+        </p>
+        <a
+          href="#"
+          class="bg-[#ff7a00] hover:bg-[#e36900] transition text-white font-bold py-3 px-10 rounded-full text-base lg:text-lg inline-block"
+        >
+          Regístrate y comienza ya
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- Imagen de fondo para móvil -->
+<section
+  class="flex md:hidden bg-cover bg-center h-[700px] items-center text-white px-6 pb-10"
+  style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/bannerfootermovil.png');"
+>
+  <div class="w-full text-center mt-[250px]">
+    <div class="max-w-md mx-auto ">
+      <h2 class="text-4xl font-extrabold mb-4 leading-tight">
+        Haz historia en el eCommerce...
+      </h2>
+      <p class="text-base mb-6 leading-relaxed">
+        Kliquea es más que un marketplace: es el impulso que tu marca necesita para crecer a otro nivel.
+      </p>
+      <a
+        href="#"
+        class="bg-[#ff7a00] hover:bg-[#e36900] transition text-white font-bold py-5 px-9 rounded-full text-base inline-block"
+      >
+        Regístrate y comienza ya
+      </a>
+    </div>
+  </div>
+</section> 
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer class="bg-blue-50 px-6 md:px-16 py-8">
+  <!-- Navegación y redes -->
+  <div class="flex flex-col md:flex-row md:justify-between items-center gap-4 md:gap-0 mb-4">
+    <!-- Links de navegación -->
+    <div class="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-[#141B5B] font-medium">
+      <a href="#quienes-somos" class="hover:underline">Quiénes somos</a>
+      <a href="#innovadores" class="hover:underline">Únete a nuestra tribu de innovadores</a>
+      <a href="#ayuda" class="hover:underline">¿Necesitas ayuda?</a>
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="flex items-center gap-4">
+      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/Twitter2.png" alt="X" class="h-4 w-4"></a>
+      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/Facebook.png" alt="Facebook" class="h-7 w-7"></a>
+      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/Instagram.png" alt="Instagram" class="h-7 w-7"></a>
+      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/TikTok.png" alt="TikTok" class="h-5 w-5"></a>
+      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/LinkedIn.png" alt="LinkedIn" class="h-4 w-4"></a>
+    </div>
+
+    <!-- Sello de confianza 
+    <div class="ml-4">
+      <img src="https://kliqueainternacional.vteximg.com.br/arquivos/sellodeconfianza.png" alt="Sello de confianza" class="h-14 w-14">
+    </div>
+  </div>
+  -->
+
+  <!-- Línea y derechos -->
+  <hr class="border-t border-blue-100 my-4">
+  <p class="text-xs text-center text-gray-500">
+    Copyright © 2026 Kliquea |
+    <a href="#terminos" class="hover:underline">Términos y condiciones</a> •
+    <a href="#privacidad" class="hover:underline">Política de privacidad</a>
+  </p>
+</footer>
+
+</html>
