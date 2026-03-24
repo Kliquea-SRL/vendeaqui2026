@@ -26,9 +26,8 @@ jobs:
       - name: Create deployment package
         run: |
           mkdir -p build
-          cp -r . build/
+          rsync -av --exclude=build --exclude=.git --exclude=.github --exclude=node_modules --exclude=.gitignore ./ build/
           cd build
-          rm -rf .git .github node_modules .gitignore
           npm ci --omit=dev
           cd ..
           zip -r lambda-deployment.zip build/
