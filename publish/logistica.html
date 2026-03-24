@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,525 +8,613 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />   
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    .beneficios-swiper {
+      --swiper-pagination-color: #141B5B;
+      --swiper-pagination-bullet-inactive-color: #0082CD;
+      --swiper-pagination-bullet-inactive-opacity: 1;
+    }
+  </style>
+
 </head>
-  <body class="bg-white text-white font-[Montserrat]">
 
- 
+<body class="bg-white text-white font-[Montserrat]">
 
-<!-- Navbar -->
-<nav class="bg-white w-full px-6 md:px-16 py-4 shadow-sm fixed top-0 left-0 z-50">
-  <div class="flex items-center justify-between">
 
-    <!-- Logo -->
-  <div class="flex items-center">
-  <a href="/default/vendeaqui" onclick="animateLogo(event)">
-    <img id="logo" src="https://kliqueainternacional.vteximg.com.br/arquivos/logoKliquea-2025 1.svg" alt="Kliquea Logo"
-      class="h-12 w-auto transition-transform duration-150 ease-in-out" />
-  </a>
-</div>
 
-    <!-- Menú escritorio -->
-    <div class="hidden md:flex items-center gap-8 text-[#030389] text-sm font-medium">
-      <!-- Dropdown -->
-      <div class="relative group">
-        <button class="flex items-center hover:font-bold text-[#030389]">
-          Comienza a vender
-          <svg class="ml-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd"
-              d="M5.23 7.21a.75.75 0 011.06.02L10 10.939l3.71-3.71a.75.75 0 011.08 1.04l-4.24 4.24a.75.75 0 01-1.08 0L5.25 8.27a.75.75 0 01-.02-1.06z"
-              clip-rule="evenodd" />
+  <!-- Navbar -->
+  <nav class="bg-white w-full px-6 md:px-16 py-4 shadow-sm fixed top-0 left-0 z-50">
+    <div class="flex items-center justify-between">
+
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="/default/vendeaqui" onclick="animateLogo(event)">
+          <img id="logo" src="https://kliqueainternacional.vteximg.com.br/arquivos/logoKliquea-2025 1.svg"
+            alt="Kliquea Logo" class="h-12 w-auto transition-transform duration-150 ease-in-out" />
+        </a>
+      </div>
+
+      <!-- Menú escritorio -->
+      <div class="hidden md:flex items-center gap-8 text-[#030389] text-sm font-medium">
+        <!-- Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center hover:font-bold text-[#030389]">
+            Comienza a vender
+            <svg class="ml-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 10.939l3.71-3.71a.75.75 0 011.08 1.04l-4.24 4.24a.75.75 0 01-1.08 0L5.25 8.27a.75.75 0 01-.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+
+          <!-- Dropdown content -->
+          <div
+            class="absolute top-full right-2 mt-2 w-64 bg-white shadow-md border border-gray-200 group-hover:opacity-100 opacity-0 invisible group-hover:visible transition-all duration-200 delay-100 z-50"
+            onmouseover="this.classList.add('opacity-100', 'visible')"
+            onmouseout="this.classList.remove('opacity-100', 'visible')">
+            <a href="/default/integraciones"
+              class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Integraciones</a>
+            <hr class="border-gray-200 mx-6" />
+            <a href="/default/logistica"
+              class="block px-6 py-6 text-sm text-gray-400 ttransition-all duration-200 ease-in-out hover:font-bold hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Logística</a>
+            <hr class="border-gray-200 mx-6" />
+            <a href="/default/servicios"
+              class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold   hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Servicios</a>
+            <hr class="border-gray-200 mx-6" />
+            <a href="/default/facturacion"
+              class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold  hover:text-[#030389] active:translate-x-1 active:scale-95">Facturación</a>
+          </div>
+        </div>
+
+        <!-- Otros enlaces -->
+        <a href="/default/requisitos"
+          class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
+          Requisitos
+        </a>
+
+        <a href="/default/crecimiento"
+          class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
+          Crecimiento
+        </a>
+
+        <a href="/default/alianzas"
+          class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
+          Alianzas y servicios
+        </a>
+      </div>
+
+      <!-- Botón hamburguesa -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-[#030389] focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-
-        <!-- Dropdown content -->
-        <div class="absolute top-full right-2 mt-2 w-64 bg-white shadow-md border border-gray-200 group-hover:opacity-100 opacity-0 invisible group-hover:visible transition-all duration-200 delay-100 z-50"
-          onmouseover="this.classList.add('opacity-100', 'visible')"
-          onmouseout="this.classList.remove('opacity-100', 'visible')">
-          <a href="/default/integraciones" class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Integraciones</a>
-          <hr class="border-gray-200 mx-6" />
-          <a href="/default/logistica" class="block px-6 py-6 text-sm text-gray-400 ttransition-all duration-200 ease-in-out hover:font-bold hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Logística</a>
-          <hr class="border-gray-200 mx-6" />
-          <a href="/default/servicios" class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold   hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Servicios</a>
-          <hr class="border-gray-200 mx-6" />
-          <a href="/default/facturacion" class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold  hover:text-[#030389] active:translate-x-1 active:scale-95">Facturación</a>
-        </div>
-      </div>
-
-      <!-- Otros enlaces -->
-      <a href="/default/requisitos" 
-        class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
-        Requisitos
-      </a>
-
-      <a href="/default/crecimiento" 
-        class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
-        Crecimiento
-      </a>
-
-      <a href="/default/alianzas" 
-        class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
-        Alianzas y servicios
-      </a>
-</div>
-
-    <!-- Botón hamburguesa -->
-    <div class="md:hidden">
-      <button id="menu-toggle" class="text-[#030389] focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-    </div>
-  </div>
-
-<!-- Menú móvil -->
-  <div id="mobile-menu" class="fixed top-16 left-0 w-full h-[calc(100vh-4rem)] z-50 hidden bg-white">
-    <div class="flex h-full">
-      <!-- Lado izquierdo vacío con línea -->
-      <div class="w-[40%] border-r border-gray-200 bg-white"></div>
-
-      <!-- Menú lado derecho -->
-      <div class="w-[60%] bg-white flex flex-col font-montserrat shadow-lg px-6 pt-6 space-y-6">
-        <!-- Botón cerrar -->
-        <div class="flex justify-end">
-          <button id="menu-close" class="text-[#030389] focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        <!-- Submenú desplegable -->
-        <div>
-          <button onclick="toggleSubmenu()" class="flex justify-between items-center w-full text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pr-2 hover:font-medium">
-            <span>Comienza a vender</span>
-            <svg id="arrow-icon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="#F58220"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-
-       <div id="submenu" class="hidden mt-2 pl-4 text-sm text-gray-500 space-y-6">
-          <a href="/default/integraciones" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Integraciones</a>
-
-          <a href="/default/logistica" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Logística</a>
-
-          <a href="/default/servicios" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Servicios</a>
-
-          <a href="/default/facturacion" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Facturación</a>
-      </div>
-
-        </div>
-
-        <hr class="border-gray-200" />
-        <a href="/default/requisitos" class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Requisitos</a>
-        <hr class="border-gray-200" />
-        <a href="/default/crecimiento" class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Crecimiento</a>
-        <hr class="border-gray-200" />
-       <a href="/default/alianzas" class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Alianzas y servicios </a>
       </div>
     </div>
-  </div>
-</nav>
 
- 
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="fixed top-16 left-0 w-full h-[calc(100vh-4rem)] z-50 hidden bg-white">
+      <div class="flex h-full">
+        <!-- Lado izquierdo vacío con línea -->
+        <div class="w-[40%] border-r border-gray-200 bg-white"></div>
 
-<section class="relative text-white overflow-hidden h-[500px] md:min-h-[450px]">
-  <div class="absolute inset-0">
-    <div class="hidden md:block w-full h-full bg-cover bg-center"
-         style="background-image:url('https://kliqueainternacional.vteximg.com.br/arquivos/BannerHero-logistica-desk-vendeaqui.png')"></div>
-    <div class="block md:hidden w-full h-full bg-cover bg-center"
-         style="background-image:url('https://kliqueainternacional.vteximg.com.br/arquivos/imgbannerlogimovil.png')"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-[#000066]"></div>
-  </div>
+        <!-- Menú lado derecho -->
+        <div class="w-[60%] bg-white flex flex-col font-montserrat shadow-lg px-6 pt-6 space-y-6">
+          <!-- Botón cerrar -->
+          <div class="flex justify-end">
+            <button id="menu-close" class="text-[#030389] focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
 
-  <div class="relative z-10 h-full flex items-center justify-end
+          <!-- Submenú desplegable -->
+          <div>
+            <button onclick="toggleSubmenu()"
+              class="flex justify-between items-center w-full text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pr-2 hover:font-medium">
+              <span>Comienza a vender</span>
+              <svg id="arrow-icon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="#F58220"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <div id="submenu" class="hidden mt-2 pl-4 text-sm text-gray-500 space-y-6">
+              <a href="/default/integraciones"
+                class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Integraciones</a>
+
+              <a href="/default/logistica"
+                class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Logística</a>
+
+              <a href="/default/servicios"
+                class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Servicios</a>
+
+              <a href="/default/facturacion"
+                class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Facturación</a>
+            </div>
+
+          </div>
+
+          <hr class="border-gray-200" />
+          <a href="/default/requisitos"
+            class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Requisitos</a>
+          <hr class="border-gray-200" />
+          <a href="/default/crecimiento"
+            class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Crecimiento</a>
+          <hr class="border-gray-200" />
+          <a href="/default/alianzas"
+            class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Alianzas
+            y servicios </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <section class="relative text-white overflow-hidden h-[500px] md:min-h-[450px]">
+    <div class="absolute inset-0">
+      <div class="hidden md:block w-full h-full bg-cover bg-center"
+        style="background-image:url('https://kliqueainternacional.vteximg.com.br/arquivos/BannerHero-logistica-desk-vendeaqui.png')">
+      </div>
+      <div class="block md:hidden w-full h-full bg-cover bg-center"
+        style="background-image:url('https://kliqueainternacional.vteximg.com.br/arquivos/imgbannerlogimovil.png')">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-[#000066]"></div>
+    </div>
+
+    <div class="relative z-10 h-full flex items-center justify-end
                 px-8 md:px-20 lg:px-32 lg:mt-8 md:mt-8 lg:mr-0 max-w-7xl mx-auto">
-    <div class="w-full flex flex-col justify-center space-y-4
+      <div class="w-full flex flex-col justify-center space-y-4
                     items-start md:items-end
                     text-left md:text-right
                     md:max-w-2xl
                     -mt-12 md:mt-0">
 
-      <h2 class="text-4xl sm:text-5xl md:text-5xl font-extrabold leading-none mb-4">
-        Logística que mueve<br class="hidden sm:block"> tu marca
-      </h2>
+        <h2 class="text-4xl sm:text-5xl md:text-5xl font-extrabold leading-none mb-4">
+          Logística que mueve<br class="hidden sm:block"> tu marca
+        </h2>
 
-      <p class="hidden md:block text-lg md:text-xl leading-relaxed ">
-        Desde el inventario hasta la entrega, Kliquea te conecta con una red logística inteligente, rápida y sin fronteras.<br>
-        Nosotros nos encargamos del envío, tú enfócate en vender.
-      </p>
+        <p class="hidden md:block text-lg md:text-xl leading-relaxed ">
+          Desde el inventario hasta la entrega, Kliquea te conecta con una red logística inteligente, rápida y sin
+          fronteras.<br>
+          Nosotros nos encargamos del envío, tú enfócate en vender.
+        </p>
 
-        <button
-          class=" bg-[#F4771D] text-white px-6 py-3 rounded-full transition-transform transform hover:scale-105">
-          Regístrate y comienza ya
-        </button>
+        <!-- <button
+        class="bg-[#F4771D] text-white px-8 md:px-14 py-4 md:py-7  font-bold rounded-full transition-transform transform hover:scale-105">  <a
+        href="https://share.hsforms.com/21cz14lO0QpKSnYGNtEbW1gtbolg"
+         target="_blank">
+        Regístrate y comienza ya</a>
+      </button> -->
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  
- <!-- Introducción -->
-<section class="bg-[#E8E8E8] px-6 md:px-16 py-12">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
-    
-    <!-- Contenido de texto -->
-    <div class="md:w-1/2">
 
-          <div class="md:hidden text-[#585858] text-center italic px-8">
-      <p>"Desde el inventario hasta la entrega, Kliquea te conecta con una red logística inteligente, rápida y sin fronteras. Nosotros nos encargamos del envío, tú enfócate en vender."</p>
+  <!-- Introducción -->
+  <section class="bg-[#E8E8E8] px-6 md:px-16 py-12">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
+
+      <!-- Contenido de texto -->
+      <div class="md:w-1/2">
+
+        <div class="md:hidden text-[#585858] text-center italic px-8">
+          <p>"Desde el inventario hasta la entrega, Kliquea te conecta con una red logística inteligente, rápida y sin
+            fronteras. Nosotros nos encargamos del envío, tú enfócate en vender."</p>
+        </div>
+
+        <h2 class="text-3xl md:text-4xl font-bold text-[#141B5B] mt-12 mb-4">
+          Logística inteligente desde el corazón del Caribe.
+        </h2>
+
+        <!-- Imagen solo en móvil: debajo del título -->
+        <img src="https://kliqueainternacional.vteximg.com.br/arquivos/imagen-seg-seccion.png"
+          class="block md:hidden mb-6 w-full" alt="Logística">
+
+        <p class="text-gray-700 mb-4">
+          Además de conectar tu tienda con compradores en toda la región, te ofrecemos soluciones logísticas desde
+          nuestros hubs: pick & pack, control de inventario, almacenaje, manejo de volumétricos, envíos nacionales e
+          internacionales, devoluciones y última milla.
+        </p>
+        <p class="text-gray-700">
+          ¿Ya tienes tu propia logística? Perfecto. También operamos recogiendo directamente desde tus almacenes o nos
+          dejas el pedido en el punto de recogida asignado para tu región.
+        </p>
       </div>
 
-      <h2 class="text-3xl md:text-4xl font-bold text-[#141B5B] mt-12 mb-4">
-        Logística inteligente desde el corazón del Caribe.
-      </h2>
-      
-      <!-- Imagen solo en móvil: debajo del título -->
-      <img src="https://kliqueainternacional.vteximg.com.br/arquivos/imagen-seg-seccion.png" class="block md:hidden mb-6 w-full" alt="Logística">
+      <!-- Imagen solo en desktop: al lado derecho -->
+      <div class="hidden md:block md:w-1/2">
+        <img src="https://kliqueainternacional.vteximg.com.br/arquivos/imagen-seg-seccion.png" class="w-full"
+          alt="Logística">
+      </div>
 
-      <p class="text-gray-700 mb-4">
-        Además de conectar tu tienda con compradores en toda la región, te ofrecemos soluciones logísticas desde nuestros hubs: pick & pack, control de inventario, almacenaje, manejo de volumétricos, envíos nacionales e internacionales, devoluciones y última milla.
-      </p>
-      <p class="text-gray-700">
-        ¿Ya tienes tu propia logística? Perfecto. También operamos recogiendo directamente desde tus almacenes o nos dejas el pedido en el punto de recogida asignado para tu región.
-      </p>
     </div>
+  </section>
 
-    <!-- Imagen solo en desktop: al lado derecho -->
-    <div class="hidden md:block md:w-1/2">
-      <img src="https://kliqueainternacional.vteximg.com.br/arquivos/imagen-seg-seccion.png" class="w-full" alt="Logística">
-    </div>
-    
+
+  <!--Boton de Contacto azul-->
+
+  <div class="hidden md:block  fixed bottom-[50px] right-[15px] z-50">
+    <button class="flex items-center transition-transform duration-200 hover:scale-105">
+      <img src="https://kliqueainternacional.vteximg.com.br/arquivos/contacto.png" alt="Chat Icon"
+        class="w-20 h-20 mr-1">
+    </button>
   </div>
-</section>
 
+  <!--Fin Boton de Contacto azul-->
 
- <!--Boton de Contacto azul-->
-
-<div class="hidden md:block  fixed bottom-[500px] right-[15px] z-50">
-  <button class="flex items-center transition-transform duration-200 hover:scale-105">
-    <img src="https://kliqueainternacional.vteximg.com.br/arquivos/contacto.png" alt="Chat Icon" class="w-20 h-20 mr-1">
-  </button>
-</div>
-
- <!--Fin Boton de Contacto azul-->
-  
 
 
   <!-- Servicios -->
-  <section class="px-6 md:px-16 py-16 bg-white">
+  <section class="px-6  py-8 md:px-16 md:py-12 bg-white">
     <h2 class="text-center text-orange-500 font-semibold text-xl mb-12">Servicios</h2>
-  
+
     <div class="grid md:grid-cols-1 gap-8">
       <!-- Servicio: República Dominicana -->
       <div class="border border-orange-300 rounded-lg p-6 shadow-sm bg-white">
         <div class="flex items-center mb-4 gap-3">
-          <img src="https://kliqueainternacional.vteximg.com.br/arquivos/fullfimentcompleto.png" alt="Icono RD" class="w-10 h-10">
+          <img src="https://kliqueainternacional.vteximg.com.br/arquivos/fullfimentcompleto.png" alt="Icono RD"
+            class="w-10 h-10">
           <h3 class="text-[#141B5B] font-bold text-lg">Fulfillment República Dominicana</h3>
         </div>
         <p class="text-gray-700 mb-4 text-sm">
-          Garantizamos que tus productos lleguen a cada rincón del país con tiempos de entrega rápidos y efectivos.  Los componentes principales de nuestro servicio incluyen:
+          Garantizamos que tus productos lleguen a cada rincón del país con tiempos de entrega rápidos y efectivos. Los
+          componentes principales de nuestro servicio incluyen:
         </p>
         <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
-          <li><strong>Almacenamiento Local:</strong> Gestionamos tu inventario desde centros de distribución ubicados estratégicamente, optimizando costos y tiempos de preparación.</li>
-          <li><strong>Pick and Pack:</strong> Preparación de pedidos personalizada, seleccionando y empacando productos para cumplir con los estándares más altos de calidad.</li>
-          <li><strong>Reempaque:</strong> Soluciones de embalaje para garantizar que cada producto llegue en condiciones impecables.</li>
-          <li><strong>Última Milla:</strong> Logramos entregas rápidas en todo el país, ofreciendo seguimiento en tiempo real y un proceso eficiente de gestión de devoluciones que mejora la experiencia del cliente.</li>
+          <li><strong>Almacenamiento Local:</strong> Gestionamos tu inventario desde centros de distribución ubicados
+            estratégicamente, optimizando costos y tiempos de preparación.</li>
+          <li><strong>Pick and Pack:</strong> Preparación de pedidos personalizada, seleccionando y empacando productos
+            para cumplir con los estándares más altos de calidad.</li>
+          <li><strong>Reempaque:</strong> Soluciones de embalaje para garantizar que cada producto llegue en condiciones
+            impecables.</li>
+          <li><strong>Última Milla:</strong> Logramos entregas rápidas en todo el país, ofreciendo seguimiento en tiempo
+            real y un proceso eficiente de gestión de devoluciones que mejora la experiencia del cliente.</li>
         </ul>
         <p class="text-xs italic text-gray-500 mt-3">*Servicio disponible solo para República Dominicana</p>
       </div>
-  
+
       <!-- Servicio: Internacional -->
       <div class="border border-orange-300 rounded-lg p-6 shadow-sm bg-white">
         <div class="flex items-center mb-4 gap-3">
-          <img src="https://kliqueainternacional.vteximg.com.br/arquivos/fullfimentcompletointernacional.png" alt="Icono Internacional" class="w-10 h-10">
+          <img src="https://kliqueainternacional.vteximg.com.br/arquivos/fullfimentcompletointernacional.png"
+            alt="Icono Internacional" class="w-10 h-10">
           <h3 class="text-[#141B5B] font-bold text-lg">Fulfillment Internacional</h3>
         </div>
         <p class="text-gray-700 mb-4 text-sm">
-         Expande tu alcance con nuestras soluciones internacionales, conectando tus productos desde Colombia y Estados Unidos con clientes en República Dominicana. Nuestros servicios incluyen: 
+          Expande tu alcance con nuestras soluciones internacionales, conectando tus productos desde Colombia y Estados
+          Unidos con clientes en República Dominicana. Nuestros servicios incluyen:
         </p>
         <ul class="list-disc pl-5 text-sm text-[#585858] space-y-1">
-          <li><strong>Infraestructura estratégica:</strong>Hubs logísticos en los países mencionados, lo que permite un flujo continuo y eficiente de tus productos hacia destinos clave. </li>
-          <li><strong>Gestión de Inventarios Internacional:</strong> Almacenamos tus productos en puntos estratégicos, acelerando el proceso de exportación .</li>
-          <li><strong>Exportación simplificada:</strong> Nos encargamos del proceso aduanal, asegurando el cumplimiento normativo en cada país.</li>
-          <li><strong>Envíos multimodales:</strong> Utilizamos transporte aéreo, marítimo y terrestre para optimizar tiempos de entrega y costos, garantizando envíos rápidos y seguros.</li>
-          <li><strong>Soporte local:</strong> En cada destino, ofrecemos atención al cliente y soluciones rápidas para resolver cualquier inconveniente con los envíos.</li>
-           <li><strong>Almacenamiento Local:</strong> Gestionamos tu inventario desde centros de distribución ubicados estratégicamente, optimizando costos y tiempos de preparación.</li>
-          <li><strong>Pick and Pack</strong> Preparación de pedidos personalizada, seleccionando y empacando productos para cumplir con los estándares más altos de calidad.
-             <li><strong> Reempaque</strong> Soluciones de embalaje para garantizar que cada producto llegue en condiciones impecables.
+          <li><strong>Infraestructura estratégica:</strong>Hubs logísticos en los países mencionados, lo que permite un
+            flujo continuo y eficiente de tus productos hacia destinos clave. </li>
+          <li><strong>Gestión de Inventarios Internacional:</strong> Almacenamos tus productos en puntos estratégicos,
+            acelerando el proceso de exportación .</li>
+          <li><strong>Exportación simplificada:</strong> Nos encargamos del proceso aduanal, asegurando el cumplimiento
+            normativo en cada país.</li>
+          <li><strong>Envíos multimodales:</strong> Utilizamos transporte aéreo, marítimo y terrestre para optimizar
+            tiempos de entrega y costos, garantizando envíos rápidos y seguros.</li>
+          <li><strong>Soporte local:</strong> En cada destino, ofrecemos atención al cliente y soluciones rápidas para
+            resolver cualquier inconveniente con los envíos.</li>
+          <li><strong>Almacenamiento Local:</strong> Gestionamos tu inventario desde centros de distribución ubicados
+            estratégicamente, optimizando costos y tiempos de preparación.</li>
+          <li><strong>Pick and Pack</strong> Preparación de pedidos personalizada, seleccionando y empacando productos
+            para cumplir con los estándares más altos de calidad.
+          <li><strong> Reempaque</strong> Soluciones de embalaje para garantizar que cada producto llegue en condiciones
+            impecables.
           </li>
-          <li><strong>Última Milla:</strong>Logramos entregas rápidas en todo el país, ofreciendo seguimiento en tiempo real y un proceso eficiente de gestión de devoluciones que mejora la experiencia del cliente.</li>
+          <li><strong>Última Milla:</strong>Logramos entregas rápidas en todo el país, ofreciendo seguimiento en tiempo
+            real y un proceso eficiente de gestión de devoluciones que mejora la experiencia del cliente.</li>
         </ul>
       </div>
-  </div>
-
-  <div class="grid md:grid-cols-2 gap-8 mt-12">
-
-    <!-- Servicio: Gestión desde tu almacén -->
-    <div class="border border-orange-300 rounded-lg p-6 shadow-sm bg-white">
-      <div class="flex items-center mb-4 gap-3">
-        <img src="https://kliqueainternacional.vteximg.com.br/arquivos/fullfillmentelogigestion.png" alt="Icono Almacén" class="w-10 h-10">
-        <h3 class="text-[#141B5B] font-bold text-lg">Fulfillment logística - Gestión de pedidos desde tu almacén</h3>
-      </div>
-      <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
-        <li>Si ya tienes tu propio almacén organizado, nosotros gestionamos los pedidos directamente desde ahí. </li>
-        <li>Recibes la orden del cliente final y tu equipo coordina la preparación de este y nosotros nos encargamos de pasar a recoger el pedido directamente desde tu ubicación, asegurando una logística fluida. </li>
-        <li>Te proporcionamos soporte para sincronizar inventarios en tiempo real con nuestro marketplace para evitar inconsistencias de stock. </li>
-      </ul>
     </div>
-    
-    <!-- Servicio: Entrega en sucursales -->
-    <div class="border border-orange-300 rounded-lg p-6 shadow-sm bg-white">
-      <div class="flex items-center mb-4 gap-3">
-        <img src="https://kliqueainternacional.vteximg.com.br/arquivos/fullfillmentelogigestionentregasucur.png" alt="Icono Sucursal" class="w-10 h-10">
-        <h3 class="text-[#141B5B] font-bold text-lg">Fulfillment logística - Entrega en sucursales habilitadas</h3>
-      </div>
-      <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
-        <li>Simplifica el proceso, entregando el producto en una de nuestras sucursales habilitadas. </li>
-        <li>Desde ahí, nos encargamos de todo el proceso logístico hasta el envío directo a tus clientes. </li>
-        <li>Ideal para sellers que cuentan con un sistema de logística funcional.  </li>
-      </ul>
-    </div>
-  </div>
-</div>
 
-</section>
+    <div class="grid md:grid-cols-2 gap-8 mt-12">
+
+      <!-- Servicio: Gestión desde tu almacén -->
+      <div class="border border-orange-300 rounded-lg p-6 shadow-sm bg-white">
+        <div class="flex items-center mb-4 gap-3">
+          <img src="https://kliqueainternacional.vteximg.com.br/arquivos/fullfillmentelogigestion.png"
+            alt="Icono Almacén" class="w-10 h-10">
+          <h3 class="text-[#141B5B] font-bold text-lg">Fulfillment logística - Gestión de pedidos desde tu almacén</h3>
+        </div>
+        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+          <li>Si ya tienes tu propio almacén organizado, nosotros gestionamos los pedidos directamente desde ahí. </li>
+          <li>Recibes la orden del cliente final y tu equipo coordina la preparación de este y nosotros nos encargamos
+            de pasar a recoger el pedido directamente desde tu ubicación, asegurando una logística fluida. </li>
+          <li>Te proporcionamos soporte para sincronizar inventarios en tiempo real con nuestro marketplace para evitar
+            inconsistencias de stock. </li>
+        </ul>
+      </div>
+
+      <!-- Servicio: Entrega en sucursales -->
+      <div class="border border-orange-300 rounded-lg p-6 shadow-sm bg-white">
+        <div class="flex items-center mb-4 gap-3">
+          <img src="https://kliqueainternacional.vteximg.com.br/arquivos/fullfillmentelogigestionentregasucur.png"
+            alt="Icono Sucursal" class="w-10 h-10">
+          <h3 class="text-[#141B5B] font-bold text-lg">Fulfillment logística - Entrega en sucursales habilitadas</h3>
+        </div>
+        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+          <li>Simplifica el proceso, entregando el producto en una de nuestras sucursales habilitadas. </li>
+          <li>Desde ahí, nos encargamos de todo el proceso logístico hasta el envío directo a tus clientes. </li>
+          <li>Ideal para sellers que cuentan con un sistema de logística funcional. </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+
+  </section>
+
 
 
 
   <!-- Beneficios -->
-  <section class="px-6 md:px-16 py-2 bg-white w-[1080px] max-w-[1180px] content-center mx-auto">
-    <h2 class="text-center text-[#141B5B] font-bold text-lg mb-8">Beneficios</h2>
-    
- <!-- Versión desktop -->
-<div class="hidden md:grid md:grid-cols-2 gap-6">
-  <!-- Beneficios con imágenes -->
-   <!--Card1-->
-  <div class="flex justify-between items-center p-4 bg-[#f0f4ff] rounded-xl shadow-sm">
-    <div class=" pr-4">
-      <h3 class="self-stretch justify-center text-blue-950 text-xl font-bold font-['Montserrat'] leading-8">Servicio integral</h3>
-      <p class="text-sm text-gray-700">Desde almacenamiento hasta entregas, nosotros nos encargamos de todo.</p>
-    </div>
-    <img src="https://kliqueainternacional.vteximg.com.br/arquivos/serviciointegral.jpg" alt="Servicio integral" class="w-[40%] rounded-md object-cover">
-  </div>
-<!--Card2-->
-  <div class="flex justify-between items-center p-4 bg-[#f0f4ff] rounded-xl shadow-sm">
-    <div class="pr-4">
-      <h3 class="self-stretch justify-center text-blue-950 text-xl font-bold font-['Montserrat'] leading-8">Eficiencia y velocidad</h3>
-      <p class="text-sm text-gray-700">Tiempos de envío óptimos para satisfacer las expectativas de tus clientes.</p>
-    </div>
-    <img src="https://kliqueainternacional.vteximg.com.br/arquivos/eficienciayvelocidad.png" alt="Eficiencia y velocidad" class="w-[40%] rounded-md object-cover">
-  </div>
-<!--Card3-->
-  <div class="md:col-span-2 self-stretch min-w-[500px] px-7 py-2.5 bg-indigo-50 rounded-[10px] inline-flex justify-start items-center gap-3.5">
-    <div class="flex-1 inline-flex flex-col justify-center items-start gap-3.5">
-      <div class="self-stretch justify-center text-blue-950 text-xl font-bold font-['Montserrat'] leading-8">Crecimiento sin límites</div>
-      <div class="self-stretch justify-center text-zinc-600 text-base font-normal font-['Montserrat'] leading-5">Expande tu negocio hacia nuevos mercados internacionales con confianza y soporte constante.</div>
-    </div>
-    <img src="https://kliqueainternacional.vteximg.com.br/arquivos/crecimientosinlimites.png" alt="Crecimiento sin límites" class="w-44 h-32 rounded-[10px] object-cover">
-  </div>
-</div>
-
-
-
-    <!-- Carrusel móvil -->
-<div class="md:hidden swiper swiper-logistica px-2">
-  <div class="swiper-wrapper mb-12">
-
-    <!-- Slide 1 -->
-  <div class="swiper-slide w-full">
-    <div class="bg-[#f0f4ff] rounded-xl p-5 shadow border flex flex-col items-center text-center w-full h-[350px]">
-        <div class="mb-4">
-            <h3 class="font-bold text-[#030389]">Servicio integral</h3>
-            <p class="text-sm mt-2 text-gray-700">
-                Desde almacenamiento hasta entregas, nosotros nos encargamos de todo.
-            </p>
-        </div>
-        <div class="w-full overflow-hidden rounded-xl mt-2">
-            <img src="https://kliqueainternacional.vteximg.com.br/arquivos/serviciointegral.jpg" alt="Servicio integral" class="w-full h-auto object-cover rounded-md" style="max-height: 200px;" />
-        </div>
-    </div>
-</div>
-
- <!-- Slide 2 -->
-<div class="swiper-slide w-full">
-    <div class="bg-[#f0f4ff] rounded-xl p-5 shadow border flex flex-col items-center text-center w-full h-[350px]">
-        <div class="mb-4">
-            <h3 class="font-bold text-[#030389]">Eficiencia y velocidad</h3>
-            <p class="text-sm mt-2 text-gray-700">
-                Tiempos de envío óptimos para satisfacer las expectativas de tus clientes.
-            </p>
-        </div>
-        <div class="w-full overflow-hidden rounded-xl mt-2">
-            <img src="https://kliqueainternacional.vteximg.com.br/arquivos/eficienciayvelocidad.png" alt="Eficiencia y velocidad" class="w-full h-auto object-cover rounded-md" style="max-height: 200px;" />
-        </div>
-    </div>
-</div>
-
-<!--Slide3-->
-<div class="swiper-slide w-full">
-    <div class="bg-[#f0f4ff] rounded-xl p-5 shadow border flex flex-col items-center text-center w-full h-[350px]">
-        <div class="mb-4">
-            <h3 class="font-bold text-[#030389]">Crecimiento sin límites</h3>
-            <p class="text-sm mt-2 text-gray-700">
-                Expande tu negocio hacia nuevos mercados internacionales con confianza y soporte constante.
-            </p>
-        </div>
-        <div class="w-full overflow-hidden rounded-xl mt-2">
-            <img src="https://kliqueainternacional.vteximg.com.br/arquivos/crecimientosinlimites.png" alt="Crecimiento sin límites" class="w-full h-auto object-cover rounded-md" style="max-height: 200px;" />
-        </div>
-    </div>
-</div>
-
-  </div>
-  <div class="swiper-pagination mt-6"></div>
-</div>
-
-
-    
   
 
+  <!-- Beneficios -->
+  <div class="w-full pb-6 text-center justify-start text-blue-950 text-xl font-bold font-['Montserrat'] leading-8">
+    Beneficios
+  </div>
+  <div class="hidden md:flex w-full md:justify-center md:items-center mt-8 mb-16">
 
+    <div class="w-[1080px] max-w-[1180px] inline-flex justify-center items-center gap-5 flex-wrap content-center">
+      <div class="flex-1 min-w-[500px] px-7 py-2.5 bg-indigo-50 rounded-[10px] flex justify-start items-center gap-3.5">
+        <div class="flex-1 inline-flex flex-col justify-center items-start gap-3.5">
+          <div class="self-stretch justify-center text-blue-950 text-xl font-bold font-['Montserrat'] leading-8">
+            Servicio integral
+          </div>
+          <div class="self-stretch justify-center text-zinc-600 text-base font-normal font-['Montserrat'] leading-5">
+            Desde almacenamiento hasta entregas, nosotros nos encargamos de todo.
+          </div>
+        </div>
+        <img class="w-44 h-32 rounded-[10px] object-cover"
+          src="https://kliqueainternacional.vteximg.com.br/arquivos/serviciointegral.jpg"
+          alt="Servicio integral" />
+      </div>
 
-</section>
-<!-- Soporte humano -->
-<div class="mt-16 mb-8 md:w-[1280px] md:max-w-full md:px-12 md:flex md:justify-between md:items-center lg:mx-auto lg:items-center">
-  <div class="flex-1 px-5 py-5 md:px-7 md:py-5 bg-indigo-50 rounded-[10px] flex flex-col md:flex-row justify-between items-start md:items-center gap-5 md:gap-0">
-    <div class="flex-1 md:pr-12 inline-flex flex-col justify-center items-start gap-2.5">
-      <h3 class="w-full md:w-[844px] text-blue-950 text-2xl md:text-3xl font-bold font-['Montserrat'] leading-8 md:leading-10">Soporte humano en cada etapa</h3>
-      <p class="self-stretch text-zinc-600 text-sm md:text-base font-normal font-['Montserrat'] leading-5">No estás solo. Nuestro equipo logístico te acompaña en cada fase del proceso<br class="hidden md:block">para que siempre tengas claridad y respaldo. ¿Tienes dudas? Nuestro equipo está para apoyarte.</p>
+      <div class="flex-1 min-w-[500px] px-7 py-2.5 bg-indigo-50 rounded-[10px] flex justify-start items-center gap-3.5">
+        <div class="flex-1 inline-flex flex-col justify-center items-start gap-3.5">
+          <div class="self-stretch justify-center text-blue-950 text-xl font-bold font-['Montserrat'] leading-8">
+            Eficiencia y velocidad
+          </div>
+          <div class="self-stretch justify-center text-zinc-600 text-base font-normal font-['Montserrat'] leading-5">
+            Tiempos de envío óptimos para satisfacer las expectativas de<br />tus clientes.
+          </div>
+        </div>
+        <img class="w-44 h-32 rounded-[10px] object-cover"
+          src="https://kliqueainternacional.vteximg.com.br/arquivos/Eficiencia-velocidad-logis-vendeaqui.png"
+          alt="Eficiencia y velocidad" />
+      </div>
+
+      <div class="flex-1 min-w-[500px] px-7 py-2.5 bg-indigo-50 rounded-[10px] flex justify-start items-center gap-3.5">
+        <div class="flex-1 inline-flex flex-col justify-center items-start gap-3.5">
+          <div class="self-stretch justify-center text-blue-950 text-xl font-bold font-['Montserrat'] leading-8">
+            Crecimiento sin límites
+          </div>
+          <div class="self-stretch justify-center text-zinc-600 text-base font-normal font-['Montserrat'] leading-5">
+            Expande tu negocio hacia nuevos mercados internacionales con confianza y soporte constante.
+          </div>
+        </div>
+        <img class="w-44 h-32 rounded-[10px] object-cover"
+          src="https://kliqueainternacional.vteximg.com.br/arquivos/crecimientosinlimites.png"
+          alt="Crecimiento sin límites" />
+      </div>
     </div>
-    <a href="#contacto" class="px-8 py-4 md:px-14 md:py-7 bg-sky-600 rounded-[47.27px] inline-flex justify-start items-center gap-2 hover:bg-cyan-700 transition">
-      <span class="text-center text-white text-base md:text-xl font-semibold leading-5">Contáctanos</span>
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-      </svg>
+  </div>
+
+  <section >
+
+    <!-- Carrusel móvil -->
+    <div class="md:hidden swiper swiper-logistica pl-6">
+      <div class="swiper-wrapper mb-12">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide w-full">
+          <div
+            class="bg-[#f0f4ff] rounded-xl p-5 shadow border flex flex-col items-center text-center w-full h-[350px]">
+            <div class="mb-4">
+              <h3 class="font-bold text-[#030389]">Servicio integral</h3>
+              <p class="text-sm mt-2 text-gray-700">
+                Desde almacenamiento hasta entregas, nosotros nos encargamos de todo.
+              </p>
+            </div>
+            <div class="w-full overflow-hidden rounded-xl mt-2">
+              <img src="https://kliqueainternacional.vteximg.com.br/arquivos/serviciointegral.jpg"
+                alt="Servicio integral" class="w-full h-auto object-cover rounded-md" style="max-height: 200px;" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide w-full">
+          <div
+            class="bg-[#f0f4ff] rounded-xl p-5 shadow border flex flex-col items-center text-center w-full h-[350px]">
+            <div class="mb-4">
+              <h3 class="font-bold text-[#030389]">Eficiencia y velocidad</h3>
+              <p class="text-sm mt-2 text-gray-700">
+                Tiempos de envío óptimos para satisfacer las expectativas de tus clientes.
+              </p>
+            </div>
+            <div class="w-full overflow-hidden rounded-xl mt-2">
+              <img src="https://kliqueainternacional.vteximg.com.br/arquivos/Eficiencia-velocidad-logis-vendeaqui.png"
+                alt="Eficiencia y velocidad" class="w-full h-auto object-cover rounded-md" style="max-height: 200px;" />
+            </div>
+          </div>
+        </div>
+
+        <!--Slide3-->
+        <div class="swiper-slide w-full">
+          <div
+            class="bg-[#f0f4ff] rounded-xl p-5 shadow border flex flex-col items-center text-center w-full h-[350px]">
+            <div class="mb-4">
+              <h3 class="font-bold text-[#030389]">Crecimiento sin límites</h3>
+              <p class="text-sm mt-2 text-gray-700">
+                Expande tu negocio hacia nuevos mercados internacionales con confianza y soporte constante.
+              </p>
+            </div>
+            <div class="w-full overflow-hidden rounded-xl mt-2">
+              <img src="https://kliqueainternacional.vteximg.com.br/arquivos/crecimientosinlimites.png"
+                alt="Crecimiento sin límites" class="w-full h-auto object-cover rounded-md"
+                style="max-height: 200px;" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination mt-6"></div>
+    </div>
+
+  </section>
+<!-- Soporte humano -->
+<div class="mb-8 mx-auto w-96 px-5 pt-5 flex justify-between items-center md:w-[1280px] md:max-w-full md:px-12 md:pt-0">
+  <div class="flex-1 p-5 bg-indigo-50 rounded-[10px] inline-flex flex-col justify-start items-start gap-3.5 md:px-7 md:py-5 md:flex-row md:justify-between md:items-center md:gap-0">
+    <div class="self-stretch inline-flex flex-col justify-start items-start gap-3.5 md:flex-1 md:pr-12 md:justify-center md:gap-2.5">
+      <div class="self-stretch justify-start text-blue-950 text-xl font-bold font-['Montserrat'] leading-6 md:w-[844px] md:max-w-full md:text-3xl md:leading-10">
+        Soporte humano en cada etapa
+      </div>
+      <div class="self-stretch justify-start text-zinc-600 text-sm font-normal font-['Montserrat'] leading-4 md:text-base md:leading-5">
+        No estás solo. Nuestro equipo logístico te acompaña en cada fase del proceso<br />
+        para que siempre tengas claridad y respaldo. ¿Tienes dudas? Nuestro equipo está para apoyarte.
+      </div>
+    </div>
+    <a href="#contacto" data-icon-left="false" data-icon-right="true" data-size="Smaller" data-type="Primary"
+      class="self-stretch px-4 py-3.5 bg-sky-600 rounded-[30px] inline-flex justify-center items-center gap-2 hover:bg-cyan-700 transition md:self-auto md:px-14 md:py-7 md:rounded-[47.27px] md:justify-start">
+      <div class="text-center justify-start text-white text-sm font-bold font-['Montserrat'] leading-5 md:text-xl md:font-['DM_Sans']">Contáctanos</div>
+      <div class="w-3.5 h-3.5 relative overflow-hidden md:w-5 md:h-5">
+        <div class="w-1.5 h-2.5 left-[7.84px] top-[2.21px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-white md:w-2 md:h-3.5 md:left-[10.45px] md:top-[2.95px] md:outline-[1.67px] md:outline-offset-[-0.83px]"></div>
+        <div class="w-3 h-0 left-[1.88px] top-[7.50px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-white md:w-3.5 md:left-[2.50px] md:top-[10px] md:outline-[1.67px] md:outline-offset-[-0.83px]"></div>
+      </div>
     </a>
   </div>
 </div>
-  
-   <script>
-  function animateLogo(event) {
-    event.preventDefault(); // Evita la navegación inmediata
 
-    const logo = document.getElementById('logo');
-    const link = event.currentTarget.getAttribute('href');
+  <script>
+    function animateLogo(event) {
+      event.preventDefault(); // Evita la navegación inmediata
 
-    logo.classList.add('rotate-12', 'scale-105');
+      const logo = document.getElementById('logo');
+      const link = event.currentTarget.getAttribute('href');
 
-    // Esperar que termine la animación antes de redirigir
-    setTimeout(() => {
-      logo.classList.remove('rotate-12', 'scale-105');
-      window.location.href = link;
-    }, 300); // Mismo tiempo que tu animación
-  }
-</script>
+      logo.classList.add('rotate-12', 'scale-105');
+
+      // Esperar que termine la animación antes de redirigir
+      setTimeout(() => {
+        logo.classList.remove('rotate-12', 'scale-105');
+        window.location.href = link;
+      }, 300); // Mismo tiempo que tu animación
+    }
+  </script>
 
 
 
-    <!--animaciones del menu-->
+  <!--animaciones del menu-->
 
-<span class="hidden translate-x-1.5 pl-3"></span>
- <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenu = document.getElementById('mobile-menu');
-    const closeBtn = document.getElementById('menu-close');
+  <span class="hidden translate-x-1.5 pl-3"></span>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeBtn = document.getElementById('menu-close');
 
-    // Cierre del menú al hacer clic en el botón cerrar
-    closeBtn?.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-    });
+      // Cierre del menú al hacer clic en el botón cerrar
+      closeBtn?.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
 
-    // Seleccionar todos los <a> dentro del menú móvil (incluye submenu)
-    const menuLinks = mobileMenu.querySelectorAll('a');
+      // Seleccionar todos los <a> dentro del menú móvil (incluye submenu)
+      const menuLinks = mobileMenu.querySelectorAll('a');
 
-    menuLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevenir navegación inmediata
+      menuLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault(); // Prevenir navegación inmediata
 
-        // Agrega animación de rebote (solo si no está ya en animación)
-        link.classList.add('pl-3', 'font-medium'); // Cambio visual
-        link.classList.add('duration-200', 'transition-all'); // Asegura transición
+          // Agrega animación de rebote (solo si no está ya en animación)
+          link.classList.add('pl-3', 'font-medium'); // Cambio visual
+          link.classList.add('duration-200', 'transition-all'); // Asegura transición
 
-        // Rebote con clase temporal
-        link.classList.add('translate-x-1.5');
-        setTimeout(() => {
-          link.classList.remove('translate-x-1.5');
-        }, 200);
+          // Rebote con clase temporal
+          link.classList.add('translate-x-1.5');
+          setTimeout(() => {
+            link.classList.remove('translate-x-1.5');
+          }, 200);
 
-        // Cierra el menú tras un pequeño delay y redirecciona
-        const href = link.getAttribute('href');
-        setTimeout(() => {
-          mobileMenu.classList.add('hidden');
-          window.location.href = href;
-        }, 250); // Da tiempo al efecto visual
+          // Cierra el menú tras un pequeño delay y redirecciona
+          const href = link.getAttribute('href');
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+            window.location.href = href;
+          }, 250); // Da tiempo al efecto visual
+        });
       });
     });
-  });
-</script>
+  </script>
 
 
 
-    
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  new Swiper(".swiper-logistica", {
-    slidesPerView: 1.5,
-    spaceBetween: 20,
-    pagination: {
-      el: ".swiper-logistica .swiper-pagination",
-      clickable: true,
-    },
-  });
-</script>
- <!--menuresponsivehome   -->
- <script >
-  document.getElementById('menu-toggle').addEventListener('click', function () {
-    document.getElementById('mobile-menu').classList.remove('hidden');
-  });
 
-  document.getElementById('menu-close').addEventListener('click', function () {
-    document.getElementById('mobile-menu').classList.add('hidden');
-  });
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper(".swiper-logistica", {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+      pagination: {
+        el: ".swiper-logistica .swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+  <!--menuresponsivehome   -->
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      document.getElementById('mobile-menu').classList.remove('hidden');
+    });
 
-  function toggleSubmenu() {
-    const submenu = document.getElementById('submenu');
-    const arrowIcon = document.getElementById('arrow-icon');
-    submenu.classList.toggle('hidden');
-    arrowIcon.classList.toggle('rotate-180');
-  }
+    document.getElementById('menu-close').addEventListener('click', function () {
+      document.getElementById('mobile-menu').classList.add('hidden');
+    });
 
-</script>
-  
-</body>
+    function toggleSubmenu() {
+      const submenu = document.getElementById('submenu');
+      const arrowIcon = document.getElementById('arrow-icon');
+      submenu.classList.toggle('hidden');
+      arrowIcon.classList.toggle('rotate-180');
+    }
+
+  </script>
 
 
 <!-- Call to action -->
-  <section class="hidden md:block w-full">
-  <div class="relative h-[300px] bg-cover bg-no-repeat bg-left" style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/baner.jpg');">
+<section class="hidden md:block w-full">
+  <div class="relative h-[300px] bg-cover bg-no-repeat bg-left"
+    style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/baner.jpg');">
 
     <!-- Gradiente solo visible en md y adelante -->
-    <div class="absolute inset-0 bg-gradient-to-r from-black/5 via-[#000030]/60 to-[#000066]/90 z-0"></div>
+
 
     <!-- Contenido -->
     <div class="absolute inset-0 flex items-center justify-center md:justify-end px-6 md:px-16 z-10">
-      <div class="text-left md:text-right text-white max-w-xl md:mr-[10%] ">
-        <h2 class="text-3xl font-extrabold mb-4 leading-tight">
-          Haz historia en el eCommerce...
-        </h2>
-        <p class="text-base font-medium lg:text-lg mb-6 leading-relaxed">
-          Kliquea es más que un marketplace:<br class="hidden lg:block" />
-          es el impulso que tu marca necesita para crecer a otro nivel.
-        </p>
-        <a
-          href="#"
-          class="bg-[#ff7a00] hover:bg-[#e36900] transition text-white font-bold py-3 px-10 rounded-full text-base lg:text-lg inline-block"
-        >
-          Regístrate y comienza ya
-        </a>
+      <div class="w-[1280px] p-12 inline-flex justify-end items-center gap-7">
+        <div class="w-[652px] pl-12 inline-flex flex-col justify-center items-start gap-3.5">
+          <div class="self-stretch justify-start text-white text-4xl font-bold font-['Montserrat'] leading-[50px]">Haz
+            historia en el eCommerce...</div>
+          <div class="self-stretch justify-start text-white text-base font-normal font-['Montserrat'] leading-5">Kliquea
+            es más que un marketplace:<br />es el impulso que tu marca necesita para crecer a otro nivel.</div>
+          <div data-icon-left="false" data-icon-right="false" data-size="Large" data-type="Primary"
+            class="px-14 py-7 bg-orange-500 rounded-[47.27px] inline-flex justify-start items-start gap-2">
+            <div class="text-center justify-start text-white text-lg font-bold font-['Montserrat'] leading-4">
+              <a href="https://share.hsforms.com/21cz14lO0QpKSnYGNtEbW1gtbolg">
+
+                Regístrate
+                y comienza ya
+              </a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -537,10 +626,8 @@
 
 
 <!-- Imagen de fondo para móvil -->
-<section
-  class="flex md:hidden bg-cover bg-center h-[700px] items-center text-white px-6 pb-10"
-  style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivosbannerfootermovil.png');"
->
+<section class="flex md:hidden bg-cover bg-center h-[700px] items-center text-white px-6 pb-10"
+  style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/bannerfootermovil.png');">
   <div class="w-full text-center mt-[250px]">
     <div class="max-w-md mx-auto ">
       <h2 class="text-4xl font-extrabold mb-4 leading-tight">
@@ -549,10 +636,8 @@
       <p class="text-base mb-6 leading-relaxed">
         Kliquea es más que un marketplace: es el impulso que tu marca necesita para crecer a otro nivel.
       </p>
-      <a
-        href="#"
-        class="bg-[#ff7a00] hover:bg-[#e36900] transition text-white font-bold py-5 px-9 rounded-full text-base inline-block"
-      >
+      <a href="https://share.hsforms.com/21cz14lO0QpKSnYGNtEbW1gtbolg"
+        class="bg-[#ff7a00] hover:bg-[#e36900] transition text-white font-bold py-5 px-9 rounded-full text-base inline-block">
         Regístrate y comienza ya
       </a>
     </div>
@@ -561,39 +646,97 @@
 
 
 
+
+
 <!-- Footer -->
-<footer class="bg-blue-50 px-6 md:px-16 py-8">
+<!-- Footer -->
+<footer class="bg-blue-50  md:px-16 py-4">
   <!-- Navegación y redes -->
-  <div class="flex flex-col md:flex-row md:justify-between items-center gap-4 md:gap-0 mb-4">
-    <!-- Links de navegación -->
-    <div class="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-[#141B5B] font-medium">
-      <a href="#quienes-somos" class="hover:underline">Quiénes somos</a>
-      <a href="#innovadores" class="hover:underline">Únete a nuestra tribu de innovadores</a>
-      <a href="#ayuda" class="hover:underline">¿Necesitas ayuda?</a>
-    </div>
+  <div class="mb-4">
+    <!-- Mobile version -->
+    <div class="self-stretch px-5 inline-flex flex-col justify-center items-start gap-2.5 md:hidden">
+      <div class="inline-flex justify-start items-start">
+        <div class="flex justify-start items-center gap-1.5">
+          <div class="text-center justify-start text-blue-950 text-xs font-normal font-['Montserrat'] leading-5">Quiénes
+            somos</div>
+        </div>
+      </div>
+      <div class="inline-flex justify-start items-start">
+        <div class="flex justify-start items-center gap-1.5">
+          <div class="text-center justify-start text-blue-950 text-xs font-normal font-['Montserrat'] leading-5">Únete a
+            nuestra tribu de innovadores</div>
+        </div>
+      </div>
+      <div class="inline-flex justify-start items-start">
+        <div class="flex justify-start items-center gap-1.5">
+          <div class="text-center justify-start text-blue-950 text-xs font-normal font-['Montserrat'] leading-5">
+            ¿Necesitas ayuda?</div>
+        </div>
+      </div>
+      <!-- Redes sociales mobile -->
+      <div class="sm:hidden md:hidden md:flex md:flex-row md:justify-betweenflex items-center flex gap-4  pb-2">
 
-    <!-- Redes sociales -->
-    <div class="flex items-center gap-4">
-      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/Twitter2.png" alt="X" class="h-4 w-4"></a>
-      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/Facebook.png" alt="Facebook" class="h-7 w-7"></a>
-      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/Instagram.png" alt="Instagram" class="h-7 w-7"></a>
-      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/TikTok.png" alt="TikTok" class="h-5 w-5"></a>
-      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/LinkedIn.png" alt="LinkedIn" class="h-4 w-4"></a>
-    </div>
+        <a href="https://www.facebook.com/share/1Am4hAYtzV/"><img
+            src="https://kliqueainternacional.vteximg.com.br/arquivos/Facebook.png" alt="Facebook" class="h-7 w-7"></a>
+        <a href="https://www.instagram.com/kliquea_oficial?igsh=dDY3Z2txZ3R6N2Ni"><img
+            src="https://kliqueainternacional.vteximg.com.br/arquivos/Instagram.png" alt="Instagram"
+            class="h-7 w-7"></a>
 
-    <!-- Sello de confianza 
-    <div class="ml-4">
-      <img src="https://kliqueainternacional.vteximg.com.br/arquivos/sellodeconfianza.png" alt="Sello de confianza" class="h-14 w-14">
+        <a href="https://www.linkedin.com/company/kliquea-marketplace/"><img
+            src="https://kliqueainternacional.vteximg.com.br/arquivos/LinkedIn.png" alt="LinkedIn" class="h-4 w-4"></a>
+      </div>
+      <!-- Línea y derechos -->
+      <div class="">
+
+        <hr class="border-t border-blue-100 my-4">
+        <p class="text-[8px] md:text-xs text-center text-gray-500">
+          Copyright © 2026 Kliquea |
+          <a href="#terminos" class="hover:underline">Términos y condiciones</a> •
+          <a href="#privacidad" class="hover:underline">Política de privacidad</a>
+        </p>
+      </div>
     </div>
   </div>
-  -->
-  <!-- Línea y derechos -->
-  <hr class="border-t border-blue-100 my-4">
-  <p class="text-xs text-center text-gray-500">
-    Copyright © 2026 Kliquea |
-    <a href="#terminos" class="hover:underline">Términos y condiciones</a> •
-    <a href="#privacidad" class="hover:underline">Política de privacidad</a>
-  </p>
+
+
+  <!-- Desktop version -->
+  <div class="hidden md:flex md:flex-col md:justify-between gap-4 md:gap-0">
+    <!-- Links de navegación y redes sociales -->
+    <div class="flex items-center justify-between">
+      <!-- Links de navegación -->
+      <div class="flex flex-wrap justify-start gap-6 text-sm text-[#141B5B] font-medium">
+        <a href="#quienes-somos" class="hover:underline">Quiénes somos</a>
+        <a href="https://www.kliquea.com.do/" class="hover:underline">Tienda local</a>
+        <a href="https://www.kliquea.com/" class="hover:underline">Tienda internacional</a>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="flex items-center gap-4">
+        <a href="https://www.facebook.com/share/1Am4hAYtzV/"><img
+            src="https://kliqueainternacional.vteximg.com.br/arquivos/Facebook.png" alt="Facebook" class="h-7 w-7"></a>
+        <a href="https://www.instagram.com/kliquea_oficial?igsh=dDY3Z2txZ3R6N2Ni"><img
+            src="https://kliqueainternacional.vteximg.com.br/arquivos/Instagram.png" alt="Instagram">
+        <a href="https://www.linkedin.com/company/kliquea-marketplace/"><img
+            src="https://kliqueainternacional.vteximg.com.br/arquivos/LinkedIn.png" alt="LinkedIn" class="h-4 w-4"></a>
+      </div>
+    </div>
+
+
+
+
+    <!-- Línea y derechos Desktop -->
+    <div class=" inline-block">
+      <hr class="border-t border-blue-100 my-4">
+      <p class="text-[8px] md:text-xs text-center text-gray-500">
+        Copyright © 2026 Kliquea |
+        <a href="#https://www.kliquea.com.do/informacion-legal/" class="hover:underline">Términos y condiciones</a> •
+        <a href="https://www.kliquea.com/informacion-legal/tratamiento-datos-personales" class="hover:underline">Política de privacidad</a>
+      </p>
+    </div>
+
+  </div>
+
+
 </footer>
 
 </html>

@@ -23,8 +23,19 @@
   .accordion-content.open {
     max-height: 1000px; /* valor alto para permitir expansión */
     opacity: 1;
+
+  
+  
   }
-</style>
+  
+  
+  .beneficios-swiper {
+      --swiper-pagination-color: #141B5B;
+      --swiper-pagination-bullet-inactive-color: #0082CD;
+      --swiper-pagination-bullet-inactive-opacity: 1;
+    }
+
+  </style>
 
 </head>
 
@@ -179,10 +190,12 @@ Aquí te contamos como empezar
         Kliquea es más que un marketplace: es el impulso que tu marca necesita para crecer a otro nivel.
       </p>
 
-        <button
-          class=" bg-[#F4771D] text-white px-6 py-3 rounded-full transition-transform transform hover:scale-105">
-          Regístrate y comienza ya
-        </button>
+      <!-- <button
+      class="bg-[#F4771D] text-white px-8 md:px-14 py-4 md:py-7 rounded-full transition-transform transform hover:scale-105">  <a
+      href="https://share.hsforms.com/21cz14lO0QpKSnYGNtEbW1gtbolg"
+       target="_blank">
+      Regístrate y comienza ya</a>
+    </button> -->
     </div>
   </div>
 </section>
@@ -432,7 +445,7 @@ Aquí te contamos como empezar
       
        <!--Boton de Contacto azul-->
 
-      <div class="hidden md:block  fixed bottom-[500px] right-[15px] z-50">
+      <div class="hidden md:block  fixed bottom-[50px] right-[15px] z-50">
         <button class="flex items-center transition-transform duration-200 hover:scale-105">
           <img src="https://kliqueainternacional.vteximg.com.br/arquivos/contacto.png" alt="Chat Icon" class="w-20 h-20 mr-1">
         </button>
@@ -1095,28 +1108,33 @@ Es parte fundamental de tu formalización como vendedor y permite llevar un cont
 
 </body>
 <!-- Call to action -->
-  <section class="hidden md:block w-full">
-  <div class="relative h-[300px] bg-cover bg-no-repeat bg-left" style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/baner.jpg');">
+<!-- Call to action -->
+<section class="hidden md:block w-full">
+  <div class="relative h-[300px] bg-cover bg-no-repeat bg-left"
+    style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/baner.jpg');">
 
     <!-- Gradiente solo visible en md y adelante -->
-    <div class="absolute inset-0 bg-gradient-to-r from-black/5 via-[#000030]/60 to-[#000066]/90 z-0"></div>
+
 
     <!-- Contenido -->
     <div class="absolute inset-0 flex items-center justify-center md:justify-end px-6 md:px-16 z-10">
-      <div class="text-left md:text-right text-white max-w-xl md:mr-[10%] ">
-        <h2 class="text-3xl font-extrabold mb-4 leading-tight">
-          Haz historia en el eCommerce...
-        </h2>
-        <p class="text-base font-medium lg:text-lg mb-6 leading-relaxed">
-          Kliquea es más que un marketplace:<br class="hidden lg:block" />
-          es el impulso que tu marca necesita para crecer a otro nivel.
-        </p>
-        <a
-          href="#"
-          class="bg-[#ff7a00] hover:bg-[#e36900] transition text-white font-bold py-3 px-10 rounded-full text-base lg:text-lg inline-block"
-        >
-          Regístrate y comienza ya
-        </a>
+      <div class="w-[1280px] p-12 inline-flex justify-end items-center gap-7">
+        <div class="w-[652px] pl-12 inline-flex flex-col justify-center items-start gap-3.5">
+          <div class="self-stretch justify-start text-white text-4xl font-bold font-['Montserrat'] leading-[50px]">Haz
+            historia en el eCommerce...</div>
+          <div class="self-stretch justify-start text-white text-base font-normal font-['Montserrat'] leading-5">Kliquea
+            es más que un marketplace:<br />es el impulso que tu marca necesita para crecer a otro nivel.</div>
+          <div data-icon-left="false" data-icon-right="false" data-size="Large" data-type="Primary"
+            class="px-14 py-7 bg-orange-500 rounded-[47.27px] inline-flex justify-start items-start gap-2">
+            <div class="text-center justify-start text-white text-lg font-bold font-['Montserrat'] leading-4">
+              <a href="https://share.hsforms.com/21cz14lO0QpKSnYGNtEbW1gtbolg">
+
+                Regístrate
+                y comienza ya
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1128,10 +1146,8 @@ Es parte fundamental de tu formalización como vendedor y permite llevar un cont
 
 
 <!-- Imagen de fondo para móvil -->
-<section
-  class="flex md:hidden bg-cover bg-center h-[700px] items-center text-white px-6 pb-10"
-  style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/bannerfootermovil.png');"
->
+<section class="flex md:hidden bg-cover bg-center h-[700px] items-center text-white px-6 pb-10"
+  style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/bannerfootermovil.png');">
   <div class="w-full text-center mt-[250px]">
     <div class="max-w-md mx-auto ">
       <h2 class="text-4xl font-extrabold mb-4 leading-tight">
@@ -1140,10 +1156,8 @@ Es parte fundamental de tu formalización como vendedor y permite llevar un cont
       <p class="text-base mb-6 leading-relaxed">
         Kliquea es más que un marketplace: es el impulso que tu marca necesita para crecer a otro nivel.
       </p>
-      <a
-        href="#"
-        class="bg-[#ff7a00] hover:bg-[#e36900] transition text-white font-bold py-5 px-9 rounded-full text-base inline-block"
-      >
+      <a href="https://share.hsforms.com/21cz14lO0QpKSnYGNtEbW1gtbolg"
+        class="bg-[#ff7a00] hover:bg-[#e36900] transition text-white font-bold py-5 px-9 rounded-full text-base inline-block">
         Regístrate y comienza ya
       </a>
     </div>
@@ -1152,39 +1166,97 @@ Es parte fundamental de tu formalización como vendedor y permite llevar un cont
 
 
 
-<!-- Footer -->
-<footer class="bg-blue-50 px-6 md:px-16 py-8">
-  <!-- Navegación y redes -->
-  <div class="flex flex-col md:flex-row md:justify-between items-center gap-4 md:gap-0 mb-4">
-    <!-- Links de navegación -->
-    <div class="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-[#141B5B] font-medium">
-      <a href="#quienes-somos" class="hover:underline">Quiénes somos</a>
-      <a href="#innovadores" class="hover:underline">Únete a nuestra tribu de innovadores</a>
-      <a href="#ayuda" class="hover:underline">¿Necesitas ayuda?</a>
-    </div>
 
-    <!-- Redes sociales -->
-    <div class="flex items-center gap-4">
-      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/Twitter2.png" alt="X" class="h-4 w-4"></a>
-      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/Facebook.png" alt="Facebook" class="h-7 w-7"></a>
-      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/Instagram.png" alt="Instagram" class="h-7 w-7"></a>
-      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/TikTok.png" alt="TikTok" class="h-5 w-5"></a>
-      <a href="#"><img src="https://kliqueainternacional.vteximg.com.br/arquivos/LinkedIn.png" alt="LinkedIn" class="h-4 w-4"></a>
-    </div>
-    <!-- Sello de confianza 
-    <div class="ml-4">
-      <img src="https://kliqueainternacional.vteximg.com.br/arquivos/sellodeconfianza.png" alt="Sello de confianza" class="h-14 w-14">
+
+<!-- Footer -->
+<!-- Footer -->
+<footer class="bg-blue-50  md:px-16 py-4">
+  <!-- Navegación y redes -->
+  <div class="mb-4">
+    <!-- Mobile version -->
+    <div class="self-stretch px-5 inline-flex flex-col justify-center items-start gap-2.5 md:hidden">
+      <div class="inline-flex justify-start items-start">
+        <div class="flex justify-start items-center gap-1.5">
+          <div class="text-center justify-start text-blue-950 text-xs font-normal font-['Montserrat'] leading-5">Quiénes
+            somos</div>
+        </div>
+      </div>
+      <div class="inline-flex justify-start items-start">
+        <div class="flex justify-start items-center gap-1.5">
+          <div class="text-center justify-start text-blue-950 text-xs font-normal font-['Montserrat'] leading-5">Únete a
+            nuestra tribu de innovadores</div>
+        </div>
+      </div>
+      <div class="inline-flex justify-start items-start">
+        <div class="flex justify-start items-center gap-1.5">
+          <div class="text-center justify-start text-blue-950 text-xs font-normal font-['Montserrat'] leading-5">
+            ¿Necesitas ayuda?</div>
+        </div>
+      </div>
+      <!-- Redes sociales mobile -->
+      <div class="sm:hidden md:hidden md:flex md:flex-row md:justify-betweenflex items-center flex gap-4  pb-2">
+
+        <a href="https://www.facebook.com/share/1Am4hAYtzV/"><img
+            src="https://kliqueainternacional.vteximg.com.br/arquivos/Facebook.png" alt="Facebook" class="h-7 w-7"></a>
+        <a href="https://www.instagram.com/kliquea_oficial?igsh=dDY3Z2txZ3R6N2Ni"><img
+            src="https://kliqueainternacional.vteximg.com.br/arquivos/Instagram.png" alt="Instagram"
+            class="h-7 w-7"></a>
+
+        <a href="https://www.linkedin.com/company/kliquea-marketplace/"><img
+            src="https://kliqueainternacional.vteximg.com.br/arquivos/LinkedIn.png" alt="LinkedIn" class="h-4 w-4"></a>
+      </div>
+      <!-- Línea y derechos -->
+      <div class="">
+
+        <hr class="border-t border-blue-100 my-4">
+        <p class="text-[8px] md:text-xs text-center text-gray-500">
+          Copyright © 2026 Kliquea |
+          <a href="#terminos" class="hover:underline">Términos y condiciones</a> •
+          <a href="#privacidad" class="hover:underline">Política de privacidad</a>
+        </p>
+      </div>
     </div>
   </div>
-  -->
 
-  <!-- Línea y derechos -->
-  <hr class="border-t border-blue-100 my-4">
-  <p class="text-xs text-center text-gray-500">
-    Copyright © 2026 Kliquea |
-    <a href="#terminos" class="hover:underline">Términos y condiciones</a> •
-    <a href="#privacidad" class="hover:underline">Política de privacidad</a>
-  </p>
+
+  <!-- Desktop version -->
+  <div class="hidden md:flex md:flex-col md:justify-between gap-4 md:gap-0">
+    <!-- Links de navegación y redes sociales -->
+    <div class="flex items-center justify-between">
+      <!-- Links de navegación -->
+      <div class="flex flex-wrap justify-start gap-6 text-sm text-[#141B5B] font-medium">
+        <a href="#quienes-somos" class="hover:underline">Quiénes somos</a>
+        <a href="https://www.kliquea.com.do/" class="hover:underline">Tienda local</a>
+        <a href="https://www.kliquea.com/" class="hover:underline">Tienda internacional</a>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="flex items-center gap-4">
+        <a href="https://www.facebook.com/share/1Am4hAYtzV/"><img
+            src="https://kliqueainternacional.vteximg.com.br/arquivos/Facebook.png" alt="Facebook" class="h-7 w-7"></a>
+        <a href="https://www.instagram.com/kliquea_oficial?igsh=dDY3Z2txZ3R6N2Ni"><img
+            src="https://kliqueainternacional.vteximg.com.br/arquivos/Instagram.png" alt="Instagram">
+        <a href="https://www.linkedin.com/company/kliquea-marketplace/"><img
+            src="https://kliqueainternacional.vteximg.com.br/arquivos/LinkedIn.png" alt="LinkedIn" class="h-4 w-4"></a>
+      </div>
+    </div>
+
+
+
+
+    <!-- Línea y derechos Desktop -->
+    <div class=" inline-block">
+      <hr class="border-t border-blue-100 my-4">
+      <p class="text-[8px] md:text-xs text-center text-gray-500">
+        Copyright © 2026 Kliquea |
+        <a href="#https://www.kliquea.com.do/informacion-legal/" class="hover:underline">Términos y condiciones</a> •
+        <a href="https://www.kliquea.com/informacion-legal/tratamiento-datos-personales" class="hover:underline">Política de privacidad</a>
+      </p>
+    </div>
+
+  </div>
+
+
 </footer>
 
 </html>

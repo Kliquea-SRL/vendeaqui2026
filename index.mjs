@@ -18,6 +18,9 @@ export const handler = async (event) => {
     "/default/requisitos": "requisitos.html",
     "/default/servicios": "servicios.html",
     "/default/alianzas": "alianzas.html",
+    "/default/form": "form.html",
+    "/form": "form.html"
+
   };
 
   if (routesMap[route]) {
