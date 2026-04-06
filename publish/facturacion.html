@@ -17,74 +17,80 @@
     }
   </style>
 </head>
-  <body class="bg-white text-white font-[Montserrat]">    
+  <body class="bg-white text-white font-[Montserrat] pt-[65px] md:pt-[85px]">    
 
  
 <!-- Navbar -->
 <nav class="bg-white w-full px-6 md:px-16 py-4 shadow-sm fixed top-0 left-0 z-50">
   <div class="flex items-center justify-between">
 
-    <!-- Logo -->
-  <div class="flex items-center">
-  <a href="/default/vendeaqui" onclick="animateLogo(event)">
-    <img id="logo" src="https://kliqueainternacional.vteximg.com.br/arquivos/logoKliquea-2025 1.svg" alt="Kliquea Logo"
-      class="h-12 w-auto transition-transform duration-150 ease-in-out" />
-  </a>
-</div>
-
-    <!-- Menú escritorio -->
-    <div class="hidden md:flex items-center gap-8 text-[#030389] text-sm font-medium">
-      <!-- Dropdown -->
-      <div class="relative group">
-        <button class="flex items-center hover:font-bold text-[#030389]">
-          Comienza a vender
-          <svg class="ml-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd"
-              d="M5.23 7.21a.75.75 0 011.06.02L10 10.939l3.71-3.71a.75.75 0 011.08 1.04l-4.24 4.24a.75.75 0 01-1.08 0L5.25 8.27a.75.75 0 01-.02-1.06z"
-              clip-rule="evenodd" />
-          </svg>
-        </button>
-
-        <!-- Dropdown content -->
-        <div class="absolute top-full right-2 mt-2 w-64 bg-white shadow-md border border-gray-200 group-hover:opacity-100 opacity-0 invisible group-hover:visible transition-all duration-200 delay-100 z-50"
-          onmouseover="this.classList.add('opacity-100', 'visible')"
-          onmouseout="this.classList.remove('opacity-100', 'visible')">
-          <a href="/default/integraciones" class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Integraciones</a>
-          <hr class="border-gray-200 mx-6" />
-          <a href="/default/logistica" class="block px-6 py-6 text-sm text-gray-400 ttransition-all duration-200 ease-in-out hover:font-bold hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Logística</a>
-          <hr class="border-gray-200 mx-6" />
-          <a href="/default/servicios" class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold   hover:text-[#030389] text-[#030389] active:translate-x-1 active:scale-95">Servicios</a>
-          <hr class="border-gray-200 mx-6" />
-          <a href="/default/facturacion" class="block px-6 py-6 text-sm text-gray-400 transition-all duration-200 ease-in-out hover:font-bold  hover:text-[#030389] active:translate-x-1 active:scale-95">Facturación</a>
-        </div>
+        <!-- Logo -->
+      <div class="flex items-center">
+        <a href="/default/vendeaqui" onclick="animateLogo(event)">
+          <img id="logo" src="https://kliqueainternacional.vteximg.com.br/arquivos/logoKliquea-2025 1.svg"
+            alt="Kliquea Logo" class="w-20 h-6  md:w-44 md: md:h-12  transition-transform duration-150 ease-in-out" />
+        </a>
       </div>
 
+      <!-- Menú escritorio -->
+      <div class="hidden md:flex items-center gap-8 text-[#141B5B] text-base font-normal">
+        <!-- Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center hover:font-bold text-[#141B5B] text-base font-normal ">
+            Comienza a vender
+            <svg class="ml-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 10.939l3.71-3.71a.75.75 0 011.08 1.04l-4.24 4.24a.75.75 0 01-1.08 0L5.25 8.27a.75.75 0 01-.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+
+          <!-- Dropdown content -->
+          <div
+            class="absolute top-full right-2 mt-2 w-64 bg-white shadow-md border border-gray-200 group-hover:opacity-100 opacity-0 invisible group-hover:visible transition-all duration-200 delay-100 z-50"
+            onmouseover="this.classList.add('opacity-100', 'visible')"
+            onmouseout="this.classList.remove('opacity-100', 'visible')">
+            <a href="/default/integraciones"
+              class="block px-6 py-6 text-sm font-normal text-gray-400 transition-all duration-200 ease-in-out hover:font-bold hover:text-[#141B5B] text-[#141B5B] active:translate-x-1 active:scale-95">Integraciones</a>
+            <hr class="border-gray-200 mx-6" />
+            <a href="/default/logistica"
+              class="block px-6 py-6 text-sm font-normal text-gray-400 ttransition-all duration-200 ease-in-out hover:font-bold hover:text-[#141B5B] text-[#141B5B] active:translate-x-1 active:scale-95">Logística</a>
+            <hr class="border-gray-200 mx-6" />
+            <a href="/default/servicios"
+              class="block px-6 py-6 text-sm font-normal text-gray-400 transition-all duration-200 ease-in-out hover:font-bold   hover:text-[#141B5B] text-[#141B5B] active:translate-x-1 active:scale-95">Servicios</a>
+            <hr class="border-gray-200 mx-6" />
+            <a href="/default/facturacion"
+              class="block px-6 py-6 text-sm font-normal text-gray-400 transition-all duration-200 ease-in-out hover:font-bold  hover:text-[#141B5B] active:translate-x-1 active:scale-95">Facturación</a>
+          </div>
+        </div>
       <!-- Otros enlaces -->
       <a href="/default/requisitos" 
-        class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
+        class="text-[#141B5B] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
         Requisitos
       </a>
 
       <a href="/default/crecimiento" 
-        class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
+        class="text-[#141B5B] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
         Crecimiento
       </a>
 
       <a href="/default/alianzas" 
-        class="text-[#030389] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
+        class="text-[#141B5B] transition-all duration-200 ease-in-out hover:font-bold active:translate-x-1 active:scale-95">
         Alianzas y servicios
       </a>
 </div>
 
     <!-- Botón hamburguesa -->
-    <div class="md:hidden">
-      <button id="menu-toggle" class="text-[#030389] focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-    </div>
-  </div>
+     <div class="md:hidden">
+        <button id="menu-toggle" class="text-[#141B5B] focus:outline-none">
+          <svg id="icon-hamburger" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
 
 <!-- Menú móvil -->
   <div id="mobile-menu" class="fixed top-16 left-0 w-full h-[calc(100vh-4rem)] z-50 hidden bg-white">
@@ -94,18 +100,18 @@
 
       <!-- Menú lado derecho -->
       <div class="w-[60%] bg-white flex flex-col font-montserrat shadow-lg px-6 pt-6 space-y-6">
-        <!-- Botón cerrar -->
+        <!-- Botón cerrar 
         <div class="flex justify-end">
-          <button id="menu-close" class="text-[#030389] focus:outline-none">
+          <button id="menu-close" class="text-[#141B5B] focus:outline-none">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-        </div>
+        </div>-->
 
         <!-- Submenú desplegable -->
         <div>
-          <button onclick="toggleSubmenu()" class="flex justify-between items-center w-full text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pr-2 hover:font-medium">
+          <button onclick="toggleSubmenu()" class="flex justify-between items-center w-full text-[#141B5B] font-normal transition-all duration-200 ease-in-out hover:text-[#141B5B] hover:pr-2 hover:font-medium">
             <span>Comienza a vender</span>
             <svg id="arrow-icon" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="#F58220"
               viewBox="0 0 24 24">
@@ -114,23 +120,23 @@
           </button>
 
        <div id="submenu" class="hidden mt-2 pl-4 text-sm text-gray-500 space-y-6">
-          <a href="/default/integraciones" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Integraciones</a>
+          <a href="/default/integraciones" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#141B5B] hover:pl-2 hover:font-medium">Integraciones</a>
 
-          <a href="/default/logistica" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Logística</a>
+          <a href="/default/logistica" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#141B5B] hover:pl-2 hover:font-medium">Logística</a>
 
-          <a href="/default/servicios" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Servicios</a>
+          <a href="/default/servicios" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#141B5B] hover:pl-2 hover:font-medium">Servicios</a>
 
-          <a href="/default/facturacion" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Facturación</a>
+          <a href="/default/facturacion" class="block text-gray-500 font-normal transition-all duration-200 ease-in-out hover:text-[#141B5B] hover:pl-2 hover:font-medium">Facturación</a>
       </div>
 
         </div>
 
         <hr class="border-gray-200" />
-        <a href="/default/requisitos" class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Requisitos</a>
+        <a href="/default/requisitos" class="block text-[#141B5B] font-normal transition-all duration-200 ease-in-out hover:text-[#141B5B] hover:pl-2 hover:font-medium">Requisitos</a>
         <hr class="border-gray-200" />
-        <a href="/default/crecimiento" class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Crecimiento</a>
+        <a href="/default/crecimiento" class="block text-[#141B5B] font-normal transition-all duration-200 ease-in-out hover:text-[#141B5B] hover:pl-2 hover:font-medium">Crecimiento</a>
         <hr class="border-gray-200" />
-        <a href="/default/alianzas" class="block text-[#030389] font-normal transition-all duration-200 ease-in-out hover:text-[#030389] hover:pl-2 hover:font-medium">Alianzas y servicios </a>
+        <a href="/default/alianzas" class="block text-[#141B5B] font-normal transition-all duration-200 ease-in-out hover:text-[#141B5B] hover:pl-2 hover:font-medium">Alianzas y servicios </a>
       </div>
     </div>
   </div>
@@ -138,55 +144,44 @@
 
     
 
- <body class="bg-white text-[#1b1b1b] font-sans">
+ <body class="bg-white text-[#1b1b1b] font-sans pt-[80px] md:pt-[80px]">
 
-<section class="relative text-white overflow-hidden h-[500px] md:min-h-[450px]">
-  <!-- Fondos -->
-  <div class="absolute inset-0">
-    <div class="hidden md:block w-full h-full bg-cover bg-center"
-         style="background-image:url('https://kliqueainternacional.vteximg.com.br/arquivos/bannerprincipal-facturacion.png')"></div>
-    <div class="block md:hidden w-full h-full bg-cover bg-center"
-         style="background-image:url('https://kliqueainternacional.vteximg.com.br/arquivos/bannermovilfacturacion.png')"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-[#000066]"></div>
-  </div>
-
-  <section class="relative text-white overflow-hidden h-[500px] md:min-h-[450px]">
-  <!-- ... fondos ... -->
-
-  <div class="relative z-10 h-full flex items-center justify-end
-              px-8 md:px-20 lg:px-2 lg:mt-8  md:mt-8 lg:mr-24 max-w-7xl mx-auto">
-    <div class="w-full flex flex-col justify-center space-y-4
-                items-start md:items-end
-                text-left md:text-right
-                md:max-w-2xl
-                -mt-12 md:mt-0">
-
-      <!-- 1) TITULO SIN ESPACIADO EXTRA -->
-      <h2 class="text-4xl sm:text-5xl md:text-5xl font-extrabold leading-none mb-4">
-        Todo tu proceso financiero,<br class="hidden md:inline">
-        claro y estructurado
-      </h2>
-
-      <p class="hidden md:block text-lg md:text-xl leading-relaxed ">
-        Desde la carga de facturas hasta el pago en tu cuenta, Kliquea consolida, valida y te paga
-        con calendario fijo, comisiones transparentes y total control.
-      </p>
-
-      <!-- 2) BOTON: margen top en móvil + margen Izq en móvil -->
-      <button
-      class="bg-[#F4771D] text-white px-8 md:px-14 py-4 md:py-7 rounded-full transition-transform transform hover:scale-105">  <a
-      href="https://share.hsforms.com/21cz14lO0QpKSnYGNtEbW1gtbolg"
-       target="_blank">
-      Regístrate y comienza ya</a>
-    </button>
-
+  <section class="relative text-white overflow-hidden h-72 md:h-72">
+    <div class="absolute inset-0">
+      <div class="hidden md:block w-full h-full bg-cover bg-center"
+        style="background-image:url('https://kliqueainternacional.vteximg.com.br/arquivos/bannerprincipal-facturacion.png')">
+      </div>
+      <div class="block md:hidden w-full h-full bg-cover bg-center"
+        style="background-image:url('https://kliqueainternacional.vteximg.com.br/arquivos/hero-mobile-vendeaqui-factu.png')">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-l from-black/70 via-transparent to-[#000066]"></div>
     </div>
-  </div>
-</section>
 
+    <div class="relative z-10 h-full flex items-start justify-end 
+                px-8 md:pr-20 lg:pr-36 max-w-7xl ml-auto">
+      <div class="w-full pt-[90px] md:pt-12 flex flex-col justify-center space-y-4
+                    items-start md:items-end
+                    text-left md:text-right
+                    
+                  
+                    -mt-12 md:mt-0">
 
-  <!--fincontenido-->
-</section>
+        <h2 class="text-xl sm:text-5xl md:text-5xl font-bold leading-none">
+          Todo tu proceso financiero,<br class="hidden sm:block"> claro y estructurado
+        </h2>
+        <div class="self-stretch justify-start  text-white text-sm font-normal font-['Montserrat'] leading-4">
+          <p class="md:w-[705px] md:ml-auto md:block text-base leading-5 text-left md:text-right">Desde la carga de facturas hasta el pago en tu cuenta, Kliquea consolida, valida y te paga con calendario fijo, comisiones transparentes y total control.</p>
+        </div>
+
+        <!-- <button
+        class="bg-[#F4771D] text-white px-8 md:px-14 py-4 md:py-7 font-bold rounded-full transition-transform transform hover:scale-105">  <a
+        href="https://share.hsforms.com/21cz14lO0QpKSnYGNtEbW1gtbolg"
+         target="_blank">
+        Regístrate y comienza ya</a>
+      </button> -->
+      </div>
+    </div>
+  </section>
 
 
 
@@ -195,113 +190,113 @@
 <div class="hidden md:block  fixed bottom-[50px] right-[15px] z-50">
   <button class="flex items-center transition-transform duration-200 hover:scale-105">
     <img src="https://kliqueainternacional.vteximg.com.br/arquivos/contacto.png" alt="Chat Icon" class="w-20 h-20 mr-1">
+    <a href="https://wa.me/+18292599527"></a>
   </button>
 </div>
 
  <!--Fin Boton de Contacto azul-->
-
-
-
-
-  
-               <div class="md:hidden text-[#585858] text-center mt-12 italic px-10">
-      <p>"Con Kliquea, tu marca cuenta con el soporte necesario para destacarse desde el primer día: desde la integración hasta la presentación visual, te impulsamos para que tu tienda tenga un arranque exitoso."</p>
-      </div>
-    
+   
 
 
             <!-- Intro -->
-      <section class="py-10 mt-12 px-6 text-center max-w-3xl mx-auto">
-        <h2 class="text-2xl font-semibold text-[#030389] mb-4">Así gestionamos tu dinero: <br><span class="font-bold">claro, ordenado y sin sorpresas</span></h2>
-        <p class="text-gray-700 text-sm">En Kliquea, la transparencia es parte del trato.<br>Por eso te mostramos cómo funciona el proceso de facturación y pagos, paso a paso, para que sepas exactamente qué esperar después de cada venta.</p>
+      <section class="py-10  px-6 text-center max-w-3xl mx-auto ">
+        <h2 class="text-2xl font-bold text-[#141B5B] mb-4 leading-6 ">Así gestionamos tu dinero: <br>claro, ordenado y sin <br> sorpresas</span></h2>
+        <p class="text-gray-700 text-sm">En Kliquea, la transparencia es parte del trato.<br>Por eso te mostramos cómo funciona el proceso de facturación y pagos, paso a paso, para que sepas exactamente qué esperar después de cada venta. <br>
+        Aquí empieza tu relación financiera con nosotros… y sí, ¡te va a encantar!</p>
       </section>
     
 
 
 <!-- Acordeón -->
 
-         <section class="py-10 px-6 text-center max-w-3xl mx-auto">
+         <section class="py-2 px-6 text-center max-w-3xl mx-auto">
 
-  <div class="space-y-8 font-[Montserrat]">
+  <div class=" font-[Montserrat] ">
   
   <!-- Paso 1 -->
-  <div class="border-b border-gray-300 py-2">
-    <button onclick="toggleExclusiveAccordion(1)" class="flex justify-between w-full items-start text-left">
-      <div class="flex items-start space-x-3">
-        <span class="text-[#F7931E] font-bold text-2xl">01</span>
+  <div class="border-y border-gray-300 py-2">
+    <button onclick="toggleExclusiveAccordion(1)" class="flex justify-between w-full items-center text-left py-2">
+      <div class="flex items-center space-x-3">
+        <span class="text-[#F7931E] font-bold text-xl">01</span>
         <div>
-          <p class="text-[#0D1E72] font-bold">Recibes una orden, facturas tu producto</p>
+          <p class="text-[#0D1E72] font-bold flex items-center">Recibes una orden, facturas tu producto</p>
         </div>
       </div>
-      <span class="w-6 h-6" id="icon-1">
-        <img id="icon-closed-1" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" alt="Cerrado" />
-        <img id="icon-open-1" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" alt="Abierto" />
+      <span class="w-6 h-6 shrink-0 flex-none" id="icon-1">
+        <img id="icon-closed-1" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6  object-contain" alt="Cerrado" />
+        <img id="icon-open-1" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden object-contain" alt="Abierto" />
       </span>
     </button>
-    <div id="content-1" class="hidden mt-2 text-gray-500 text-sm pl-10">
-    <p class="text-left">  Cada vez que recibas una venta, verás la orden directamente en tu panel de vendedor.
+    <div id="content-1" class="hidden  text-gray-500 text-sm pl-10">
+    <p class="text-left pr-6">  Cada vez que recibas una venta, verás la orden directamente en tu panel de vendedor.
       Tú eres el emisor de la factura del producto al cliente final y cargas al sistema.
       Esto es clave para continuar el proceso logístico y financiero.</p>
     </div>
   </div>
 
   <!-- Paso 2 -->
-  <div class="border-b border-gray-300 py-2">
-    <button onclick="toggleExclusiveAccordion(2)" class="flex justify-between w-full items-center text-left">
+  <div class="border-b border-gray-300 ">
+    <button onclick="toggleExclusiveAccordion(2)" class="flex justify-between w-full items-center text-left py-4">
       <div class="flex items-center space-x-3">
-        <span class="text-[#F7931E] font-bold text-2xl">02</span>
-        <p class="text-[#0D1E72] font-bold">Consolidamos tu facturación</p>
+        <span class="text-[#F7931E] font-bold text-xl">02</span>
+        <div>
+          <p class="text-[#0D1E72] font-bold flex items-center">Consolidamos tu facturación</p>
+        </div>
       </div>
-      <span class="w-6 h-6" id="icon-2">
-        <img id="icon-closed-2" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" alt="Cerrado" />
-        <img id="icon-open-2" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" alt="Abierto" />
+      <span class="w-6 h-6 shrink-0 flex-none" id="icon-2">
+        <img id="icon-closed-2" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6  object-contain" alt="Cerrado" />
+        <img id="icon-open-2" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden object-contain" alt="Abierto" />
       </span>
     </button>
-    <div id="content-2" class="hidden mt-2 text-gray-500 text-sm pl-10">
-    <p class="text-left"> Una vez cargadas tus facturas, nuestros equipos financieros —tanto el tuyo como el de Kliquea— validan y consolidan la información. 
-Este proceso asegura que todo esté correcto, alineado y aprobado para avanzar al siguiente paso. </p>
+    <div id="content-2" class="hidden text-gray-500 text-sm pl-10">
+    <p class="text-left pr-6">Una vez cargadas tus facturas, nuestros equipos financieros —tanto el tuyo como el de Kliquea— validan y consolidan la información. 
+Este proceso asegura que todo esté correcto, alineado y aprobado para avanzar al siguiente paso.</p>
     </div>
   </div>
 
   <!-- Paso 3 -->
-  <div class="border-b border-gray-300 py-2">
-    <button onclick="toggleExclusiveAccordion(3)" class="flex justify-between w-full items-center text-left">
+  <div class="border-b border-gray-300 ">
+    <button onclick="toggleExclusiveAccordion(3)" class="flex justify-between w-full items-center text-left py-4">
       <div class="flex items-center space-x-3">
-        <span class="text-[#F7931E] font-bold text-2xl">03</span>
-        <p class="text-[#0D1E72] font-bold">Recibes factura de Kliquea por comisiones</p>
+        <span class="text-[#F7931E] font-bold text-xl">03</span>
+        <div>
+          <p class="text-[#0D1E72] font-bold flex items-center">Recibes factura de Kliquea por comisiones</p>
+        </div>
       </div>
-      <span class="w-6 h-6" id="icon-3">
-        <img id="icon-closed-3" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" alt="Cerrado" />
-        <img id="icon-open-3" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" alt="Abierto" />
+      <span class="w-6 h-6 shrink-0 flex-none" id="icon-3">
+        <img id="icon-closed-3" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6  object-contain" alt="Cerrado" />
+        <img id="icon-open-3" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden object-contain" alt="Abierto" />
       </span>
     </button>
-    <div id="content-3" class="hidden mt-2 text-gray-500 text-sm pl-10">
-      <p class="text-left"> Luego de validar las ventas, Kliquea te envía una factura que refleja el porcentaje de comisión acordado, junto con cualquier otro servicio adicional contratado (como campañas, diseño, activaciones, etc.). 
-Todo detallado, todo claro. </p>
+    <div id="content-3" class="hidden text-gray-500 text-sm pl-10">
+      <p class="text-left pr-6">Luego de validar las ventas, Kliquea te envía una factura que refleja el porcentaje de comisión acordado, junto con cualquier otro servicio adicional contratado (como campañas, diseño, activaciones, etc.). 
+Todo detallado, todo claro.</p>
     </div>
   </div>
 
   <!-- Paso 4 -->
-  <div class="border-b border-gray-300 py-2">
-    <button onclick="toggleExclusiveAccordion(4)" class="flex justify-between w-full items-center text-left">
+  <div class="border-b border-gray-300 ">
+    <button onclick="toggleExclusiveAccordion(4)" class="flex justify-between w-full items-center text-left py-4">
       <div class="flex items-center space-x-3">
-        <span class="text-[#F7931E] font-bold text-2xl">04</span>
-        <p class="text-[#0D1E72] font-bold">Recibes tu pago vía transferencia</p>
+        <span class="text-[#F7931E] font-bold text-xl">04</span>
+        <div>
+          <p class="text-[#0D1E72] font-bold flex items-center">Recibes tu pago vía transferencia</p>
+        </div>
       </div>
-      <span class="w-6 h-6" id="icon-4">
-        <img id="icon-closed-4" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6" alt="Cerrado" />
-        <img id="icon-open-4" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden" alt="Abierto" />
+      <span class="w-6 h-6 shrink-0 flex-none" id="icon-4">
+        <img id="icon-closed-4" src="https://kliqueainternacional.vteximg.com.br/arquivos/ClosedQuestion-vendeaqui.png" class="w-6 h-6  object-contain" alt="Cerrado" />
+        <img id="icon-open-4" src="https://kliqueainternacional.vteximg.com.br/arquivos/OpenQuestion-vendeaqui.png" class="w-6 h-6 hidden object-contain" alt="Abierto" />
       </span>
     </button>
-    <div id="content-4" class="hidden mt-2 text-gray-500 text-sm pl-10">
-      <p class="text-left">Una vez cerrado el corte, ¡es momento de cobrar! 
+    <div id="content-4" class="hidden text-gray-500 text-sm pl-10">
+      <p class="text-left pr-6">Una vez cerrado el corte, ¡es momento de cobrar! 
 Kliquea realiza los pagos a través de transferencia bancaria, para que recibas el dinero de forma rápida y segura. 
 Tiempos clave que debes tener en cuenta 
 
-Corte financiero:se realiza 15 días después de la fecha de venta. 
+Corte financiero: se realiza 15 días después de la fecha de venta. 
 
 Pago: se realiza 3 días después del corte. 
-Por ejemplo, si la venta fue el día 1, el corte será el día 16 y el pago el día 19. </p>
+Por ejemplo, si la venta fue el día 1, el corte será el día 16 y el pago el día 19.</p>
     </div>
   </div>
 
@@ -318,16 +313,19 @@ Por ejemplo, si la venta fue el día 1, el corte será el día 16 y el pago el d
 
 
     
-      <section class=" py-12 px-6 mt-4">
-        <h2 class="text-center text-[#030389] font-bold text-xl mb-8">Beneficios</h2>
+      <section class=" py-6 px-6">
+        <h2 class="text-center text-[#141B5B] font-bold text-xl md:pt-4 md:pb-8 ">Beneficios</h2>
       
                   <!-- Desktop grid -->
       <div class="hidden md:grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
                     <!-- Beneficio 1 -->
                     <div class="bg-[#f0f4ff]  rounded-xl p-5 shadow border flex items-center justify-between gap-4">
                       <div class="text-left">
-                        <h3 class="font-bold text-[#030389]">Pagos puntuales y seguros</h3>
-                        <p class="text-sm mt-2 text-gray-700">Recibes tu dinero por transferencia, directo a tu cuenta, 3 días después de cada corte. Sin cheques, sin procesos lentos. Confiabilidad que te permite planificar. </p>
+                        <h3 class="font-bold text-[#141B5B]">Pagos puntuales y <br>seguros</h3>
+                        <p class="text-sm mt-2 text-gray-700">Recibes tu dinero por transferencia, directo a tu cuenta, 3 días después de cada corte.
+                          <br>
+                          Sin cheques, sin procesos lentos. Confiabilidad que te permite <br>
+                           planificar.</p>
                       </div>
                       <img src="https://kliqueainternacional.vteximg.com.br/arquivos/pagospuntualesyseguros.jpg" alt="Pagos seguros" class="w-[150px] h-[100px] object-cover rounded-md" />
                     </div>
@@ -335,8 +333,9 @@ Por ejemplo, si la venta fue el día 1, el corte será el día 16 y el pago el d
                     <!-- Beneficio 2 -->
                     <div class="bg-[#f0f4ff]  rounded-xl p-5 shadow border flex items-center justify-between gap-4">
                       <div class="text-left">
-                        <h3 class="font-bold text-[#030389]">Seguimiento compartido con tu equipo</h3>
-                        <p class="text-sm mt-2 text-gray-700">Tanto tu departamento financiero como el nuestro trabajan en conjunto para consolidar la información. Eso significa más control, menos errores y más confianza.  </p>
+                        <h3 class="font-bold text-[#141B5B]">Seguimiento <br> compartido con tu <br>
+                           equipo</h3>
+                        <p class="text-sm mt-2 text-gray-700">Tanto tu departamento financiero como el nuestro trabajan en conjunto para consolidar la información. Eso significa más control, menos errores y más confianza. </p>
                       </div>
                       <img src="https://kliqueainternacional.vteximg.com.br/arquivos/seguimientocompartido.jpg" alt="Seguimiento equipo" class="w-[150px] h-[100px] object-cover rounded-md" />
                     </div>
@@ -344,7 +343,7 @@ Por ejemplo, si la venta fue el día 1, el corte será el día 16 y el pago el d
                     <!-- Beneficio 3 -->
                     <div class="bg-[#f0f4ff]  rounded-xl p-5 shadow border flex items-center justify-between gap-4">
                       <div class="text-left">
-                        <h3 class="font-bold text-[#030389]">Cobros estructurados y sin confusión</h3>
+                        <h3 class="font-bold text-[#141B5B]">Cobros estructurados y sin confusión</h3>
                         <p class="text-sm mt-2 text-gray-700">Con un sistema de cortes y pagos fijos, sabes exactamente cuándo te toca cobrar. Nada de incertidumbre. Aquí todo está calendarizado y controlado. </p>
                       </div>
                       <img src="https://kliqueainternacional.vteximg.com.br/arquivos/cobrosestructurados.jpg" alt="Cobros estructurados" class="w-[150px] h-[100px] object-cover rounded-md" />
@@ -353,7 +352,8 @@ Por ejemplo, si la venta fue el día 1, el corte será el día 16 y el pago el d
                     <!-- Beneficio 4 -->
                     <div class="bg-[#f0f4ff]  rounded-xl p-5 shadow border flex items-center justify-between gap-4">
                       <div class="text-left">
-                        <h3 class="font-bold text-[#030389]">Comisiones claras, sin sorpresas</h3>
+                        <h3 class="font-bold text-[#141B5B]">Comisiones claras, <br>
+                           sin sorpresas</h3>
                         <p class="text-sm mt-2 text-gray-700">En cada factura de Kliquea ves el desglose exacto de las comisiones y servicios contratados. Transparencia total. Sabes qué estás pagando y por qué.</p>
                       </div>
                       <img src="https://kliqueainternacional.vteximg.com.br/arquivos/comisiones.jpg" alt="Comisiones claras" class="w-[150px] h-[100px] object-cover rounded-md" />
@@ -362,67 +362,69 @@ Por ejemplo, si la venta fue el día 1, el corte será el día 16 y el pago el d
                     
 
                   </div>
+   </section>
+
 
 <!-- Swiper en móvil -->
-<div class="md:hidden mb-4 swiper beneficios-swiper w-full px-4">
+<div class="md:hidden mb-4 swiper beneficios-swiper w-full">
   <div class="swiper-wrapper mb-12">
 
     <!-- Slide 1 -->
     <div class="swiper-slide w-full">
-      <div class="bg-[#f0f4ff] rounded-xl p-5 shadow border flex flex-col items-center text-center w-full h-[400px]">
-        <div class="mb-4 min-h-[120px]">
-          <h3 class="font-bold text-[#030389] text-lg">Pagos puntuales y seguros</h3>
-          <p class="text-sm mt-2 text-gray-700">
-            Recibes tu dinero por transferencia, directo a tu cuenta, 3 días después de cada corte. Sin cheques, sin procesos lentos. Confiabilidad que te permite planificar. 
+      <div class="bg-[#f0f4ff] rounded-xl p-5 shadow border flex flex-col items-center text-center w-full h-[310px]">
+        <div class="mb-4 ">
+          <h3 class="font-bold text-[#141B5B] text-base text-left">Pagos puntuales y seguros</h3>
+          <p class="text-sm mt-2 text-gray-700 text-left leading-4">
+            Recibes tu dinero por transferencia, directo a tu cuenta, 3 días después de cada corte. <br>Sin cheques, sin procesos lentos. Confiabilidad que te permite planificar.
           </p>
         </div>
         <div class="w-full overflow-hidden rounded-xl mt-auto">
-          <img src="https://kliqueainternacional.vteximg.com.br/arquivos/pagospuntualesyseguros.jpg" alt="Pagos seguros" class="w-full h-[180px] object-cover rounded-md" />
+          <img src="https://kliqueainternacional.vteximg.com.br/arquivos/pagospuntualesyseguros.jpg" alt="Pagos seguros" class="w-36 h-24 object-cover mx-auto rounded-[10px]" />
         </div>
       </div>
     </div>
 
     <!-- Slide 2 -->
     <div class="swiper-slide w-full">
-      <div class="bg-[#f0f4ff] rounded-xl p-5 shadow border flex flex-col items-center text-center w-full h-[400px]">
-        <div class="mb-4 min-h-[120px]">
-          <h3 class="font-bold text-[#030389] text-lg">Seguimiento compartido con tu equipo</h3>
-          <p class="text-sm mt-2 text-gray-700">
+      <div class="bg-[#f0f4ff] rounded-xl p-5 shadow border flex flex-col items-center text-center w-full h-[310px]">
+        <div class="mb-4 ">
+          <h3 class="font-bold text-[#141B5B] text-base text-left">Seguimiento compartido con tu equipo</h3>
+          <p class="text-sm mt-2 text-gray-700 text-left leading-4">
             Tanto tu departamento financiero como el nuestro trabajan en conjunto para consolidar la información. Eso significa más control, menos errores y más confianza. 
           </p>
         </div>
         <div class="w-full overflow-hidden rounded-xl mt-auto">
-          <img src="https://kliqueainternacional.vteximg.com.br/arquivos/seguimientocompartido.jpg" alt="Seguimiento equipo" class="w-full h-[180px] object-cover rounded-md" />
+          <img src="https://kliqueainternacional.vteximg.com.br/arquivos/seguimientocompartido.jpg" alt="Seguimiento equipo" class="w-36 h-24 object-cover mx-auto rounded-[10px]" />
         </div>
       </div>
     </div>
 
     <!-- Slide 3 -->
     <div class="swiper-slide w-full">
-      <div class="bg-[#f0f4ff] rounded-xl p-5 shadow border flex flex-col items-center text-center w-full h-[400px]">
-        <div class="mb-4 min-h-[120px]">
-          <h3 class="font-bold text-[#030389] text-lg">Cobros estructurados y sin confusión</h3>
-          <p class="text-sm mt-2 text-gray-700">
+      <div class="bg-[#f0f4ff] rounded-xl p-5 shadow border flex flex-col items-center text-center w-full h-[310px]">
+        <div class="mb-4 ">
+          <h3 class="font-bold text-[#141B5B] text-base text-left">Cobros estructurados y sin confusión</h3>
+          <p class="text-sm mt-2 text-gray-700 text-left leading-4">
             Con un sistema de cortes y pagos fijos, sabes exactamente cuándo te toca cobrar. Nada de incertidumbre. Aquí todo está calendarizado y controlado.
           </p>
         </div>
         <div class="w-full overflow-hidden rounded-xl mt-auto">
-          <img src="https://kliqueainternacional.vteximg.com.br/arquivos/cobrosestructurados.jpg" alt="Cobros estructurados" class="w-full h-[180px] object-cover rounded-md" />
+          <img src="https://kliqueainternacional.vteximg.com.br/arquivos/cobrosestructurados.jpg" alt="Cobros estructurados" class="w-36 h-24 object-cover mx-auto rounded-[10px]" />
         </div>
       </div>
     </div>
 
     <!-- Slide 4 -->
     <div class="swiper-slide w-full">
-      <div class="bg-[#f0f4ff] rounded-xl p-5 shadow border flex flex-col items-center text-center w-full h-[400px]">
-        <div class="mb-4 min-h-[120px]">
-          <h3 class="font-bold text-[#030389] text-lg">Comisiones claras, sin sorpresas</h3>
-          <p class="text-sm mt-2 text-gray-700">
+      <div class="bg-[#f0f4ff] rounded-xl p-5 shadow border flex flex-col items-center text-center w-full h-[310px]">
+        <div class="mb-4 ">
+          <h3 class="font-bold text-[#141B5B] text-base text-left">Comisiones claras, sin sorpresas</h3>
+          <p class="text-sm mt-2 text-gray-700 text-left leading-4">
             En cada factura de Kliquea ves el desglose exacto de las comisiones y servicios contratados. Transparencia total. Sabes qué estás pagando y por qué.
           </p>
         </div>
         <div class="w-full overflow-hidden rounded-xl mt-auto">
-          <img src="https://kliqueainternacional.vteximg.com.br/arquivos/comisiones.jpg" alt="Comisiones claras" class="w-full h-[180px] object-cover rounded-md" />
+          <img src="https://kliqueainternacional.vteximg.com.br/arquivos/comisiones.jpg" alt="Comisiones claras" class="w-36 h-24 object-cover mx-auto rounded-[10px]" />
         </div>
       </div>
     </div>
@@ -436,14 +438,27 @@ Por ejemplo, si la venta fue el día 1, el corte será el día 16 y el pago el d
 
 </section>
     
-      <!-- Soporte humano -->
-      <section class="bg-[#f0f4ff] rounded-xl mt-12 py-10 px-6  mb-12 flex flex-col md:flex-row justify-between items-center gap-6 max-w-6xl mx-10  sm:mx-24 md:mx-24 lg:mx-auto">
-        <div>
-          <h3 class="text-lg text-[#030389] font-bold mb-2">Soporte humano en cada etapa</h3>
-          <p class="text-sm text-gray-700">No estás solo. Nuestro equipo de finanzas te acompaña en cada fase del proceso para que siempre tengas claridad y respaldo. ¿Tienes dudas? Nuestro equipo financiero está para apoyarte. </p>
-        </div>
-        <a href="#contacto" class="bg-[#00c2ff] text-white font-semibold py-2 px-5 rounded-full shadow-md hover:bg-[#00b0e6] transition">Contáctanos</a>
-      </section>
+<!-- Soporte humano -->
+<div class="self-stretch mb-8 mx-auto w-96 px-5 pt-5 flex justify-between items-center md:w-[1280px]  md:px-10 md:pt-0">
+  <div class="flex-1 p-5 bg-indigo-50 rounded-[10px] flex flex-col justify-start items-start gap-3.5 md:px-7 md:py-5 md:flex-row md:justify-between md:items-center md:gap-0">
+    <div class="self-stretch inline-flex flex-col justify-start items-start gap-3.5 md:flex-1 md:pr-12 md:justify-center md:gap-2.5">
+      <div class="self-stretch justify-start text-[#141B5B] text-xl font-bold font-['Montserrat'] leading-6 md:text-3xl md:leading-10">
+        Soporte humano en cada etapa
+      </div>
+      <div class="self-stretch justify-start text-zinc-600 text-sm font-normal font-['Montserrat'] leading-4 md:text-base md:leading-5">
+        No estás solo. Nuestro equipo logístico te acompaña en cada fase del proceso<br />
+        para que siempre tengas claridad y respaldo. <br> ¿Tienes dudas? Nuestro equipo está para apoyarte.
+      </div>
+    </div>
+    <a href="https://formvendeaqui.kliquea.com/vende-en-kliquuea-marketplace" data-icon-left="false" data-icon-right="true" data-size="Smaller" data-type="Primary"
+      class="self-stretch px-4 py-3.5 bg-sky-600 rounded-[30px] inline-flex justify-center items-center gap-2 hover:bg-cyan-700 transition md:self-auto md:px-14 md:py-7 md:rounded-[47.27px] md:justify-start">
+      <div class="text-center justify-start text-white text-sm font-bold font-['Montserrat'] leading-5 md:text-xl md:font-['Montserrat']">Contáctanos</div>
+      <div class="w-3.5 h-3.5 relative overflow-hidden md:w-5 md:h-5">
+        <img src="https://kliqueainternacional.vteximg.com.br/arquivos/Arrow Right-vendeaqui.svg" alt="">
+      </div>
+    </a>
+  </div>
+</div> 
 
 
 
@@ -453,7 +468,7 @@ Por ejemplo, si la venta fue el día 1, el corte será el día 16 y el pago el d
 
 <!-- Call to action -->
 
-!-- Call to action -->
+
 <section class="hidden md:block w-full">
   <div class="relative h-[300px] bg-cover bg-no-repeat bg-left"
     style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/baner.jpg');">
@@ -485,19 +500,21 @@ Por ejemplo, si la venta fue el día 1, el corte será el día 16 y el pago el d
 
 
 
+
+
 <!-- Imagen de fondo para móvil -->
-<section class="flex md:hidden bg-cover bg-center h-[700px] items-center text-white px-6 pb-10"
+<section class="flex md:hidden bg-cover bg-center h-[460px] items-center text-white px-6 pb-10"
   style="background-image: url('https://kliqueainternacional.vteximg.com.br/arquivos/bannerfootermovil.png');">
-  <div class="w-full text-center mt-[250px]">
+  <div class="w-full text-center mt-[175px]">
     <div class="max-w-md mx-auto ">
-      <h2 class="text-4xl font-extrabold mb-4 leading-tight">
+      <h2 class="text-4xl font-extrabold mb-4 leading-9">
         Haz historia en el eCommerce...
       </h2>
-      <p class="text-base mb-6 leading-relaxed">
+      <p class="text-base mb-6 leading-4">
         Kliquea es más que un marketplace: es el impulso que tu marca necesita para crecer a otro nivel.
       </p>
       <a href="https://share.hsforms.com/21cz14lO0QpKSnYGNtEbW1gtbolg"
-        class="bg-[#ff7a00] hover:bg-[#e36900] font-bold transition text-white font-bold py-5 px-9 rounded-full text-base inline-block">
+        class="bg-[#ff7a00] hover:bg-[#e36900] transition text-white font-bold py-5 px-9 rounded-full text-base inline-block">
         Regístrate y comienza ya
       </a>
     </div>
@@ -541,8 +558,10 @@ Por ejemplo, si la venta fue el día 1, el corte será el día 16 y el pago el d
       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
       <script>
         new Swiper(".beneficios-swiper", {
-          slidesPerView: 1.1,
+          slidesPerView: 1.3,
           spaceBetween: 20,
+          slidesOffsetBefore: 24,
+          slidesOffsetAfter: 24,
           pagination: {
             el: ".beneficios-swiper .swiper-pagination",
             clickable: true,
@@ -573,46 +592,48 @@ Por ejemplo, si la venta fue el día 1, el corte será el día 16 y el pago el d
 
 <span class="hidden translate-x-1.5 pl-3"></span>
  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenu = document.getElementById('mobile-menu');
-    const closeBtn = document.getElementById('menu-close');
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const toggleBtn = document.getElementById('menu-toggle');
+      const iconHamburger = document.getElementById('icon-hamburger');
+      const iconClose = document.getElementById('icon-close');
 
-    // Cierre del menú al hacer clic en el botón cerrar
-    closeBtn?.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-    });
+      function toggleMenu() {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        iconHamburger.classList.toggle('hidden', !isHidden);
+        iconClose.classList.toggle('hidden', isHidden);
+      }
 
-    // Seleccionar todos los <a> dentro del menú móvil (incluye submenu)
-    const menuLinks = mobileMenu.querySelectorAll('a');
+      toggleBtn.addEventListener('click', toggleMenu);
 
-    menuLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevenir navegación inmediata
+      // Seleccionar todos los <a> dentro del menú móvil (incluye submenu)
+      const menuLinks = mobileMenu.querySelectorAll('a');
 
-        // Agrega animación de rebote (solo si no está ya en animación)
-        link.classList.add('pl-3', 'font-medium'); // Cambio visual
-        link.classList.add('duration-200', 'transition-all'); // Asegura transición
+      menuLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
 
-        // Rebote con clase temporal
-        link.classList.add('translate-x-1.5');
-        setTimeout(() => {
-          link.classList.remove('translate-x-1.5');
-        }, 200);
+          link.classList.add('pl-3', 'font-medium');
+          link.classList.add('duration-200', 'transition-all');
 
-        // Cierra el menú tras un pequeño delay y redirecciona
-        const href = link.getAttribute('href');
-        setTimeout(() => {
-          mobileMenu.classList.add('hidden');
-          window.location.href = href;
-        }, 250); // Da tiempo al efecto visual
+          link.classList.add('translate-x-1.5');
+          setTimeout(() => {
+            link.classList.remove('translate-x-1.5');
+          }, 200);
+
+          const href = link.getAttribute('href');
+          setTimeout(() => {
+            toggleMenu();
+            window.location.href = href;
+          }, 250);
+        });
       });
     });
-  });
-</script>
+  </script>
 
 
 
- <!--menuresponsivehome-->
+ <!--menuresponsivehome
       <script >
   document.getElementById('menu-toggle').addEventListener('click', function () {
     document.getElementById('mobile-menu').classList.remove('hidden');
@@ -629,59 +650,53 @@ Por ejemplo, si la venta fue el día 1, el corte será el día 16 y el pago el d
     arrowIcon.classList.toggle('rotate-180');
   }
 </script>
-
+-->
 
 </body>
 
 <!-- Footer -->
 <!-- Footer -->
+
+<!-- Footer -->
 <footer class="bg-blue-50  md:px-16 py-4">
   <!-- Navegación y redes -->
-  <div class="mb-4">
+  <div class="">
     <!-- Mobile version -->
-    <div class="self-stretch px-5 inline-flex flex-col justify-center items-start gap-2.5 md:hidden">
-      <div class="inline-flex justify-start items-start">
-        <div class="flex justify-start items-center gap-1.5">
-          <div class="text-center justify-start text-blue-950 text-xs font-normal font-['Montserrat'] leading-5">Quiénes
-            somos</div>
+      <!-- Mobile version -->
+    <div class="w-full px-5 flex flex-col justify-start items-center gap-2.5 md:hidden lg:hidden">
+      <div class="w-full  flex flex-col justify-center items-start gap-2.5">
+        <div class="inline-flex justify-start items-start">
+          <div class="text-center text-[#141B5B] text-xs font-normal font-['Montserrat'] leading-5 pt-4">Quiénes somos</div>
+        </div>
+        <div class="inline-flex justify-start items-start">
+          <div class="text-center text-[#141B5B] text-xs font-normal font-['Montserrat'] leading-5">Únete a nuestra tribu de innovadores</div>
+        </div>
+        <div class="inline-flex justify-start items-start">
+          <div class="text-center text-[#141B5B] text-xs font-normal font-['Montserrat'] leading-5">¿Necesitas ayuda?</div>
         </div>
       </div>
-      <div class="inline-flex justify-start items-start">
-        <div class="flex justify-start items-center gap-1.5">
-          <div class="text-center justify-start text-blue-950 text-xs font-normal font-['Montserrat'] leading-5">Únete a
-            nuestra tribu de innovadores</div>
-        </div>
-      </div>
-      <div class="inline-flex justify-start items-start">
-        <div class="flex justify-start items-center gap-1.5">
-          <div class="text-center justify-start text-blue-950 text-xs font-normal font-['Montserrat'] leading-5">
-            ¿Necesitas ayuda?</div>
-        </div>
-      </div>
-      <!-- Redes sociales mobile -->
-      <div class="sm:hidden md:hidden md:flex md:flex-row md:justify-betweenflex items-center flex gap-4  pb-2">
 
+      <!-- Redes sociales mobile -->
+      <div class="w-full flex items-center justify-start gap-4">
         <a href="https://www.facebook.com/share/1Am4hAYtzV/"><img
             src="https://kliqueainternacional.vteximg.com.br/arquivos/Facebook.png" alt="Facebook" class="h-7 w-7"></a>
         <a href="https://www.instagram.com/kliquea_oficial?igsh=dDY3Z2txZ3R6N2Ni"><img
-            src="https://kliqueainternacional.vteximg.com.br/arquivos/Instagram.png" alt="Instagram"
-            class="h-7 w-7"></a>
-
+            src="https://kliqueainternacional.vteximg.com.br/arquivos/Instagram.png" alt="Instagram" class="h-7 w-7"></a>
         <a href="https://www.linkedin.com/company/kliquea-marketplace/"><img
             src="https://kliqueainternacional.vteximg.com.br/arquivos/LinkedIn.png" alt="LinkedIn" class="h-4 w-4"></a>
       </div>
-      <!-- Línea y derechos -->
-      <div class="">
 
-        <hr class="border-t border-blue-100 my-4">
-        <p class="text-[8px] md:text-xs text-center text-gray-500">
+      <!-- Línea y derechos -->
+    </div>
+
+      <hr class="w-full border-0 h-px bg-gray-400 mt-2 md:hidden" />
+      <div class="self-stretch px-5 pb-[10px] pt-[10px] flex flex-col justify-start items-center md:hidden">
+        <p class="text-[8px] text-center text-gray-500">
           Copyright © 2026 Kliquea |
           <a href="#terminos" class="hover:underline">Términos y condiciones</a> •
           <a href="#privacidad" class="hover:underline">Política de privacidad</a>
         </p>
       </div>
-    </div>
-  </div>
 
 
   <!-- Desktop version -->
@@ -700,7 +715,7 @@ Por ejemplo, si la venta fue el día 1, el corte será el día 16 y el pago el d
         <a href="https://www.facebook.com/share/1Am4hAYtzV/"><img
             src="https://kliqueainternacional.vteximg.com.br/arquivos/Facebook.png" alt="Facebook" class="h-7 w-7"></a>
         <a href="https://www.instagram.com/kliquea_oficial?igsh=dDY3Z2txZ3R6N2Ni"><img
-            src="https://kliqueainternacional.vteximg.com.br/arquivos/Instagram.png" alt="Instagram">
+          src="https://kliqueainternacional.vteximg.com.br/arquivos/Instagram.png" alt="Instagram" class="h-7 w-7"></a>
         <a href="https://www.linkedin.com/company/kliquea-marketplace/"><img
             src="https://kliqueainternacional.vteximg.com.br/arquivos/LinkedIn.png" alt="LinkedIn" class="h-4 w-4"></a>
       </div>
@@ -722,7 +737,20 @@ Por ejemplo, si la venta fue el día 1, el corte será el día 16 y el pago el d
   </div>
 
 
+
+
+
+
+  <!-- Sello de confianza 
+    <div class="ml-4">
+      <img src="https://kliqueainternacional.vteximg.com.br/arquivos/sellodeconfianza.png" alt="Sello de confianza" class="h-14 w-14">
+    </div>
+  </div>
+  -->
+
+
 </footer>
+
 
 </html>
 
