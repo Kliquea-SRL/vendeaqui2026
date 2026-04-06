@@ -29,8 +29,7 @@ jobs:
           rsync -av --exclude=build --exclude=.git --exclude=.github --exclude=node_modules --exclude=.gitignore ./ build/
           cd build
           npm ci --omit=dev
-          cd ..
-          zip -r lambda-deployment.zip build/
+          zip -r ../lambda-deployment.zip .
       
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
