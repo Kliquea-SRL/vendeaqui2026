@@ -27,6 +27,7 @@
 
 
   <!-- Navbar -->
+   <!-- Navbar -->
   <nav class="bg-white w-full px-6 md:px-16 py-4 shadow-sm fixed top-0 left-0 z-50">
     <div class="flex items-center justify-between">
 
@@ -87,8 +88,8 @@
         </a>
       </div>
 
-      <!-- Botón hamburguesa / cerrar -->
-      <div class="md:hidden">
+      <!-- Botón hamburguesa -->
+     <div class="md:hidden">
         <button id="menu-toggle" class="text-[#141B5B] focus:outline-none">
           <svg id="icon-hamburger" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -98,16 +99,23 @@
           </svg>
         </button>
       </div>
-    </div>
 
     <!-- Menú móvil -->
-    <div id="mobile-menu" class="fixed top-[63px] left-0 w-full h-[calc(100vh-4rem)] z-50 hidden bg-white">
+    <div id="mobile-menu" class="fixed top-16 left-0 w-full h-[calc(100vh-4rem)] z-50 hidden bg-white">
       <div class="flex h-full">
         <!-- Lado izquierdo vacío con línea -->
         <div class="w-[40%] border-r border-gray-200 bg-white"></div>
 
         <!-- Menú lado derecho -->
         <div class="w-[60%] bg-white flex flex-col font-montserrat shadow-lg px-6 pt-6 space-y-6">
+          <!-- Botón cerrar 
+          <div class="flex justify-end">
+            <button id="menu-close" class="text-[#141B5B] focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>-->
 
           <!-- Submenú desplegable -->
           <div>
@@ -150,6 +158,7 @@
       </div>
     </div>
   </nav>
+
 
   <!-- Banner Hero -->
   <!--Banner principal-->
@@ -651,8 +660,11 @@
 
 </body>
 
+
+
+
 <!-- Footer -->
-<footer class="bg-blue-50  md:px-16 py-4">
+<footer class="bg-blue-50  md:px-16 md:py-4 ">
   <!-- Navegación y redes -->
   <div class="">
     <!-- Mobile version -->
