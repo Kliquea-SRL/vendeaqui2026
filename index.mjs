@@ -10,7 +10,7 @@ export const handler = async (event) => {
   let fileName = "index.html";
 
 const routesMap = {
-    "/": "home.html",
+    "/vendeaqui": "home.html",
     "/facturacion": "facturacion.html", 
     "/crecimiento": "crecimiento.html",
     "/integraciones": "integraciones.html",
