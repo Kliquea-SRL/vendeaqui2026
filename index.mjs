@@ -9,19 +9,18 @@ export const handler = async (event) => {
 
   let fileName = "index.html";
 
-  const routesMap = {
-    "/default/vendeaqui": "home.html",
-    "/default/facturacion": "facturacion.html",
-    "/default/crecimiento": "crecimiento.html",
-    "/default/integraciones": "integraciones.html",
-    "/default/logistica": "logistica.html",
-    "/default/requisitos": "requisitos.html",
-    "/default/servicios": "servicios.html",
-    "/default/alianzas": "alianzas.html",
-    "/default/form": "form.html",
+const routesMap = {
+    "/vendeaqui": "home.html",
+    "/facturacion": "facturacion.html", 
+    "/crecimiento": "crecimiento.html",
+    "/integraciones": "integraciones.html",
+    "/logistica": "logistica.html",
+    "/requisitos": "requisitos.html",
+    "/servicios": "servicios.html",
+    "/alianzas": "alianzas.html",
     "/form": "form.html"
+};
 
-  };
 
   if (routesMap[route]) {
     fileName = routesMap[route];
