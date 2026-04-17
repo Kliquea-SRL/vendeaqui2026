@@ -2,16 +2,16 @@ import { readFileSync } from "fs";
 import { join } from "path";
 
 export const handler = async (event) => {
-  const route = event.rawPath || "/";
+  const route = event.rawPath.replace("/default", "") || "/";
   console.log("ROUTE:", route);
 
-  const basePath = join(process.cwd(), "publish");
+  const basePath = "./publish";
 
   let fileName = "index.html";
 
-const routesMap = {
+  const routesMap = {
     "/": "home.html",
-    "/facturacion": "facturacion.html", 
+    "/facturacion": "facturacion.html",
     "/crecimiento": "crecimiento.html",
     "/integraciones": "integraciones.html",
     "/logistica": "logistica.html",
@@ -19,7 +19,7 @@ const routesMap = {
     "/servicios": "servicios.html",
     "/alianzas": "alianzas.html",
     "/form": "form.html"
-};
+  };
 
 
   if (routesMap[route]) {
