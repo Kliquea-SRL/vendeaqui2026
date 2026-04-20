@@ -1001,7 +1001,12 @@
             // Validación simple
             if (nombre && apellido && email) {
                 alert(`¡Gracias ${nombre}! Tu mensaje ha sido enviado correctamente.`);
-                // Aquí integrarías con HubSpot o tu sistema de marketing
+                // Disparar el trigger de HubSpot (CTA)
+                var ctaBtn = document.querySelector('.hs-cta-trigger-button-211382624361');
+                if (ctaBtn) {
+                    ctaBtn.click();
+                }
+                // Resetear formulario y dropdown
                 this.reset();
                 dropdownCheckboxes.forEach((checkbox) => {
                     checkbox.checked = false;
