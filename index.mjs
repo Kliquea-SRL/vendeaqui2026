@@ -4,6 +4,7 @@ import { join } from "path";
 export const handler = async (event) => {
   const route = event.rawPath.replace("/default", "") || "/";
   console.log("ROUTE:", route);
+  console.log("EVENT:", event);
 
   const basePath = "./publish";
 
