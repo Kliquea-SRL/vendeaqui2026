@@ -1,233 +1,322 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Políticas de Privacidad - BM On Demand</title>
-  <style>
-    :root {
-      color-scheme: light;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #111;
-      background: #f8f9fb;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=download" />
+    <title>Políticas de Privacidad - BM On Demand</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #111;
+            background: #f8f9fb;
+        }
 
-    * {
-      box-sizing: border-box;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-      margin: 0;
-      line-height: 1.75;
-    }
+        body {
+            margin: 0;
+            line-height: 1.75;
+        }
 
-    .page {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 32px 20px 48px;
-    }
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px 20px 48px;
+        }
 
-    header {
-      margin-bottom: 32px;
-      padding: 24px;
-      background: #ffffff;
-      border: 1px solid #e1e5ea;
-      border-radius: 5px;
-    }
+        header {
+            margin-bottom: 32px;
+            padding: 24px;
+            background: #ffffff;
+            border: 1px solid #e1e5ea;
+            border-radius: 5px;
+        }
 
-    header h1 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 2.5vw, 2.5rem);
-      letter-spacing: -0.03em;
-    }
+        header h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2rem, 2.5vw, 2.5rem);
+            letter-spacing: -0.03em;
+        }
 
-    header p {
-      margin: 0;
-      color: #4e5768;
-      font-size: 0.98rem;
-    }
+        header p {
+            margin: 0;
+            color: #4e5768;
+            font-size: 0.98rem;
+        }
 
-    .section {
-      margin-bottom: 32px;
-      padding: 28px;
-      background: #ffffff;
-      border: 1px solid #e1e5ea;
-      border-radius: 5px;
-    }
+        .section {
+            margin-bottom: 32px;
+            padding: 28px;
+            background: #ffffff;
+            border: 1px solid #e1e5ea;
+            border-radius: 5px;
+        }
 
-    .section h2 {
-      margin-top: 0;
-      font-size: 1.45rem;
-      color: #111827;
-    }
+        .section h2 {
+            margin-top: 0;
+            font-size: 1.45rem;
+            color: #111827;
+        }
 
-    .section h3 {
-      margin: 1.5rem 0 0.75rem;
-      font-size: 1.1rem;
-      color: #1f2937;
-    }
+        .section h3 {
+            margin: 1.5rem 0 0.75rem;
+            font-size: 1.1rem;
+            color: #1f2937;
+        }
 
-    .section p,
-    .section li {
-      color: #343d4d;
-      font-size: 1rem;
-    }
+        .section p,
+        .section li {
+            color: #343d4d;
+            font-size: 1rem;
+        }
 
-    .section ul {
-      margin: 0.75rem 0 0 1.25rem;
-      padding: 0;
-      list-style: disc inside;
-    }
+        .section ul {
+            margin: 0.75rem 0 0 1.25rem;
+            padding: 0;
+            list-style: disc inside;
+        }
 
-    .section ul li {
-      margin-bottom: 0.65rem;
-    }
+        .section ul li {
+            margin-bottom: 0.65rem;
+        }
 
-    .section strong {
-      color: #111827;
-    }
+        .section strong {
+            color: #111827;
+        }
 
-    .section address {
-      font-style: normal;
-      color: #343d4d;
-      margin-top: 0.75rem;
-      line-height: 1.65;
-    }
+        .section address {
+            font-style: normal;
+            color: #343d4d;
+            margin-top: 0.75rem;
+            line-height: 1.65;
+        }
 
-    .footer {
-      text-align: center;
-      color: #6d7587;
-      font-size: 0.95rem;
-      margin-top: 16px;
-    }
+        .footer {
+            text-align: center;
+            color: #6d7587;
+            font-size: 0.95rem;
+            margin-top: 16px;
+        }
 
-    a {
-      color: #0f4adf;
-      text-decoration: none;
-    }
+        a {
+            color: #0f4adf;
+            text-decoration: none;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="page">
-    <header>
-      <h1>Políticas de Privacidad - BM On Demand</h1>
-      <p><strong>Última actualización:</strong> 23 de julio de 2026</p>
-    </header>
+    <div style="display: flex; flex-direction: row-reverse; padding: 20px 50px 0 50px;">
+        <div style="">
+            <a href="politicasOndemand.pdf" download
+                style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 20px; background: #0f4adf; color: #ffffff; border-radius: 9999px; text-decoration: none; font-weight: 600; font-size: 0.95rem;">
+                Descargar políticas (PDF)  <span class="material-symbols-outlined"> download </span>
+            </a>
+        </div>
+    </div>
+    <div class="page">
+        <header>
+            <h1>Políticas de Privacidad - BM On Demand</h1>
+            <p><strong>Última actualización:</strong> 23 de julio de 2026</p>
+        </header>
 
-    <section class="section">
-      <p><strong>BM ON DEMAND – Last Mile</strong>, en lo adelante “la Aplicación”, proporciona servicios de sincronización de pedidos, creación de envíos, seguimiento, gestión logística y actualización de estados de entrega, en lo adelante “el Servicio”, a comerciantes que utilizan Shopify para operar sus tiendas.</p>
-      <p>Esta Política de privacidad describe cómo se recopila, utiliza, almacena y comparte la información personal cuando usted instala o utiliza la Aplicación en relación con su tienda respaldada por Shopify.</p>
-      <p>La Aplicación es desarrollada y operada por Business Mail & Cargo, S.R.L. (“BM Cargo”, “nosotros” o “nuestro”). En relación con los datos personales de los clientes del comerciante, el comerciante actúa generalmente como responsable del tratamiento y BM Cargo como encargado del tratamiento, procesando los datos conforme a las instrucciones del comerciante y para prestar el Servicio.</p>
-    </section>
+        <section class="section">
+            <p><strong>BM ON DEMAND – Last Mile</strong>, en lo adelante “la Aplicación”, proporciona servicios de
+                sincronización de pedidos, creación de envíos, seguimiento, gestión logística y actualización de estados
+                de entrega, en lo adelante “el Servicio”, a comerciantes que utilizan Shopify para operar sus tiendas.
+            </p>
+            <p>Esta Política de privacidad describe cómo se recopila, utiliza, almacena y comparte la información
+                personal cuando usted instala o utiliza la Aplicación en relación con su tienda respaldada por Shopify.
+            </p>
+            <p>La Aplicación es desarrollada y operada por Business Mail & Cargo, S.R.L. (“BM Cargo”, “nosotros” o
+                “nuestro”). En relación con los datos personales de los clientes del comerciante, el comerciante actúa
+                generalmente como responsable del tratamiento y BM Cargo como encargado del tratamiento, procesando los
+                datos conforme a las instrucciones del comerciante y para prestar el Servicio.</p>
+        </section>
 
-    <section class="section">
-      <h2>Información personal que recopila la Aplicación / Personal Information the App Collects</h2>
-      <p>Cuando usted instala la Aplicación, podemos acceder automáticamente a determinados tipos de información de su cuenta de Shopify, de acuerdo con los permisos autorizados durante la instalación:</p>
-      <ul>
-        <li>Información de la tienda, como nombre de la tienda, identificador de la tienda, dominio de Shopify, correo electrónico administrativo, país, idioma, zona horaria y datos de configuración necesarios para establecer y mantener la integración.</li>
-        <li>Información de pedidos, como identificador y número del pedido, fecha del pedido, productos, variantes, cantidades, SKU, peso, método de envío, estado de preparación, número de seguimiento y estado de entrega.</li>
-        <li>Información del cliente o destinatario asociada al pedido, como nombre, correo electrónico, número de teléfono, dirección de envío, ciudad, provincia o estado, código postal y país.</li>
-        <li>Información de preparación, envío y seguimiento necesaria para crear envíos y sincronizar los estados de logística y entrega entre Shopify y los sistemas de BM Cargo.</li>
-      </ul>
-      <p>Además, una vez instalada la Aplicación, podemos recopilar los siguientes tipos de información personal directamente de usted, de las personas que acceden a la Aplicación en nombre de su tienda o de sus clientes:</p>
-      <ul>
-        <li>Información sobre usted y otras personas autorizadas para acceder a la Aplicación, como nombre, nombre comercial, correo electrónico, número de teléfono, dominio de la tienda y comunicaciones de soporte.</li>
-        <li>Información técnica de los usuarios autorizados, como dirección IP, tipo de navegador, sistema operativo, fecha y hora de acceso, eventos de autenticación, reportes de errores y actividad dentro de la Aplicación.</li>
-        <li>Información proporcionada voluntariamente al solicitar soporte técnico, configurar la Aplicación o comunicarse con BM Cargo.</li>
-      </ul>
-      <p>La Aplicación no accede, recopila ni almacena números de tarjetas de pago, códigos de seguridad, credenciales bancarias, números de cuentas bancarias, credenciales de Shopify Payments ni otros datos de autenticación de pagos.</p>
-      <p>Recopilamos información personal directamente de la persona correspondiente, a través de su cuenta de Shopify, mediante las API y los webhooks de Shopify, o utilizando las siguientes tecnologías:</p>
-      <ul>
-        <li><strong>Cookies:</strong> archivos de datos que se almacenan en el dispositivo o computadora. La Aplicación puede utilizar cookies esenciales o tecnologías similares para autenticar usuarios autorizados, mantener sesiones, recordar configuraciones y proteger la Aplicación contra accesos no autorizados.</li>
-        <li><strong>Archivos de registro:</strong> registran acciones realizadas dentro de la Aplicación y pueden recopilar información como dirección IP, tipo de navegador, sistema operativo, eventos de autenticación, solicitudes a las API, errores y marcas de fecha y hora. Estos registros se utilizan para seguridad, monitoreo, solución de problemas y confiabilidad del Servicio.</li>
-      </ul>
-      <p>La Aplicación no utiliza balizas web, píxeles publicitarios, etiquetas ni tecnologías similares para rastrear a clientes con fines de publicidad conductual o marketing dirigido.</p>
-    </section>
+        <section class="section">
+            <h2>Información personal que recopila la Aplicación / Personal Information the App Collects</h2>
+            <p>Cuando usted instala la Aplicación, podemos acceder automáticamente a determinados tipos de información
+                de su cuenta de Shopify, de acuerdo con los permisos autorizados durante la instalación:</p>
+            <ul>
+                <li>Información de la tienda, como nombre de la tienda, identificador de la tienda, dominio de Shopify,
+                    correo electrónico administrativo, país, idioma, zona horaria y datos de configuración necesarios
+                    para establecer y mantener la integración.</li>
+                <li>Información de pedidos, como identificador y número del pedido, fecha del pedido, productos,
+                    variantes, cantidades, SKU, peso, método de envío, estado de preparación, número de seguimiento y
+                    estado de entrega.</li>
+                <li>Información del cliente o destinatario asociada al pedido, como nombre, correo electrónico, número
+                    de teléfono, dirección de envío, ciudad, provincia o estado, código postal y país.</li>
+                <li>Información de preparación, envío y seguimiento necesaria para crear envíos y sincronizar los
+                    estados de logística y entrega entre Shopify y los sistemas de BM Cargo.</li>
+            </ul>
+            <p>Además, una vez instalada la Aplicación, podemos recopilar los siguientes tipos de información personal
+                directamente de usted, de las personas que acceden a la Aplicación en nombre de su tienda o de sus
+                clientes:</p>
+            <ul>
+                <li>Información sobre usted y otras personas autorizadas para acceder a la Aplicación, como nombre,
+                    nombre comercial, correo electrónico, número de teléfono, dominio de la tienda y comunicaciones de
+                    soporte.</li>
+                <li>Información técnica de los usuarios autorizados, como dirección IP, tipo de navegador, sistema
+                    operativo, fecha y hora de acceso, eventos de autenticación, reportes de errores y actividad dentro
+                    de la Aplicación.</li>
+                <li>Información proporcionada voluntariamente al solicitar soporte técnico, configurar la Aplicación o
+                    comunicarse con BM Cargo.</li>
+            </ul>
+            <p>La Aplicación no accede, recopila ni almacena números de tarjetas de pago, códigos de seguridad,
+                credenciales bancarias, números de cuentas bancarias, credenciales de Shopify Payments ni otros datos de
+                autenticación de pagos.</p>
+            <p>Recopilamos información personal directamente de la persona correspondiente, a través de su cuenta de
+                Shopify, mediante las API y los webhooks de Shopify, o utilizando las siguientes tecnologías:</p>
+            <ul>
+                <li><strong>Cookies:</strong> archivos de datos que se almacenan en el dispositivo o computadora. La
+                    Aplicación puede utilizar cookies esenciales o tecnologías similares para autenticar usuarios
+                    autorizados, mantener sesiones, recordar configuraciones y proteger la Aplicación contra accesos no
+                    autorizados.</li>
+                <li><strong>Archivos de registro:</strong> registran acciones realizadas dentro de la Aplicación y
+                    pueden recopilar información como dirección IP, tipo de navegador, sistema operativo, eventos de
+                    autenticación, solicitudes a las API, errores y marcas de fecha y hora. Estos registros se utilizan
+                    para seguridad, monitoreo, solución de problemas y confiabilidad del Servicio.</li>
+            </ul>
+            <p>La Aplicación no utiliza balizas web, píxeles publicitarios, etiquetas ni tecnologías similares para
+                rastrear a clientes con fines de publicidad conductual o marketing dirigido.</p>
+        </section>
 
-    <section class="section">
-      <h2>¿Cómo usamos su información personal? / How Do We Use Your Personal Information?</h2>
-      <p>Utilizamos la información personal recopilada de usted y de sus clientes para prestar el Servicio y operar la Aplicación. En particular, podemos utilizarla para:</p>
-      <ul>
-        <li>Conectar su tienda de Shopify con los sistemas logísticos de BM Cargo.</li>
-        <li>Importar y sincronizar pedidos elegibles de Shopify.</li>
-        <li>Crear y administrar envíos.</li>
-        <li>Generar y actualizar números y enlaces de seguimiento.</li>
-        <li>Coordinar entregas y gestionar incidencias operativas.</li>
-        <li>Sincronizar estados de preparación, envío y entrega entre Shopify y BM Cargo.</li>
-        <li>Comunicarnos con usted sobre la Aplicación, su cuenta, soporte técnico o asuntos operativos.</li>
-        <li>Diagnosticar errores, optimizar y mejorar la Aplicación.</li>
-        <li>Supervisar la seguridad, disponibilidad y rendimiento del Servicio.</li>
-        <li>Prevenir fraude, uso indebido, accesos no autorizados o incidentes de seguridad.</li>
-        <li>Cumplir obligaciones contractuales, legales, regulatorias y requisitos de la plataforma Shopify.</li>
-        <li>Responder solicitudes relacionadas con privacidad y derechos de los titulares de datos.</li>
-      </ul>
-      <p>No vendemos información personal. Tampoco utilizamos información personal de comerciantes o clientes para publicidad conductual, publicidad dirigida, comercialización de datos, elaboración de perfiles ni marketing no relacionado con la prestación del Servicio.</p>
-    </section>
+        <section class="section">
+            <h2>¿Cómo usamos su información personal? / How Do We Use Your Personal Information?</h2>
+            <p>Utilizamos la información personal recopilada de usted y de sus clientes para prestar el Servicio y
+                operar la Aplicación. En particular, podemos utilizarla para:</p>
+            <ul>
+                <li>Conectar su tienda de Shopify con los sistemas logísticos de BM Cargo.</li>
+                <li>Importar y sincronizar pedidos elegibles de Shopify.</li>
+                <li>Crear y administrar envíos.</li>
+                <li>Generar y actualizar números y enlaces de seguimiento.</li>
+                <li>Coordinar entregas y gestionar incidencias operativas.</li>
+                <li>Sincronizar estados de preparación, envío y entrega entre Shopify y BM Cargo.</li>
+                <li>Comunicarnos con usted sobre la Aplicación, su cuenta, soporte técnico o asuntos operativos.</li>
+                <li>Diagnosticar errores, optimizar y mejorar la Aplicación.</li>
+                <li>Supervisar la seguridad, disponibilidad y rendimiento del Servicio.</li>
+                <li>Prevenir fraude, uso indebido, accesos no autorizados o incidentes de seguridad.</li>
+                <li>Cumplir obligaciones contractuales, legales, regulatorias y requisitos de la plataforma Shopify.
+                </li>
+                <li>Responder solicitudes relacionadas con privacidad y derechos de los titulares de datos.</li>
+            </ul>
+            <p>No vendemos información personal. Tampoco utilizamos información personal de comerciantes o clientes para
+                publicidad conductual, publicidad dirigida, comercialización de datos, elaboración de perfiles ni
+                marketing no relacionado con la prestación del Servicio.</p>
+        </section>
 
-    <section class="section">
-      <h2>Compartir su información personal / Sharing Your Personal Information</h2>
-      <p>Podemos compartir información personal con terceros que nos ayudan a prestar y operar el Servicio, incluyendo:</p>
-      <ul>
-        <li>Personal autorizado, sucursales, operaciones de entrega y sistemas logísticos internos de Business Mail & Cargo, S.R.L., cuando sea necesario para crear, gestionar, rastrear o completar un envío y brindar soporte técnico.</li>
-        <li>Shopify, como plataforma de comercio electrónico utilizada para instalar y operar la Aplicación e intercambiar información autorizada sobre tiendas, pedidos, clientes, preparación y seguimiento.</li>
-        <li>Amazon Web Services y otros proveedores de infraestructura tecnológica utilizados para alojar, almacenar, proteger y operar la Aplicación.</li>
-        <li>Proveedores de monitoreo, registros de aplicación, seguimiento de errores, ciberseguridad, copias de respaldo, soporte técnico y correo electrónico transaccional.</li>
-      </ul>
-      <p>Estos proveedores solo pueden procesar información personal en la medida necesaria para prestar servicios a BM Cargo y están sujetos a obligaciones contractuales de confidencialidad, seguridad y protección de datos.</p>
-      <p>La información personal puede almacenarse o procesarse fuera del país del comerciante o del cliente, incluyendo la República Dominicana y los Estados Unidos. Cuando la legislación aplicable lo requiera, utilizamos salvaguardas contractuales y técnicas apropiadas para las transferencias internacionales de datos.</p>
-      <p>Finalmente, también podemos compartir su información personal para cumplir las leyes y regulaciones aplicables, responder a una citación, orden judicial, orden de registro u otra solicitud legal de información, investigar fraude o incidentes de seguridad, o proteger nuestros derechos y los derechos de comerciantes, clientes u otras personas.</p>
-    </section>
+        <section class="section">
+            <h2>Compartir su información personal / Sharing Your Personal Information</h2>
+            <p>Podemos compartir información personal con terceros que nos ayudan a prestar y operar el Servicio,
+                incluyendo:</p>
+            <ul>
+                <li>Personal autorizado, sucursales, operaciones de entrega y sistemas logísticos internos de Business
+                    Mail & Cargo, S.R.L., cuando sea necesario para crear, gestionar, rastrear o completar un envío y
+                    brindar soporte técnico.</li>
+                <li>Shopify, como plataforma de comercio electrónico utilizada para instalar y operar la Aplicación e
+                    intercambiar información autorizada sobre tiendas, pedidos, clientes, preparación y seguimiento.
+                </li>
+                <li>Amazon Web Services y otros proveedores de infraestructura tecnológica utilizados para alojar,
+                    almacenar, proteger y operar la Aplicación.</li>
+                <li>Proveedores de monitoreo, registros de aplicación, seguimiento de errores, ciberseguridad, copias de
+                    respaldo, soporte técnico y correo electrónico transaccional.</li>
+            </ul>
+            <p>Estos proveedores solo pueden procesar información personal en la medida necesaria para prestar servicios
+                a BM Cargo y están sujetos a obligaciones contractuales de confidencialidad, seguridad y protección de
+                datos.</p>
+            <p>La información personal puede almacenarse o procesarse fuera del país del comerciante o del cliente,
+                incluyendo la República Dominicana y los Estados Unidos. Cuando la legislación aplicable lo requiera,
+                utilizamos salvaguardas contractuales y técnicas apropiadas para las transferencias internacionales de
+                datos.</p>
+            <p>Finalmente, también podemos compartir su información personal para cumplir las leyes y regulaciones
+                aplicables, responder a una citación, orden judicial, orden de registro u otra solicitud legal de
+                información, investigar fraude o incidentes de seguridad, o proteger nuestros derechos y los derechos de
+                comerciantes, clientes u otras personas.</p>
+        </section>
 
-    <section class="section">
-      <h2>Sus derechos / Your Rights</h2>
-      <p>Dependiendo de su ubicación y de la legislación aplicable, usted puede tener derecho a acceder a la información personal que conservamos sobre usted y solicitar que sea corregida, actualizada, restringida, transferida o eliminada.</p>
-      <p>Si usted es cliente de un comerciante que utiliza la Aplicación, deberá presentar normalmente su solicitud directamente al comerciante con el cual realizó el pedido. El comerciante actúa como responsable de sus datos personales y BM Cargo procesa dichos datos, por lo general, en nombre del comerciante.</p>
-      <p>Podemos asistir a los comerciantes en la atención de solicitudes válidas recibidas directamente o a través de Shopify. Para ejercer sus derechos o presentar una solicitud relacionada con privacidad, utilice la información de contacto indicada al final de esta Política.</p>
-      <p>Si usted reside en el Espacio Económico Europeo o en otra jurisdicción europea, procesamos su información para cumplir contratos con los comerciantes, prestar el Servicio, cumplir obligaciones legales o perseguir los intereses legítimos descritos anteriormente. Su información puede ser transferida fuera de Europa, incluyendo a la República Dominicana y a los Estados Unidos, utilizando las salvaguardas exigidas por la legislación aplicable.</p>
-    </section>
+        <section class="section">
+            <h2>Sus derechos / Your Rights</h2>
+            <p>Dependiendo de su ubicación y de la legislación aplicable, usted puede tener derecho a acceder a la
+                información personal que conservamos sobre usted y solicitar que sea corregida, actualizada,
+                restringida, transferida o eliminada.</p>
+            <p>Si usted es cliente de un comerciante que utiliza la Aplicación, deberá presentar normalmente su
+                solicitud directamente al comerciante con el cual realizó el pedido. El comerciante actúa como
+                responsable de sus datos personales y BM Cargo procesa dichos datos, por lo general, en nombre del
+                comerciante.</p>
+            <p>Podemos asistir a los comerciantes en la atención de solicitudes válidas recibidas directamente o a
+                través de Shopify. Para ejercer sus derechos o presentar una solicitud relacionada con privacidad,
+                utilice la información de contacto indicada al final de esta Política.</p>
+            <p>Si usted reside en el Espacio Económico Europeo o en otra jurisdicción europea, procesamos su información
+                para cumplir contratos con los comerciantes, prestar el Servicio, cumplir obligaciones legales o
+                perseguir los intereses legítimos descritos anteriormente. Su información puede ser transferida fuera de
+                Europa, incluyendo a la República Dominicana y a los Estados Unidos, utilizando las salvaguardas
+                exigidas por la legislación aplicable.</p>
+        </section>
 
-    <section class="section">
-      <h2>Retención de datos / Data Retention</h2>
-      <p>Conservamos información de pedidos, clientes, envíos, seguimiento y entrega durante el tiempo necesario para prestar el Servicio, completar entregas pendientes, brindar soporte técnico, cumplir obligaciones contractuales y satisfacer requisitos legales aplicables.</p>
-      <p>Mientras la Aplicación permanezca instalada y activa, la información podrá conservarse en la medida necesaria para operar la Aplicación y sincronizar la información logística.</p>
-      <p>Después de desinstalar la Aplicación, la información personal podrá conservarse durante un máximo de 30 días para completar procesos operativos pendientes, atender asuntos de soporte, tramitar solicitudes de privacidad o cumplir los requisitos de Shopify.</p>
-      <p>La Aplicación admite los webhooks obligatorios de privacidad de Shopify:</p>
-      <ul>
-        <li>customers/data_request</li>
-        <li>customers/redact</li>
-        <li>shop/redact</li>
-      </ul>
-      <p>Tras recibir una solicitud válida de eliminación o un webhook de privacidad de Shopify, la información personal será eliminada o anonimizada, salvo cuando su conservación sea exigida por la ley, necesaria para resolver una disputa, prevenir fraude, hacer cumplir un acuerdo o establecer, ejercer o defender una reclamación legal.</p>
-      <p>Una cantidad limitada de información puede permanecer temporalmente en sistemas protegidos de copia de respaldo hasta que sea eliminada mediante el ciclo normal de rotación de respaldos.</p>
-    </section>
+        <section class="section">
+            <h2>Retención de datos / Data Retention</h2>
+            <p>Conservamos información de pedidos, clientes, envíos, seguimiento y entrega durante el tiempo necesario
+                para prestar el Servicio, completar entregas pendientes, brindar soporte técnico, cumplir obligaciones
+                contractuales y satisfacer requisitos legales aplicables.</p>
+            <p>Mientras la Aplicación permanezca instalada y activa, la información podrá conservarse en la medida
+                necesaria para operar la Aplicación y sincronizar la información logística.</p>
+            <p>Después de desinstalar la Aplicación, la información personal podrá conservarse durante un máximo de 30
+                días para completar procesos operativos pendientes, atender asuntos de soporte, tramitar solicitudes de
+                privacidad o cumplir los requisitos de Shopify.</p>
+            <p>La Aplicación admite los webhooks obligatorios de privacidad de Shopify:</p>
+            <ul>
+                <li>customers/data_request</li>
+                <li>customers/redact</li>
+                <li>shop/redact</li>
+            </ul>
+            <p>Tras recibir una solicitud válida de eliminación o un webhook de privacidad de Shopify, la información
+                personal será eliminada o anonimizada, salvo cuando su conservación sea exigida por la ley, necesaria
+                para resolver una disputa, prevenir fraude, hacer cumplir un acuerdo o establecer, ejercer o defender
+                una reclamación legal.</p>
+            <p>Una cantidad limitada de información puede permanecer temporalmente en sistemas protegidos de copia de
+                respaldo hasta que sea eliminada mediante el ciclo normal de rotación de respaldos.</p>
+        </section>
 
-    <section class="section">
-      <h2>Cambios / Changes</h2>
-      <p>Podemos actualizar esta Política de privacidad periódicamente para reflejar cambios en nuestras prácticas, en la Aplicación, en el Servicio, en los requisitos de Shopify o por otras razones operativas, legales o regulatorias.</p>
-      <p>La versión actualizada mostrará una nueva fecha de “Última actualización”. Cuando los cambios sean significativos, podremos comunicarlos mediante la Aplicación, correo electrónico, la publicación de la Aplicación en Shopify App Store u otro medio apropiado.</p>
-    </section>
+        <section class="section">
+            <h2>Cambios / Changes</h2>
+            <p>Podemos actualizar esta Política de privacidad periódicamente para reflejar cambios en nuestras
+                prácticas, en la Aplicación, en el Servicio, en los requisitos de Shopify o por otras razones
+                operativas, legales o regulatorias.</p>
+            <p>La versión actualizada mostrará una nueva fecha de “Última actualización”. Cuando los cambios sean
+                significativos, podremos comunicarlos mediante la Aplicación, correo electrónico, la publicación de la
+                Aplicación en Shopify App Store u otro medio apropiado.</p>
+        </section>
 
-    <section class="section">
-      <h2>Contáctenos / Contact Us</h2>
-      <p>Para obtener más información sobre nuestras prácticas de privacidad, realizar preguntas, ejercer un derecho de privacidad o presentar una reclamación, puede comunicarse con nosotros por correo electrónico o correo postal utilizando los datos siguientes:</p>
-      <address>
-        <strong>Empresa</strong><br>
-        Business Mail & Cargo, S.R.L.<br><br>
-        <strong>Atención</strong><br>
-        Privacidad – BM ON DEMAND<br><br>
-        <strong>Correo electrónico</strong><br>
-        <a href="mailto:rsanchez@bmacargo.com">rsanchez@bmacargo.com</a><br><br>
-        <strong>Dirección</strong><br>
-        Av. Abraham Lincoln No. 1009, Piantini<br>
-        Santo Domingo, Distrito Nacional, República Dominicana
-      </address>
-    </section>
+        <section class="section">
+            <h2>Contáctenos / Contact Us</h2>
+            <p>Para obtener más información sobre nuestras prácticas de privacidad, realizar preguntas, ejercer un
+                derecho de privacidad o presentar una reclamación, puede comunicarse con nosotros por correo electrónico
+                o correo postal utilizando los datos siguientes:</p>
+            <address>
+                <strong>Empresa</strong><br>
+                Business Mail & Cargo, S.R.L.<br><br>
+                <strong>Atención</strong><br>
+                Privacidad – BM ON DEMAND<br><br>
+                <strong>Correo electrónico</strong><br>
+                <a href="mailto:rsanchez@bmacargo.com">rsanchez@bmacargo.com</a><br><br>
+                <strong>Dirección</strong><br>
+                Av. Abraham Lincoln No. 1009, Piantini<br>
+                Santo Domingo, Distrito Nacional, República Dominicana
+            </address>
+        </section>
 
-    <div class="footer">BM On Demand | Business Mail & Cargo, S.R.L.</div>
-  </div>
+        <div class="footer">BM On Demand | Business Mail & Cargo, S.R.L.</div>
+    </div>
 </body>
+
 </html>
