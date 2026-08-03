@@ -18,7 +18,8 @@ export const handler = async (event) => {
     "/requisitos": "requisitos.html",
     "/servicios": "servicios.html",
     "/alianzas": "alianzas.html",
-    "/form": "form.html"
+    "/form": "form.html",
+    "/bmc-ondemand": "politicas-de-privacidad.html",
   };
 
 
