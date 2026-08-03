@@ -20,7 +20,7 @@ export const handler = async (event) => {
     "/servicios": "servicios.html",
     "/alianzas": "alianzas.html",
     "/form": "form.html",
-    "/bmc-ondemand": "politicas-de-privacidad.html",
+    "/privacy-policy": "politicas-de-privacidad.html",
     "politicasOndemand.pdf": "politicasOndemand.pdf"
   };
 
