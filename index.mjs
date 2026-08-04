@@ -21,7 +21,7 @@ export const handler = async (event) => {
     "/alianzas": "alianzas.html",
     "/form": "form.html",
     "/privacy-policy": "politicas-de-privacidad.html",
-    "politicasOndemand.pdf": "politicasOndemand.pdf"
+    "/politicasOndemand.pdf": "politicasOndemand.pdf"
   };
 
 
